@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "create-calamity",
+	"version": "${version}",
+	"name": "Create Calamity",
+	"description": "Create Calamity Fabric!",
+	"authors": [
+		"Dev - Lunastela",
+		"Dev - JR1811",
+		"Dev - Kolos",
+		"Art - the_seven_",
+		"Art - Milkyfur",
+		"    - nullTheCoder"
+	],
+	"contact": {
+		"homepage": "https://discord.gg/fW8YQgunFg",
+		"sources": "https://github.com/LopyLuna/Create-Calamity"
+	},
+	"license": "MIT",
+	"icon": "assets/create-calamity/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"uwu.create.calamity.Calamity"
+		],
+		"client": [
+			"uwu.create.calamity.CalamityClient"
+		],
+		"fabric-datagen": [
+			"uwu.create.calamity.datagen.CalamityDataGenerator"
+		]
+	},
+	"mixins": [
+		"create-calamity.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
