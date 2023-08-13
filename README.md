@@ -6,8 +6,8 @@
     <a href="https://github.com/LopyLuna/Create-Calamity/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/LopyLuna/Create-Calamity?style=for-the-badge&labelWidth=15&color=900c3f" alt="License">
     </a>
-    <a href="https://github.com/0xJoeMama/throwing-knives">
-      <img src="https://img.shields.io/badge/Available_for-MC_1.19.4-c70039?style=for-the-badge&labelWidth=15" alt="Supported Versions">
+    <a href="https://github.com/LopyLuna/Create-Calamity">
+      <img src="https://img.shields.io/badge/Available_for-MC_1.19.2-c70039?style=for-the-badge&labelWidth=15" alt="Supported Versions">
     </a>
     <a href="https://www.curseforge.com/minecraft/mc-mods/">
         <img src="https://img.shields.io/badge/-CurseForge-gray?style=for-the-badge&logo=curseforge&labelColor=orange">
