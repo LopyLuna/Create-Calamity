@@ -1,4 +1,4 @@
-![create_calamity_prev_02](https://github.com/JR1811/NeMuelch-1.18/assets/36027822/5ced51a5-1658-49ea-b5d2-3c69a8d3174e)
+<p align="center"><img src="https://github.com/JR1811/NeMuelch-1.18/assets/36027822/5ced51a5-1658-49ea-b5d2-3c69a8d3174e" alt="Logo" width="800"></p>
 
 # Create: Calamity
 
