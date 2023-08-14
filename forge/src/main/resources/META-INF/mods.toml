@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[${forge},)"
+issueTrackerURL = "https://github.com/lopyluna/create-calamity/issues"
+license = "MIT"
+
+[[mods]]
+modId = "createcalamity"
+version = "${version}"
+displayName = "Create Calamity"
+authors = "everybody"
+description = '''
+lol
+'''
+logoFile = "icon.png"
+
+[[dependencies.createcalamity]]
+modId = "forge"
+mandatory = true
+versionRange = "[${forge},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.createcalamity]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft_version}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.createcalamity]]
+modId="create"
+mandatory=true
+versionRange="[${create_forge},)"
+ordering="NONE"
+side="BOTH"

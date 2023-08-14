@@ -1,217 +1,319 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-        jcenter()
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public' }
-        maven { url = 'https://maven.parchmentmc.org' }
+plugins {
+    id "architectury-plugin" version "${arch_plugin_version}"
+    id "dev.architectury.loom" version "${loom_version}" apply false
+	id "io.github.juuxel.loom-vineflower" version "${vineflower_version}" apply false
+	id "io.github.p03w.machete" version "${machete_version}"
+    id "io.github.pacifistmc.forgix" version "${forgix_version}"
+}
+
+// These are the access wideners depending on the minecraft version
+def mcVersionToAccessWidenerVersion = [
+        "1.19.2": "1_19_2",
+        "1.20.1": "1_20_1",
+]
+rootProject.ext.set("access_wideners", mcVersionToAccessWidenerVersion)
+
+loadProperties()
+makeAccessWidener()
+defineMixins()
+
+forgix {
+    group = rootProject.maven_group
+    mergedJarName = "${rootProject.archives_base_name}-${rootProject.mod_version}${getBuildNumber()}+mc${rootProject.minecraft_version}.jar"
+	outputDir = "build/libs/merged"
+}
+
+architectury {
+    minecraft = rootProject.minecraft_version
+}
+
+subprojects { p ->
+    apply plugin: "dev.architectury.loom"
+	apply plugin: "io.github.juuxel.loom-vineflower"
+
+	def froge = p == project(":forge")
+	def fabric = p == project(":fabric")
+	def common = p == project(":common")
+
+	def awFile = project(":common").file("src/main/resources/calamity.accesswidener")
+
+    loom {
+		silentMojangMappingsLicense()
+
+		if(awFile.exists()) {
+			accessWidenerPath = awFile
+
+			if(froge) {
+				forge {
+					convertAccessWideners = true
+					extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+				}
+			}
+		}
+	}
+
+    configurations {
+		addJar
+		shade
+
+        addJarCompile
+		addJarRuntime
+
+		if (!common) {
+			include.extendsFrom addJar
+		}
+
+        compileOnly.extendsFrom addJarCompile
+		annotationProcessor.extendsFrom addJarCompile
+        implementation.extendsFrom addJarRuntime
+
+		addJar.extendsFrom addJarCompile
+		addJar.extendsFrom addJarRuntime
+
+		implementation.extendsFrom shade
     }
+
+	repositories {
+		mavenCentral()
+		maven { url = "https://maven.parchmentmc.org" }
+		maven { url = "https://maven.quiltmc.org/repository/release" }
+		maven {
+			url = "https://maven.tterrag.com/"
+			content { includeGroup("com.jozufozu.flywheel") }
+		}
+	}
+
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:${forgegradle_version}"
-        classpath "org.spongepowered:mixingradle:${mixingradle_version}"
-        classpath "org.parchmentmc:librarian:${librarian_version}"
-    }
-}
+        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+		mappings(loom.layered {
+			it.mappings("org.quiltmc:quilt-mappings:${rootProject.minecraft_version}+build.${rootProject.quilt}:intermediary-v2")
+			it.parchment("org.parchmentmc.data:parchment-${rootProject.minecraft_version}:${rootProject.parchment}@zip")
+			it.officialMojangMappings { nameSyntheticMembers = false }
+		})
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
+        addJarCompile "systems.manifold:manifold-preprocessor:${rootProject.manifold_version}"
+		addJarCompile "systems.manifold:manifold-ext:${rootProject.manifold_version}"
+		addJarRuntime "systems.manifold:manifold-ext-rt:${rootProject.manifold_version}"
+        addJarRuntime "systems.manifold:manifold-rt:${rootProject.manifold_version}"
+        addJar "systems.manifold:manifold-util:${rootProject.manifold_version}"
 
-version = '0.0.1'
-group = 'com.calamityteam.createcalamity'
-archivesBaseName = "createcalamity-${artifact_minecraft_version}"
+        // Dev Env Optimizations
+        //// https://www.cursemaven.com/
+        //// https://docs.modrinth.com/docs/tutorials/maven/
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
-minecraft {
-    mappings channel: 'parchment', version: "${parchment_version}-${minecraft_version}"
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-
-            property 'forge.logging.console.level', 'debug'
-
-            property 'forge.enabledGameTestNamespaces', 'createcalamity'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-
-            mods {
-                createcalamity {
-                    source sourceSets.main
-                }
+        if (fabric) {
+            if (rootProject.hasProperty("lazydfu")) {
+				modRuntimeOnly "maven.modrinth:lazydfu:${rootProject.lazydfu}"
+            }
+            if (rootProject.hasProperty("smoothboot_fabric")) {
+				modRuntimeOnly "curse.maven:smoothboot-fabric-415758:${rootProject.smoothboot_fabric}"
             }
         }
 
-        server {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-
-            property 'forge.logging.console.level', 'debug'
-
-            property 'forge.enabledGameTestNamespaces', 'createcalamity'
-
-            mods {
-                createcalamity {
-                    source sourceSets.main
-                }
+        if (froge) {
+            if (rootProject.hasProperty("bmb")) {
+				modRuntimeOnly "curse.maven:better-mods-button-541584:${rootProject.bmb}"
             }
-        }
-
-        gameTestServer {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-
-            property 'forge.logging.console.level', 'debug'
-
-            property 'forge.enabledGameTestNamespaces', 'createcalamity'
-
-            mods {
-                createcalamity {
-                    source sourceSets.main
-                }
+            if (rootProject.hasProperty("smoothboot_forge")) {
+				modRuntimeOnly "curse.maven:smoothboot-forge-633412:${rootProject.smoothboot_forge}"
             }
-        }
-
-        data {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES,REGISTRYDUMP'
-
-            property 'forge.logging.console.level', 'debug'
-
-            args '--mod', 'createcalamity', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
-            mods {
-                createcalamity {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
-}
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
-
-repositories {
-    maven {
-        name = 'tterrag maven'
-        url = 'https://maven.tterrag.com/'
-    }
-    maven {
-        // location of the maven that hosts JEI files since January 2023
-        // location of the maven for Vazkii's mods
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
-    }
-    maven {
-        // location of the maven for Curios API
-        url = "https://maven.theillusivec4.top/"
-    }
-    maven {
-        name = "ModMaven"
-        url = "https://modmaven.dev"
-    }
-
-    maven {
-        url = 'https://www.cursemaven.com'
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
-        content {
-            includeGroup "maven.modrinth"
+            if (rootProject.hasProperty("catalogue")) {
+				modRuntimeOnly "curse.maven:catalogue-459701:${rootProject.catalogue}"
+			}
+			if (rootProject.hasProperty("ferritecore")) {
+				modRuntimeOnly "curse.maven:ferritecore-429235:${rootProject.ferritecore}"
+			}
         }
     }
 
-    flatDir {
-        dirs 'libs'
-    }
-}
+    processResources {
+        def properties = [
+			version: rootProject.mod_version,
+			minecraft_version: rootProject.minecraft_version,
+			forge: rootProject.forge.split("\\.")[0],
+			fabric: rootProject.fabric,
+			fabric_api: rootProject.fabric_api,
+			create_forge: rootProject.create_forge.split("-")[0],
+			create_fabric: rootProject.create_fabric,
+        ]
 
-dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+        inputs.properties properties
+		inputs.property("aw", rootProject.access_widener)
 
-    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
-    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
-    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+        filesMatching("architectury.common.json") {
+            expand(aw: rootProject.access_widener)
+        }
 
-    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
-    runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
+        filesMatching("fabric.mod.json") {
+            expand properties
+        }
 
-    //mods
-
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}")
-    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:4100299")
-    runtimeOnly fg.deobf("vazkii.quark:Quark:3.4-406.3030")
-    runtimeOnly fg.deobf("curse.maven:mouse-tweaks-60089:3871353")
-    runtimeOnly fg.deobf("curse.maven:rubidium-574856:4568727")
-    runtimeOnly fg.deobf("curse.maven:rubidium-extra-654373:4431017")
-    runtimeOnly fg.deobf("curse.maven:textrues-rubidium-options-663125:4507672")
-    runtimeOnly fg.deobf("curse.maven:memoryleakfix-627566:4465268")
-    runtimeOnly fg.deobf("curse.maven:entity-collision-fps-fix-628345:3829972")
-    runtimeOnly fg.deobf("curse.maven:smooth-boot-reloaded-633412:4162940")
-    runtimeOnly fg.deobf("curse.maven:krypton-reforged-549394:4606519")
-    //  runtimeOnly fg.deobf("slimeknights.mantle:Mantle:1.16.5-1.6.115")
-    //  runtimeOnly fg.deobf("slimeknights.tconstruct:TConstruct:1.16.5-3.1.1.252")
-    //  runtimeOnly fg.deobf("com.railwayteam.railways:railways-1.18.2-1.1.1:all") { transitive = false }
-    runtimeOnly fg.deobf("maven.modrinth:entityculling:1.6.1")
-    runtimeOnly fg.deobf("maven.modrinth:reskin:2.6.1")
-    runtimeOnly fg.deobf("maven.modrinth:sekclib:0.4.3")
-    runtimeOnly fg.deobf("curse.maven:modernfix-790626:4635137")
-    runtimeOnly fg.deobf("maven.modrinth:every-compat:1.19.2-2.4.12")
-    runtimeOnly fg.deobf("maven.modrinth:tetra:5.3.1")
-    runtimeOnly fg.deobf("maven.modrinth:moonlight:1.19.2-2.2.43")
-    runtimeOnly fg.deobf("maven.modrinth:mutil:5.1.0")
-    runtimeOnly fg.deobf("curse.maven:createaddition-439890:4683731")
-}
-
-sourceSets.main.resources {
-    srcDir 'src/generated/resources'
-    exclude '.cache/'
-}
-
-jar {
-    manifest {
-        attributes([
-                "Specification-Title"     : "createcalamity",
-                "Specification-Vendor"    : "calamityteam",
-                "Specification-Version"   : "1",
-                'Implementation-Title'    : project.jar.baseName,
-                "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "calamityteam",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
-    }
-}
-
-jar.finalizedBy('reobfJar')
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
+        filesMatching("META-INF/mods.toml") {
+            expand properties
         }
     }
+
+    remapJar.finalizedBy(mergeJars)
+}
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: "architectury-plugin"
+    apply plugin: "maven-publish"
+
+    archivesBaseName = rootProject.archives_base_name
+    version = rootProject.mod_version
+    group = rootProject.maven_group
+
     repositories {
-        maven {
-            url "file://${project.projectDir}/mcmodsrepo"
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' } // manifold
+        maven { url 'https://jitpack.io' } // idk a lot of stuff
+        maven { // modrinth
+            url "https://api.modrinth.com/maven"
+            content { includeGroup "maven.modrinth" }
+        }
+        maven { // curseforge
+            url "https://www.cursemaven.com"
+            content { includeGroup "curse.maven" }
         }
     }
+
+	tasks.withType(JavaCompile).configureEach {
+		options.encoding = "UTF-8"
+		options.release = 17
+		options.compilerArgs += ['-Xplugin:Manifold']
+	}
+
+	java {
+        withSourcesJar()
+    }
+
+	machete {
+		// disable machete locally for faster builds
+		enabled = System.getenv("GITHUB_RUN_NUMBER") != null
+	}
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+static def getBuildNumber() {
+	String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
+	return (buildNumber != null ? ".${buildNumber}" : "")
+}
+
+
+/* Cursed stuff is defined below! Beware of dog */
+
+
+
+// Defines the preprocessors
+def setupManifoldProcessors(List<String> mcVers, int mcIndex) {
+    def redefineList = new ArrayList<String>()
+    for (int i = 0; i < mcVers.size(); i++) {
+        String mcStr = "MC_" + mcVers.get(i).replace(".", "_")
+
+        if (mcIndex < i)
+            redefineList.add("PRE_$mcStr")
+
+        if (mcIndex <= i)
+            redefineList.add("PRE_CURRENT_$mcStr")
+
+        if (mcIndex == i)
+            redefineList.add(mcStr)
+
+        if (mcIndex > i)
+            redefineList.add("POST_$mcStr")
+
+        if (mcIndex >= i)
+            redefineList.add("POST_CURRENT_$mcStr")
+    }
+
+    StringBuilder sb = new StringBuilder()
+		.append("# DO NOT EDIT\n")
+		.append("# Generated by the build script. Change mcVer property to change minecraft version.\n\n")
+
+    for (String redefinedVersion : redefineList) {
+        sb.append(redefinedVersion).append("=\n")
+    }
+
+    new File(projectDir, "build.properties").text = sb.toString()
+}
+
+// Loads the properties for each version & sets up the preprocessors
+def loadProperties() {
+    def mcVersion = ""
+    def mcVers = mc_versions.split(", ")
+    int mcIndex = -1
+
+    println "Avalible Minecraft Versions: ${mc_versions}"
+
+    if (project.hasProperty("mcVer")) {
+        mcVersion = mcVer
+        mcIndex = Arrays.asList(mcVers).indexOf(mcVer)
+    }
+
+    if (mcIndex == -1) {
+        println "Defaulting to ${rootProject.default_mc_version} since the set mcVer is invalid."
+        println "Use -PmcVer='${rootProject.default_mc_version}' or edit gradle.properties to set the minecraft version."
+
+        mcVersion = default_mc_version
+        mcIndex = Arrays.asList(mcVers).indexOf(default_mc_version)
+    }
+
+    println "Using " + mcVersion + ".properties."
+    def properties = new Properties()
+
+    properties.load(new FileInputStream("$rootProject.rootDir/"+"$mcVersion"+".properties"))
+
+    properties.each { property ->
+        rootProject.ext.set(property.key, property.value)
+    }
+
+    setupManifoldProcessors(Arrays.asList(mcVers), mcIndex)
+
+    rootProject.ext.set("access_widener_version", rootProject.access_wideners.get(mcVersion))
+}
+
+// Sets up the accesswideners
+def makeAccessWidener() {
+    def accessWidenerFile = project(":common").file("src/main/resources/calamity.accesswidener")
+    def versionAccessWidenerFile = project(":common").file("src/main/resources/${rootProject.access_widener_version}.calamity.aw")
+
+    if (accessWidenerFile.exists()) {
+        delete accessWidenerFile
+    }
+
+    if (versionAccessWidenerFile.exists()) {
+        copy {
+            from versionAccessWidenerFile
+            into project(":common").file("src/main/resources/")
+            rename "${rootProject.access_widener_version}.calamity.aw", "calamity.accesswidener"
+        }
+        def text = accessWidenerFile.text
+        text += "\n# DO NOT EDIT\n# Generated by the build script. Edit ${versionAccessWidenerFile.name} instead!"
+
+        accessWidenerFile.text = text
+    } else {
+        versionAccessWidenerFile.createNewFile()
+        versionAccessWidenerFile.text = "accessWidener   v2  named"
+    }
+    rootProject.ext.set("access_widener", "${rootProject.access_widener_version}.calamity.aw")
+}
+
+// Defines the mixins
+def defineMixins() {
+    def mixins = new ArrayList<String>()
+    def projects = new ArrayList<String>()
+
+    for (Project proj : rootProject.subprojects) {
+        projects.add(proj.name)
+    }
+
+    for (String proj : projects) {
+        for (File file : project(proj).file("src/main/resources/").listFiles()) {
+            if (file.getName().endsWith("mixin.json") || file.getName().endsWith("mixins.json")) {
+                mixins.add(file.getName())
+            }
+        }
+    }
+
+    rootProject.ext.set("mixins", mixins)
 }

@@ -1,0 +1,86 @@
+plugins {
+	id "com.github.johnrengelman.shadow" version "${shadow_version}"
+}
+
+architectury {
+    platformSetupLoomIde()
+    forge()
+}
+
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentForge.extendsFrom common
+}
+
+repositories {
+	// mavens for Forge-exclusives
+	maven { url = "https://maven.theillusivec4.top/" } // Curios
+	maven { // Create Forge and Registrate Forge
+		url = "https://maven.tterrag.com/"
+		content {
+			includeGroup("com.tterrag.registrate")
+			includeGroup("com.simibubi.create")
+		}
+	}
+	maven { url = "https://cursemaven.com" }
+    maven { url "https://maven.shedaniel.me/" }
+}
+
+dependencies {
+    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge}"
+
+    common(project(path: ":common", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+
+	modImplementation("com.simibubi.create:create-${minecraft_version}:${create_forge}:slim") { transitive = false }
+	modImplementation("com.tterrag.registrate:Registrate:${registrate}")
+	modImplementation("com.jozufozu.flywheel:flywheel-forge-${flywheel_mc}:${flywheel}")
+}
+
+shadowJar {
+    exclude "fabric.mod.json"
+    exclude "architectury.common.json"
+
+    configurations = [project.configurations.shadowCommon, project.configurations.shade]
+
+    archiveClassifier.set "dev-shadow"
+}
+
+remapJar {
+    input.set shadowJar.archiveFile
+    dependsOn shadowJar
+    archiveClassifier.set null
+}
+
+jar {
+    archiveClassifier.set "dev"
+}
+
+sourcesJar {
+    def commonSources = project(":common").sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
+}
+
+components.java {
+    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+        skip()
+    }
+}
+
+publishing {
+    publications {
+        mavenForge(MavenPublication) {
+            artifactId = rootProject.archives_base_name + "-" + project.name
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+    }
+}
