@@ -9,6 +9,6 @@ public class ModMenuIntegration implements ModMenuApi {
 	@Override
 	public ConfigScreenFactory<?> getModConfigScreenFactory() {
 		//return Config::createConfigScreen;
-		return null;
+		return a -> null;
 	}
 }
