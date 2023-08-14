@@ -5,10 +5,4 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 
 //import com.calamityteam.calamity.config.Config;
 
-public class ModMenuIntegration implements ModMenuApi {
-	/*@Override
-	public ConfigScreenFactory<?> getModConfigScreenFactory() {
-		//return Config::createConfigScreen;
-		return null;
-	}*/
-}
+public class ModMenuIntegration implements ModMenuApi { }

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "createcalamity:nether_brass_ore",
+  "step": "underground_ores"
+}
