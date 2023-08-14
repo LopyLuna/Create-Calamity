@@ -19,9 +19,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-#if MC_1_19_2
 @SuppressWarnings("UnstableApiUsage")
-#endif
 public class UtilImpl {
 
 	public static List<LiteralArgumentBuilder<CommandSourceStack>> commands = new ArrayList<>();

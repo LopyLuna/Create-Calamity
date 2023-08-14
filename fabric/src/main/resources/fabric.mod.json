@@ -4,43 +4,41 @@
   "version": "${version}",
   "name": "Create Calamity",
   "description": "lol",
-  "authors": [ "everybody" ],
+  "authors": [
+	"everybody"
+  ],
   "contact": {
-    "homepage": "https://github.com/lopyluna/create-calmity",
-    "sources": "https://github.com/lopyluna/create-calmity",
-    "issues": "https://github.com/lopyluna/create-calmity/issues"
+	"homepage": "https://github.com/lopyluna/create-calmity",
+	"sources": "https://github.com/lopyluna/create-calmity",
+	"issues": "https://github.com/lopyluna/create-calmity/issues"
   },
   "license": "GPL-3.0",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "com.calamityteam.calamity.fabric.CreateCalamityFabric"
-    ],
-    "modmenu": [
-      "com.calamityteam.calamity.fabric.ModMenuIntegration"
-    ]
+	"main": [
+	  "com.calamityteam.calamity.fabric.CreateCalamityFabric"
+	]
   },
   "mixins": [
-    "createcalamity.mixins.json",
-    "createcalamity-common.mixins.json"
+	"createcalamity.mixins.json"
   ],
   "depends": {
-    "minecraft": "${minecraft_version}",
-    "fabricloader": ">=${fabric}",
-    "fabric-api": ">=${fabric_api}",
-    "create": ">=${create_fabric}"
+	"minecraft": "${minecraft_version}",
+	"fabricloader": ">=${fabric}",
+	"fabric-api": ">=${fabric_api}",
+	"create": ">=${create_fabric}"
   },
   "custom": {
-    "modmenu": {
-      "parent": {
-        "id": "create"
-      },
-      "links": {
-        "Modrinth": "",
-        "CurseForge": "",
-        "Discord": ""
-      }
-    }
+	"modmenu": {
+	  "parent": {
+		"id": "create"
+	  },
+	  "links": {
+		"Modrinth": "",
+		"CurseForge": "",
+		"Discord": ""
+	  }
+	}
   }
 }
