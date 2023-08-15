@@ -16,7 +16,7 @@ public class RMItemRegistry {
 
 	private static ItemEntry<ResearchBlueprintItem> researchBlueprint(Features feature) {
 		return REGISTRATE
-			.item( "research_blueprint_" + feature.getName(), (props) -> new ResearchBlueprintItem(props, feature))
+			.item( "research_blueprint_" + feature.getID(), (props) -> new ResearchBlueprintItem(props, feature))
 			.register();
 	}
 
