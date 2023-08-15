@@ -35,6 +35,9 @@ public abstract class BeltBlockMixin {
 
 	@Inject(method = "entityInside", at=@At("HEAD"))
 	public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, CallbackInfo ci) {
+		if(worldIn.isClientSide)
+			return;
+
 		BeltSlope slope = state.getValue(SLOPE);
 		Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
 		BeltBlockEntity beltBE = ((BeltBlockEntity) worldIn.getBlockEntity(pos));
