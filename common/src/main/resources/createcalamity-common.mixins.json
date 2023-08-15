@@ -6,8 +6,9 @@
   "client": [],
   "mixins": [
     "KineticBlockEntityAccessor",
-    "workplacehazards.EntityMixin",
-    "workplacehazards.PressingBehaviourMixin"
+    "workplace_hazards.BeltBlockMixin",
+    "workplace_hazards.EntityMixin",
+    "workplace_hazards.PressingBehaviourMixin"
   ],
   "injectors": {
     "defaultRequire": 1

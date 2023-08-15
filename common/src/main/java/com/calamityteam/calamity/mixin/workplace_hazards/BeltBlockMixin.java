@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.mixin.workplacehazards;
+package com.calamityteam.calamity.mixin.workplace_hazards;
 
 import com.simibubi.create.content.kinetics.belt.BeltBlock;
 

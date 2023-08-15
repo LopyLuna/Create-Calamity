@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.mixin.workplacehazards;
+package com.calamityteam.calamity.mixin.workplace_hazards;
 
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 
@@ -8,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Pose;
 
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -20,7 +19,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)

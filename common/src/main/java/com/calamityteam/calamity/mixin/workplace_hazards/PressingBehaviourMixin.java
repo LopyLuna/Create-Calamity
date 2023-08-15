@@ -1,23 +1,19 @@
-package com.calamityteam.calamity.mixin.workplacehazards;
+package com.calamityteam.calamity.mixin.workplace_hazards;
 
 import com.calamityteam.calamity.mixin.KineticBlockEntityAccessor;
 import com.simibubi.create.content.kinetics.belt.behaviour.BeltProcessingBehaviour;
-import com.simibubi.create.content.kinetics.press.BeltPressingCallbacks;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.press.PressingBehaviour;
 
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.phys.AABB;
 
 import org.spongepowered.asm.mixin.Final;
