@@ -18,6 +18,7 @@
     <a href="https://github.com/LopyLuna/Create-Calamity/releases">
         <img src="https://img.shields.io/github/v/release/LopyLuna/Create-Calamity?logo=github&style=for-the-badge">
     </a>
+	<img src="https://cdn.discordapp.com/attachments/1133381418987298826/1140870567977824368/warrning-image.png">
 </h1>
 
 ### Overview
