@@ -4,7 +4,7 @@ issueTrackerURL = "https://github.com/lopyluna/create-calamity/issues"
 license = "MIT"
 
 [[mods]]
-modId = "createcalamity"
+modId = "calamity"
 version = "${version}"
 displayName = "Create Calamity"
 authors = "everybody"
@@ -13,21 +13,21 @@ lol
 '''
 logoFile = "icon.png"
 
-[[dependencies.createcalamity]]
+[[dependencies.calamity]]
 modId = "forge"
 mandatory = true
 versionRange = "[${forge},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.createcalamity]]
+[[dependencies.calamity]]
 modId = "minecraft"
 mandatory = true
 versionRange = "${minecraft_version}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.createcalamity]]
+[[dependencies.calamity]]
 modId="create"
 mandatory=true
 versionRange="[${create_forge},)"
