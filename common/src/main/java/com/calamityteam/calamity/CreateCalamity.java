@@ -11,7 +11,6 @@ import com.simibubi.create.Create;
 
 import net.minecraft.resources.ResourceLocation;
 
-import com.calamityteam.calamity.base.world.feature.CalamityFeatures;
 
 public class CreateCalamity {
     public static final String MOD_ID = "createcalamity";
@@ -27,7 +26,6 @@ public class CreateCalamity {
 
         BlockRegistry.register();
 		AdvancementCriteria.register();
-        CalamityFeatures.register();
     }
 
     public static ResourceLocation asResource(String path) {
