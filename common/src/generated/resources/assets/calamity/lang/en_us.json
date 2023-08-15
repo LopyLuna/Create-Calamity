@@ -4,9 +4,15 @@
 
 	"block.calamity.brass_ore": "Brass Ore",
 
+	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
+	"block.create.track_signal.tooltip.summary": "Test",
+
+	"itemGroup.calamity": "Create: Calamity. Run while you can",
+
 
 	"_": "->------------------------]  UI & Messages  [------------------------<-",
 
+	"itemGroup.calamity": "Create: Calamity. Run while you can",
 
 
 	"_": "->------------------------]  Item Descriptions  [------------------------<-",

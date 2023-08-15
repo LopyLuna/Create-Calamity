@@ -19,6 +19,10 @@ public class CommonTags {
 			BRASS_PLATES = item("plates/brass_plates", "brass_plates", "plates/brass"),
 			COPPER_INGOTS = item("ingots/copper_ingots", "copper_ingots", "ingots/copper"),
 			IRON_INGOTS = item("ingots/iron_ingots", "iron_ingots", "ingots/iron");
+			/*ORES = item("ores", "ores", "???"),
+			NETHERRACK_ORES = item("ores_in_ground/netherrack", "ores_in_ground/netherrack", "???"),
+			BRASS_ORES = item("ores/brass", "brass_ores", "???"),
+			SPARSE_ORES = item("ore_rates/spares", "???", "ore_rates/sparse");*/
 
 	public static final Map<DyeColor, CommonTag<Item>> DYES = Util.make(new EnumMap<>(DyeColor.class), dyes -> {
 		for (DyeColor color : DyeColor.values()) {
@@ -33,8 +37,22 @@ public class CommonTags {
 	public static final CommonTag<Block>
 			RELOCATION_NOT_SUPPORTED = block("relocation_not_supported");
 
+	public static final BidirectionalCommonTag<Item>
+		ORES_ITEM = itemShared("ores");
+
+	public static final BidirectionalCommonTag<Block>
+		ORES = blockShared("ores");
+
 	public static CommonTag<Block> block(String path) {
 		return CommonTag.conventional(Registry.BLOCK_REGISTRY, path);
+	}
+
+	public static BidirectionalCommonTag<Block> blockShared(String common, String fabric, String forge) {
+		return BidirectionalCommonTag.conventional(Registry.BLOCK_REGISTRY, common, fabric, forge);
+	}
+
+	public static BidirectionalCommonTag<Block> blockShared(String path) {
+		return blockShared(path, path, path);
 	}
 
 	public static CommonTag<Item> item(String common, String fabric, String forge) {
@@ -43,5 +61,13 @@ public class CommonTags {
 
 	public static CommonTag<Item> item(String path) {
 		return item(path, path, path);
+	}
+
+	public static BidirectionalCommonTag<Item> itemShared(String common, String fabric, String forge) {
+		return BidirectionalCommonTag.conventional(Registry.ITEM_REGISTRY, common, fabric, forge);
+	}
+
+	public static BidirectionalCommonTag<Item> itemShared(String path) {
+		return itemShared(path, path, path);
 	}
 }

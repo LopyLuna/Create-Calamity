@@ -1,5 +1,9 @@
 package com.calamityteam.calamity.registry;
 
+import com.calamityteam.calamity.Calamity;
+
+import com.calamityteam.calamity.multiloader.CommonTags;
+
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.data.TagGen;
 
@@ -15,7 +19,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 
 public class CLBlocks {
 	static {
-		CreateCalamity.REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_TAB);
+		Calamity.REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_TAB);
 	}
 
 	/*public static final BlockEntry<DropExperienceBlock> BRASS_ORE = CreateCalamity.REGISTRATE
@@ -32,16 +36,20 @@ public class CLBlocks {
 		.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
 		.build()
 		.register();*/
-	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = CreateCalamity.REGISTRATE.block("brass_ore", p ->
-		new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = Calamity.REGISTRATE.block("brass_ore", p ->
+			new DropExperienceBlock(p, UniformInt.of(3,7)))
+		.initialProperties(Material.STONE)
+		.properties(p -> p
 			.sound(SoundType.NETHER_ORE)
-			.strength(3.0f,3.0f)
-			.requiresCorrectToolForDrops(),
-			UniformInt.of(3,7)))
+			.strength(3.0f, 3.0f)
+			.requiresCorrectToolForDrops())
 		.transform(TagGen.pickaxeOnly())
 		.loot((lt, b) -> lt.add(b, RegistrateBlockLootTables.createOreDrop(b, AllItems.BRASS_NUGGET.get())))
 		.tag(BlockTags.NEEDS_IRON_TOOL)
-		.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
+		.tag(CommonTags.ORES.commonWritable)
+		//.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
+		.item()
+		.tag(CommonTags.ORES_ITEM.commonWritable)
 		.build()
 		.register();
 

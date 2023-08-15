@@ -2,6 +2,7 @@ package com.calamityteam.calamity.base.data;
 
 import com.calamityteam.calamity.multiloader.CommonTags;
 
+import com.calamityteam.calamity.registry.CLBlocks;
 import com.calamityteam.calamity.registry.CLTags;
 
 import com.calamityteam.calamity.registry.CLTags.AllBlockTags;
@@ -42,6 +43,8 @@ public class CLTagGen {
 			for (ResourceLocation loc : OPTIONAL_TAGS.get(tag))
 				appender.addOptional(loc);
 		}
+
+		CommonTags.ORES.generateShared(tags);
 	}
 
 	public static void generateItemTags(RegistrateItemTagsProvider tags) {
@@ -55,7 +58,8 @@ public class CLTagGen {
 			.generateBoth(tags, tag -> tag.add(Items.STRING));
 		CommonTags.IRON_PLATES.generateCommon(tags);
 		CommonTags.BRASS_PLATES.generateCommon(tags);
-//			.generateBoth(tags, tag -> tag.add(AllItems.IRON_SHEET.get()));
+
+		CommonTags.ORES_ITEM.generateShared(tags);
 
 		for (AllItemTags tag : AllItemTags.values()) {
 			if (tag.alwaysDatagen)
