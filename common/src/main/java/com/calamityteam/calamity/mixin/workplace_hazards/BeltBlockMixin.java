@@ -78,6 +78,9 @@ public abstract class BeltBlockMixin {
 					upwards = upwards.multiply(-1, -1, -1);
 			}
 
+			if(upwards.y < 0)
+				entityIn.fallDistance = (float) (7 * upFactor);
+
 			upwards = upwards.multiply(upFactor, upFactor, upFactor).add(sidewards.multiply(sideFactor, sideFactor, sideFactor));
 			entityIn.setDeltaMovement(upwards);
 		}
