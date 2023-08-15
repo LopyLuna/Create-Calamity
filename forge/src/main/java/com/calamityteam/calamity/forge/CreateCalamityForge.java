@@ -21,8 +21,8 @@ public class CreateCalamityForge {
 
 		BlockRegistry.register();
 
-		forgeEventBus.register(Events.ClientModBusEvents.class);
-		forgeEventBus.addListener(Events::registerCommands);
+		/*forgeEventBus.register(Events.ClientModBusEvents.class);
+		forgeEventBus.addListener(Events::registerCommands);*/
 		modEventBus.addListener(CalamityEventListener::setup);
 		modEventBus.addListener(CalamityEventListener.ClientModBusEvents::onLoadComplete);
 		CreateCalamity.init();
