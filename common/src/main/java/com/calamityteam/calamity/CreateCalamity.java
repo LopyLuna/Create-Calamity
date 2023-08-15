@@ -1,15 +1,14 @@
 package com.calamityteam.calamity;
 
-import com.calamityteam.calamity.base.registries.BlockRegistry;
-import com.simibubi.create.foundation.data.CreateRegistrate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.simibubi.create.Create;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.minecraft.resources.ResourceLocation;
 
-import com.calamityteam.calamity.base.world.feature.CalamityFeatures;
+import com.calamityteam.calamity.base.registries.BlockRegistry;
 
 public class CreateCalamity {
 	public static final String MOD_ID = "createcalamity";
@@ -21,11 +20,9 @@ public class CreateCalamity {
 
 	public static void init() {
 		LOGGER.info("{} v{} initializing! Create version: {} on platform: {}", NAME, VERSION, Create.VERSION,
-				Util.platformName());
+			Util.platformName());
 
 		BlockRegistry.register();
-
-		CalamityFeatures.register();
 	}
 
 	public static ResourceLocation asResource(String path) {
