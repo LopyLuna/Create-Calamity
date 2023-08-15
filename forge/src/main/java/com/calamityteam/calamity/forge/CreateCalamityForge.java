@@ -1,5 +1,9 @@
 package com.calamityteam.calamity.forge;
 
+import com.calamityteam.calamity.CreateCalamity;
+
+import com.calamityteam.calamity.base.registries.BlockRegistry;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -13,11 +17,14 @@ public class CreateCalamityForge {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
-		forgeEventBus.register(CalamityEventListener.ClientModBusEvents.class);
-		forgeEventBus.addListener(CalamityEventListener::registerCommands);
+		CreateCalamity.REGISTRATE.registerEventListeners(modEventBus);
+
+		BlockRegistry.register();
+
+		forgeEventBus.register(Events.ClientModBusEvents.class);
+		forgeEventBus.addListener(Events::registerCommands);
 		modEventBus.addListener(CalamityEventListener::setup);
 		modEventBus.addListener(CalamityEventListener.ClientModBusEvents::onLoadComplete);
-
 		CreateCalamity.init();
 	}
 }
