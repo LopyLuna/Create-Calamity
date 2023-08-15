@@ -28,18 +28,17 @@ jobs:
             - name: Upload Forge Jars
               uses: actions/upload-artifact@v3
               with:
-                  name: cu-artifacts-forge
+                  name: Forge Artifacts
                   path: forge/build/libs/*.jar
 
             - name: Upload Fabric Jars
               uses: actions/upload-artifact@v3
               with:
-                  name: cu-artifacts-fabric
+                  name: Fabric Artifacts
                   path: fabric/build/libs/*.jar
 
             - name: Upload Merged Jars
               uses: actions/upload-artifact@v3
               with:
-                  name: cu-artifacts-merged
-                  path: |
-                      build/libs/merged/*.jar
+                  name: Merged Artifacts
+                  path: build/libs/merged/*.jar

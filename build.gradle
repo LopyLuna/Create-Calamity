@@ -2,7 +2,6 @@ plugins {
     id "architectury-plugin" version "${arch_plugin_version}"
     id "dev.architectury.loom" version "${loom_version}" apply false
 	id "io.github.juuxel.loom-vineflower" version "${vineflower_version}" apply false
-	id "io.github.p03w.machete" version "${machete_version}"
 }
 
 defineMixins()
@@ -158,11 +157,6 @@ allprojects {
 	java {
         withSourcesJar()
     }
-
-	machete {
-		// disable machete locally for faster builds
-		enabled = System.getenv("GITHUB_RUN_NUMBER") != null
-	}
 }
 
 static def getBuildNumber() {
