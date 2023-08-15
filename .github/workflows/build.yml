@@ -1,0 +1,45 @@
+name: Build
+on:
+    workflow_dispatch:
+    pull_request:
+    push:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Setup Java 17
+              uses: actions/setup-java@v3
+              with:
+                  java-version: '17'
+                  distribution: temurin
+                  cache: gradle
+
+            - name: Make Gradle wrapper executable
+              run: chmod +x ./gradlew
+
+            - name: Build
+              run: ./gradlew build
+
+            - name: Upload Forge Jars
+              uses: actions/upload-artifact@v3
+              with:
+                  name: cu-artifacts-forge
+                  path: forge/build/libs/*.jar
+
+            - name: Upload Fabric Jars
+              uses: actions/upload-artifact@v3
+              with:
+                  name: cu-artifacts-fabric
+                  path: fabric/build/libs/*.jar
+
+            - name: Upload Merged Jars
+              uses: actions/upload-artifact@v3
+              with:
+                  name: cu-artifacts-merged
+                  path: |
+                      build/libs/merged/*.jar
