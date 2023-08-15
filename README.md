@@ -18,7 +18,9 @@
     <a href="https://github.com/LopyLuna/Create-Calamity/releases">
         <img src="https://img.shields.io/github/v/release/LopyLuna/Create-Calamity?logo=github&style=for-the-badge">
     </a>
-	<img src="https://cdn.discordapp.com/attachments/1133381418987298826/1140870567977824368/warrning-image.png" align="center">
+	<p align="center">
+	<img src="https://cdn.discordapp.com/attachments/1133381418987298826/1140870567977824368/warrning-image.png" alt="Prop 65 warning, this product may expose you to chemicals known to the state of Californis to cause cancer!">
+	</p>
 </h1>
 
 ### Overview
