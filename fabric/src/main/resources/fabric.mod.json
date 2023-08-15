@@ -21,7 +21,8 @@
 	]
   },
   "mixins": [
-	"createcalamity.mixins.json"
+	"createcalamity.mixins.json",
+	"createcalamity-common.mixins.json"
   ],
   "depends": {
 	"minecraft": "${minecraft_version}",
