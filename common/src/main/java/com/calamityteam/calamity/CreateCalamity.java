@@ -1,5 +1,6 @@
 package com.calamityteam.calamity;
 
+import com.calamityteam.calamity.base.registries.AdvancementCriteria;
 import com.calamityteam.calamity.base.registries.BlockRegistry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,7 +19,6 @@ public class CreateCalamity {
     public static final String VERSION = "0.0.1";
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
-    public static final DamageSource DAMAGE_SOURCE_CRUSHING = new DamageSource("crushing").bypassArmor().bypassMagic().bypassEnchantments();
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID);
 
     public static void init() {
@@ -26,7 +26,7 @@ public class CreateCalamity {
             Util.platformName());
 
         BlockRegistry.register();
-
+		AdvancementCriteria.register();
         CalamityFeatures.register();
     }
 
