@@ -2,6 +2,10 @@ architectury {
     common rootProject.enabled_platforms.split(", ")
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/calamity.accesswidener")
+}
+
 repositories {
     maven { url "https://maven.shedaniel.me/" }
 	maven { url = "https://api.modrinth.com/maven" } // LazyDFU

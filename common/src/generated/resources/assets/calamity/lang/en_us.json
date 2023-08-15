@@ -1,0 +1,19 @@
+{
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.calamity.brass_ore": "Brass Ore",
+
+
+	"_": "->------------------------]  UI & Messages  [------------------------<-",
+
+
+
+	"_": "->------------------------]  Item Descriptions  [------------------------<-",
+
+	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
+	"block.create.track_signal.tooltip.summary": "Test",
+
+	"_": "Thank you for translating Create: Calamity!"
+
+}

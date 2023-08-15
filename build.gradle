@@ -19,20 +19,12 @@ subprojects { p ->
 	def fabric = p == project(":fabric")
 	def common = p == project(":common")
 
-	def awFile = project(":common").file("src/main/resources/calamity.accesswidener")
-
-    loom {
+	loom {
 		silentMojangMappingsLicense()
-
-		if(awFile.exists()) {
-			accessWidenerPath = awFile
-
-			if(froge) {
-				forge {
-					convertAccessWideners = true
-					extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-				}
-			}
+		runs.configureEach {
+			vmArg("-Dmixin.debug.export=true")
+			vmArg("-Dmixin.env.remapRefMap=true")
+			vmArg("-Dmixin.env.refMapRemappingFile=${projectDir}/build/createSrgToMcp/output.srg")
 		}
 	}
 

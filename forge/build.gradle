@@ -2,6 +2,18 @@ plugins {
 	id "com.github.johnrengelman.shadow" version "${shadow_version}"
 }
 
+loom {
+	accessWidenerPath = project(":common").loom.accessWidenerPath
+
+	forge {
+		mixinConfig("calamity-common.mixins.json")
+		mixinConfig("calamity.mixins.json")
+
+		convertAccessWideners = true
+		extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+	}
+}
+
 architectury {
     platformSetupLoomIde()
     forge()

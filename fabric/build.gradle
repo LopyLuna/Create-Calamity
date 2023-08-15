@@ -7,12 +7,39 @@ architectury {
 	fabric()
 }
 
+loom {
+	Project common = project(":common")
+	accessWidenerPath = common.loom.accessWidenerPath
+
+	runs {
+		datagen {
+			client()
+
+			name "Minecraft Data"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${common.file("src/generated/resources")}"
+			vmArg "-Dfabric-api.datagen.modid=calamity"
+			vmArg "-Dporting_lib.datagen.existing_resources=${common.file("src/main/resources")}"
+
+			environmentVariable("DATAGEN", "TRUE")
+		}
+	}
+}
+
 configurations {
 	common
 	shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
 	compileClasspath.extendsFrom common
 	runtimeClasspath.extendsFrom common
 	developmentFabric.extendsFrom common
+}
+
+configurations.configureEach {
+	resolutionStrategy.eachDependency {
+		if (requested.module.name == "fabric-loader") {
+			useVersion(fabric)
+		}
+	}
 }
 
 repositories {
