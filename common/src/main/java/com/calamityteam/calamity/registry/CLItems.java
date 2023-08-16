@@ -6,4 +6,8 @@ public class CLItems {
 	static {
 		REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_TAB);
 	}
+
+
+
+	public static void register() {}
 }
