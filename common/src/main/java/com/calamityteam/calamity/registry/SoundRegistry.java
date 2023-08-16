@@ -1,9 +1,9 @@
-package com.calamityteam.calamity.base.registries;
+package com.calamityteam.calamity.registry;
 
 import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvent;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 
 public class SoundRegistry {
@@ -31,9 +31,9 @@ public class SoundRegistry {
 	 * </ul>
 	 */
 	private static RegistryEntry<SoundEvent> registerSound(String id) {
-		return CreateCalamity.REGISTRATE.simple(
+		return Calamity.REGISTRATE.simple(
 			id, Registry.SOUND_EVENT_REGISTRY,
-			() -> new SoundEvent(CreateCalamity.asResource(id))
+			() -> new SoundEvent(Calamity.asResource(id))
 		);
 	}
 

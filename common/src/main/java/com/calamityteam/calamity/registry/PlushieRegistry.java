@@ -1,22 +1,22 @@
-package com.calamityteam.calamity.base.registries;
+package com.calamityteam.calamity.registry;
 
-import com.calamityteam.calamity.CreateCalamity;
-import com.calamityteam.calamity.ModCreativeModeTab;
+import com.calamityteam.calamity.Calamity;
+import com.calamityteam.calamity.registry.CLCreativeModeTab;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 
-import static com.calamityteam.calamity.CreateCalamity.REGISTRATE;
+
 
 public class PlushieRegistry {
 	static {
-		REGISTRATE.creativeModeTab(() -> ModCreativeModeTab.CALAMITY_PLUSHIE_TAB);
+		Calamity.REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_PLUSHIE_TAB);
 	}
 
 	static {
-		final BlockEntry<Block> HEROBRINE = REGISTRATE.block("herobrine", Block::new)
+		final BlockEntry<Block> HEROBRINE = Calamity.REGISTRATE.block("herobrine", Block::new)
 			.item(BlockItem::new).build().register(); // this one doesnt match on purpose, pls dont fix
 		final BlockEntry<Block> TO0PA_PLUSH = newPlush("to0pa");
 		final BlockEntry<Block> SASCHA_T_PLUSH = newPlush("sascha");
@@ -38,7 +38,7 @@ public class PlushieRegistry {
 	}
 
 	public static BlockEntry<Block> newPlush(String name) {
-		return REGISTRATE.block("plushie_" + name, Block::new)
+		return Calamity.REGISTRATE.block("plushie_" + name, Block::new)
 			.item(BlockItem::new)
 			.build()
 			.register();
