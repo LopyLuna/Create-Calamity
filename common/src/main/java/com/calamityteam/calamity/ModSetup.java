@@ -6,7 +6,7 @@ import com.calamityteam.calamity.registry.*;
 public class ModSetup {
 	public static void register() {
 		/*CLTrackMaterials.register();
-		CLBogeyStyles.register();
+		CLBogeyStyles.register();*/
 		CLItems.register();
 		CLBlockEntities.register();*/
 		CLSounds.register();
@@ -15,6 +15,7 @@ public class ModSetup {
 		/*CLContainerTypes.register();
 		CLEntities.register();*/
 		CLTags.register();
+		CLAdvancements.register();
 		/*CLEdgePointTypes.register();
 		CLSchedule.register();
 		CLDataFixers.register();

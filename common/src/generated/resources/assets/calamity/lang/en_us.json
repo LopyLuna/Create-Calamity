@@ -22,6 +22,22 @@
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
 	"block.create.track_signal.tooltip.summary": "Test",
 
+
+	"_": "->------------------------]  Damage Sources and Deaths  [------------------------<-",
+
+	"death.attack.crushing": "%1$s got bonked",
+	"death.attack.crushing.player": "%1$s got bonked while fighting %1$s",
+	"death.attack.crunching": "%1$s was crunched to death",
+	"death.attack.crunching.player": "%1$s was crunched to death while fighting %1$s",
+
+
+	"_": "->------------------------]  Advancement Titles and Tooltips  [------------------------<-",
+
+	"advancement.createcalamity.bonked.title": "Bonk! it goes indeed",
+	"advancement.createcalamity.bonked.desc": "Get crushed by a mechanical press.",
+	"advancement.createcalamity.crunched.title": "RIP AND TEAR",
+	"advancement.createcalamity.crunched.desc": "Have 2 maximum speed opposite-running cogwheels crunch you to death.",
+
 	"_": "Thank you for translating Create: Calamity!"
 
 }
