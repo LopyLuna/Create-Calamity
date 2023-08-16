@@ -19,10 +19,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class PlushieBlock extends HorizontalDirectionalBlock {
-	private final @Nullable List<SoundEvent> sounds;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 
-	public PlushieBlock(Properties properties, @Nullable List<SoundEvent> sounds) {
+public class PlushieBlock extends HorizontalDirectionalBlock {
+	private final @Nullable List<RegistryEntry<SoundEvent>> sounds;
+
+	public PlushieBlock(Properties properties, @Nullable List<RegistryEntry<SoundEvent>> sounds) {
 		super(properties);
 		this.registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
 		this.sounds = sounds;
@@ -33,7 +35,6 @@ public class PlushieBlock extends HorizontalDirectionalBlock {
 		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
 	}
 
-
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING);
@@ -42,11 +43,11 @@ public class PlushieBlock extends HorizontalDirectionalBlock {
 	@SuppressWarnings("deprecation")
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-		if (level.isClientSide()) return super.use(state, level, pos, player, hand, hit);
-		if (this.sounds == null || sounds.isEmpty()) return InteractionResult.SUCCESS;
+		if (level.isClientSide() || this.sounds == null) return InteractionResult.SUCCESS;
 
-		int random = level.getRandom().nextInt(sounds.size() - 1);
-		level.playSound(null, pos, this.sounds.get(random), SoundSource.BLOCKS, 2f, 1f);
+		int index = 0;
+		if (this.sounds.size() > 1) index = level.getRandom().nextInt(this.sounds.size());
+		level.playSound(null, pos, this.sounds.get(index).get(), SoundSource.BLOCKS, 2f, 1f);
 
 		return InteractionResult.SUCCESS;
 	}

@@ -2,6 +2,8 @@ package com.calamityteam.calamity.registry;
 
 import java.util.List;
 
+import com.tterrag.registrate.util.entry.RegistryEntry;
+
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.BlockItem;
@@ -56,7 +58,7 @@ public class PlushieRegistry {
 	public static final BlockEntry<PlushieBlock> CAKE_PLUSH = newPlush("cake",
 		List.of());
 
-	public static BlockEntry<PlushieBlock> newPlush(String name, List<SoundEvent> sounds) {
+	public static BlockEntry<PlushieBlock> newPlush(String name, List<RegistryEntry<SoundEvent>> sounds) {
 		return Calamity.REGISTRATE.block("plushie_" + name, properties -> new PlushieBlock(properties, sounds))
 			.properties(BlockBehaviour.Properties::noOcclusion)
 			.addLayer(() -> RenderType::cutoutMipped)

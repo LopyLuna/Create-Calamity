@@ -1,68 +1,68 @@
 {
   "plushie_506": {
-    "subtitle": "sound.createcalamity.plushie_506",
+    "subtitle": "sound.calamity.plushie_506",
     "sounds": [
-      "createcalamity:plushie_506"
+      "calamity:plushie_506"
     ]
   },
   "plushie_illuc": {
-    "subtitle": "sound.createcalamity.plushie_illuc",
+    "subtitle": "sound.calamity.plushie_illuc",
     "sounds": [
-      "createcalamity:plushie_illuc"
+      "calamity:plushie_illuc"
     ]
   },
   "plushie_kelad8": {
-    "subtitle": "sound.createcalamity.plushie_kelad8",
+    "subtitle": "sound.calamity.plushie_kelad8",
     "sounds": [
-      "createcalamity:plushie_kelad8"
+      "calamity:plushie_kelad8"
     ]
   },
   "plushie_milkyfur_blush": {
-    "subtitle": "sound.createcalamity.plushie_milkyfur_blush",
+    "subtitle": "sound.calamity.plushie_milkyfur_blush",
     "sounds": [
-      "createcalamity:plushie_milkyfur_blush"
+      "calamity:plushie_milkyfur_blush"
     ]
   },
   "plushie_milkyfur_honk": {
-    "subtitle": "sound.createcalamity.plushie_milkyfur_honk",
+    "subtitle": "sound.calamity.plushie_milkyfur_honk",
     "sounds": [
-      "createcalamity:plushie_milkyfur_honk"
+      "calamity:plushie_milkyfur_honk"
     ]
   },
   "plushie_outcraft": {
-    "subtitle": "sound.createcalamity.plushie_outcraft",
+    "subtitle": "sound.calamity.plushie_outcraft",
     "sounds": [
-      "createcalamity:plushie_outcraft"
+      "calamity:plushie_outcraft"
     ]
   },
   "plushie_reds": {
-    "subtitle": "sound.createcalamity.plushie_reds",
+    "subtitle": "sound.calamity.plushie_reds",
     "sounds": [
-      "createcalamity:plushie_reds"
+      "calamity:plushie_reds"
     ]
   },
   "plushie_shirojr": {
-    "subtitle": "sound.createcalamity.plushie_shirojr",
+    "subtitle": "sound.calamity.plushie_shirojr",
     "sounds": [
-      "createcalamity:plushie_shirojr"
+      "calamity:plushie_shirojr"
     ]
   },
   "plushie_thespokesman": {
-    "subtitle": "sound.createcalamity.plushie_thespokesman",
+    "subtitle": "sound.calamity.plushie_thespokesman",
     "sounds": [
-      "createcalamity:plushie_thespokesman"
+      "calamity:plushie_thespokesman"
     ]
   },
   "plushie_to0pa": {
-    "subtitle": "sound.createcalamity.plushie_to0pa",
+    "subtitle": "sound.calamity.plushie_to0pa",
     "sounds": [
-      "createcalamity:plushie_to0pa"
+      "calamity:plushie_to0pa"
     ]
   },
   "plushie_sascha": {
-    "subtitle": "sound.createcalamity.plushie_sascha",
+    "subtitle": "sound.calamity.plushie_sascha",
     "sounds": [
-      "createcalamity:plushie_sascha"
+      "calamity:plushie_sascha"
     ]
   }
 }

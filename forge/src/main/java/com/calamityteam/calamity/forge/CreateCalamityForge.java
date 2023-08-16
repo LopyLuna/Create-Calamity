@@ -18,9 +18,9 @@ public class CreateCalamityForge {
 
 		Calamity.REGISTRATE.registerEventListeners(modEventBus);
 
+		CLSounds.register();
 		CLBlocks.register();
 		PlushieRegistry.register();
-		CLSounds.register();
 
 		/*forgeEventBus.register(Events.ClientModBusEvents.class);
 		forgeEventBus.addListener(Events::registerCommands);*/

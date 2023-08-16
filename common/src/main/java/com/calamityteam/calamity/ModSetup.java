@@ -9,11 +9,11 @@ public class ModSetup {
 		CLBogeyStyles.register();
 		CLItems.register();
 		CLBlockEntities.register();*/
+		CLSounds.register();
 		CLBlocks.register();
 		PlushieRegistry.register();
 		/*CLContainerTypes.register();
-		CLEntities.register();
-		CLSounds.register();*/
+		CLEntities.register();*/
 		CLTags.register();
 		/*CLEdgePointTypes.register();
 		CLSchedule.register();

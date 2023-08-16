@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench by ShiroJR",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "calamity:block/plushie_shiro_jr",
-		"particle": "calamity:block/plushie_shiro_jr"
+		"0": "calamity:block/plushie_shirojr",
+		"particle": "calamity:block/plushie_shirojr"
 	},
 	"elements": [
 		{
