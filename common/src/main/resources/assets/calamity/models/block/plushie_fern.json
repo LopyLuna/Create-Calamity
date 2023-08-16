@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "plushie_fern",
-		"1": "b3cefd502cb257b2",
-		"particle": "plushie_fern"
+		"0": "calamity:block/plushie_fern",
+		"1": "calamity:block/b3cefd502cb257b2",
+		"particle": "calamity:block/plushie_fern"
 	},
 	"elements": [
 		{

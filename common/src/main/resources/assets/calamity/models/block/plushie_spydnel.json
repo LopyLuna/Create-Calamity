@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "plushie_spydnel",
-		"particle": "plushie_spydnel"
+		"0": "calamity:block/plushie_spydnel",
+		"particle": "calamity:block/plushie_spydnel"
 	},
 	"elements": [
 		{

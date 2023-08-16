@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "calamity:block/plushie_to0pa"
+    },
+    "facing=east": {
+      "model": "calamity:block/plushie_to0pa",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "calamity:block/plushie_to0pa",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "calamity:block/plushie_to0pa",
+      "y": 270
+    }
+  }
+}

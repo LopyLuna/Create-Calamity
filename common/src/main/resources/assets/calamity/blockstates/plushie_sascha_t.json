@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "calamity:block/plushie_sascha_t"
+    },
+    "facing=east": {
+      "model": "calamity:block/plushie_sascha_t",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "calamity:block/plushie_sascha_t",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "calamity:block/plushie_sascha_t",
+      "y": 270
+    }
+  }
+}

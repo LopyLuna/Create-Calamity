@@ -1,8 +1,8 @@
 {
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "plushie_outcraft",
-		"particle": "plushie_outcraft"
+		"0": "calamity:block/plushie_outcraft",
+		"particle": "calamity:block/plushie_outcraft"
 	},
 	"elements": [
 		{

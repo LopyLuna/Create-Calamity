@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "plushie_baab",
-		"particle": "plushie_baab"
+		"0": "calamity:block/plushie_baab",
+		"particle": "calamity:block/plushie_baab"
 	},
 	"elements": [
 		{

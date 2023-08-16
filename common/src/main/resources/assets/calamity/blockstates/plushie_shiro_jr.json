@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "calamity:block/plushie_shiro_jr"
+    },
+    "facing=east": {
+      "model": "calamity:block/plushie_shiro_jr",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "calamity:block/plushie_shiro_jr",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "calamity:block/plushie_shiro_jr",
+      "y": 270
+    }
+  }
+}

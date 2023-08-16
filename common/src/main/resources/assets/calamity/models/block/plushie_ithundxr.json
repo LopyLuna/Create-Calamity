@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "plushie_ithundxr",
-		"particle": "plushie_ithundxr"
+		"1": "calamity:block/plushie_ithundxr",
+		"particle": "calamity:block/plushie_ithundxr"
 	},
 	"elements": [
 		{
