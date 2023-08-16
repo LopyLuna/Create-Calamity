@@ -2,6 +2,7 @@ package com.calamityteam.calamity.registry;
 
 import java.util.List;
 
+import com.calamityteam.calamity.base.block.PlushieBlock;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 
 import net.minecraft.client.renderer.RenderType;

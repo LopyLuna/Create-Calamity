@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.registry;
+package com.calamityteam.calamity.base.block;
 
 import java.util.List;
 
