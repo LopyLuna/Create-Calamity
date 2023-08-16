@@ -16,13 +16,17 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.Music;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import org.jetbrains.annotations.Nullable;
 
-public class TrumpetItem implements CustomArmPoseItem, ParticleProvider {
+public class TrumpetItem extends Item implements CustomArmPoseItem, ParticleProvider {
 
 
+	public TrumpetItem(Properties properties) {
+		super(properties);
+	}
 
 	public ArmPose getArmPose(ItemStack stack, AbstractClientPlayer player, InteractionHand hand) {
 		ArmPose getArmPose = getArmPose(stack, player, hand);
