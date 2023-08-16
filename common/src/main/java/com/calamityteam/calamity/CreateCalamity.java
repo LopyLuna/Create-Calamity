@@ -38,7 +38,6 @@ public class CreateCalamity {
 				Util.platformName());
 
 		BlockRegistry.register();
-		//ResearchFeatureManager.visit();
 		CalamityFeatures.register();
 	}
 
