@@ -1,5 +1,9 @@
 package com.calamityteam.calamity.forge;
 
+import com.calamityteam.calamity.Calamity;
+import com.calamityteam.calamity.registry.worldgen.forge.CLFeaturesImpl;
+import com.calamityteam.calamity.util.forge.UtilImpl;
+
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 import net.minecraft.commands.CommandSourceStack;
@@ -15,16 +19,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import com.calamityteam.calamity.CreateCalamity;
-import com.calamityteam.calamity.forge.base.world.feature.CalamityFeaturesForge;
-
 public abstract class CalamityEventListener {
-	@Mod.EventBusSubscriber(modid = CreateCalamity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+	@Mod.EventBusSubscriber(modid = Calamity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static abstract class ClientModBusEvents {
 		@SubscribeEvent
 		static void onLoadComplete(FMLLoadCompleteEvent event) {
 			ModContainer container = ModList.get()
-				.getModContainerById(CreateCalamity.MOD_ID)
+				.getModContainerById(Calamity.MOD_ID)
 				.orElseThrow(
 					() -> new IllegalStateException("Create Calamity mod container missing on LoadComplete"));
 			container.registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class,
@@ -42,7 +43,7 @@ public abstract class CalamityEventListener {
 	@SubscribeEvent
 	static void setup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() ->
-			CalamityFeaturesForge.register(FMLJavaModLoadingContext.get().getModEventBus())
+			CLFeaturesImpl.register(FMLJavaModLoadingContext.get().getModEventBus())
 		);
 	}
 }

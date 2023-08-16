@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores_in_ground/netherrack",
+      "required": false
+    },
+    {
+      "id": "#forge:ore_bearing_ground/netherrack",
+      "required": false
+    }
+  ]
+}
