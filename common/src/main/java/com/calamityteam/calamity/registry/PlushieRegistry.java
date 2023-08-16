@@ -35,29 +35,24 @@ public class PlushieRegistry {
 		List.of(CLSounds.PLUSHIE_OUTCRAFT));
 	public static final BlockEntry<PlushieBlock> ILLUC_PLUSH = newPlush("illuc",
 		List.of(CLSounds.PLUSHIE_ILLUC));
-	public static final BlockEntry<PlushieBlock> SPYDNEL_PLUSH = newPlush("spydnel",
-		List.of());
-	public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee",
-		List.of());
+	public static final BlockEntry<PlushieBlock> SPYDNEL_PLUSH = newPlush("spydnel");
+	public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee");
 	public static final BlockEntry<PlushieBlock> SHIROJR_PLUSH = newPlush("shirojr",
 		List.of(CLSounds.PLUSHIE_SHIROJR));
 	public static final BlockEntry<PlushieBlock> REDS_PLUSH = newPlush("reds",
 		List.of(CLSounds.PLUSHIE_REDS));
-	public static final BlockEntry<PlushieBlock> TOMATO_SOUPTER_PLUSH = newPlush("tomato_soupter",
-		List.of());
-	public static final BlockEntry<PlushieBlock> POTATO_PLUSH = newPlush("potato",
-		List.of());
-	public static final BlockEntry<PlushieBlock> NULL_PLUSH = newPlush("null",
-		List.of());
-	public static final BlockEntry<PlushieBlock> BAAB_PLUSH = newPlush("baab",
-		List.of());
-	public static final BlockEntry<PlushieBlock> ITHUNDXR_PLUSH = newPlush("ithundxr",
-		List.of());
-	public static final BlockEntry<PlushieBlock> FERN_PLUSH = newPlush("fern",
-		List.of());
-	public static final BlockEntry<PlushieBlock> CAKE_PLUSH = newPlush("cake",
-		List.of());
+	public static final BlockEntry<PlushieBlock> TOMATO_SOUPTER_PLUSH = newPlush("tomato_soupter");
+	public static final BlockEntry<PlushieBlock> POTATO_PLUSH = newPlush("potato");
+	public static final BlockEntry<PlushieBlock> NULL_PLUSH = newPlush("null");
+	public static final BlockEntry<PlushieBlock> BAAB_PLUSH = newPlush("baab");
+	public static final BlockEntry<PlushieBlock> ITHUNDXR_PLUSH = newPlush("ithundxr");
+	public static final BlockEntry<PlushieBlock> FERN_PLUSH = newPlush("fern");
+	public static final BlockEntry<PlushieBlock> CAKE_PLUSH = newPlush("cake");
 
+
+	public static BlockEntry<PlushieBlock> newPlush(String name) {
+		return newPlush(name, null);
+	}
 	public static BlockEntry<PlushieBlock> newPlush(String name, List<RegistryEntry<SoundEvent>> sounds) {
 		return Calamity.REGISTRATE.block("plushie_" + name, properties -> new PlushieBlock(properties, sounds))
 			.properties(BlockBehaviour.Properties::noOcclusion)
