@@ -13,6 +13,7 @@ public class ModSetup {
 		/*CLContainerTypes.register();
 		CLEntities.register();
 		CLSounds.register();*/
+		CLItems.register();
 		CLTags.register();
 		/*CLEdgePointTypes.register();
 		CLSchedule.register();
@@ -22,6 +23,6 @@ public class ModSetup {
 	}
 
 	public static void registerPostRegistrate() {
-		CLFeatures.register();
+
 	}
 }

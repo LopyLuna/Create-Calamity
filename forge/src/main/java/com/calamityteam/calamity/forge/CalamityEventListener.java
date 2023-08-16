@@ -42,8 +42,6 @@ public abstract class CalamityEventListener {
 
 	@SubscribeEvent
 	static void setup(FMLCommonSetupEvent event) {
-		event.enqueueWork(() ->
-			CLFeaturesImpl.register(FMLJavaModLoadingContext.get().getModEventBus())
-		);
+
 	}
 }

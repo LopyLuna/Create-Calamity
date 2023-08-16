@@ -36,27 +36,7 @@ public class CLBlocks {
 		.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
 		.build()
 		.register();*/
-	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = Calamity.REGISTRATE.block("brass_ore", p ->
-			new DropExperienceBlock(p, UniformInt.of(3,7)))
-		.initialProperties(Material.STONE)
-		.properties(p -> p
-			.sound(SoundType.NETHER_ORE)
-			.strength(3.0f, 3.0f)
-			.requiresCorrectToolForDrops())
-		.transform(TagGen.pickaxeOnly())
-		.loot((lt, b) -> lt.add(b, RegistrateBlockLootTables.createOreDrop(b, AllItems.BRASS_NUGGET.get())))
-		.tag(BlockTags.NEEDS_IRON_TOOL)
-		.tag(CommonTags.ORES.commonWritable)
-		.tag(CommonTags.NETHERRACK_ORES.commonWritable)
-		.tag(CommonTags.BRASS_ORES.commonWritable)
-		.tag(CommonTags.SPARSE_ORES.commonWritable)
-		//.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
-		.item()
-		.tag(CommonTags.ORES_ITEM.commonWritable)
-		.tag(CommonTags.NETHERRACK_ORES_ITEM.commonWritable)
-		.tag(CommonTags.BRASS_ORES_ITEM.commonWritable)
-		.build()
-		.register();
+
 
 
 

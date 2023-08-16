@@ -5,15 +5,11 @@ import com.simibubi.create.foundation.item.CustomArmPoseItem;
 import io.github.fabricators_of_create.porting_lib.mixin.client.accessor.ParticleAccessor;
 
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.NoteParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
-import net.minecraft.client.particle.ParticleRenderType;
-import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.model.HumanoidModel.ArmPose;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.sounds.Music;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;

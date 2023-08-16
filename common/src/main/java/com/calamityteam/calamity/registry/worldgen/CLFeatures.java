@@ -21,11 +21,7 @@ import java.util.List;
 
 
 public class CLFeatures {
-	@ApiStatus.Internal
-	public static ConfiguredFeature<?, ?> makeBrassConfiguredFeature() {
-		return new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OreFeatures.NETHER_ORE_REPLACEABLES,
-			CLBlocks.BRASS_ORE.getDefaultState(), 7));
-	}
+
 
 	@ExpectPlatform
 	private static Holder<ConfiguredFeature<?, ?>> getBrassFeatureHolder() {
@@ -34,13 +30,7 @@ public class CLFeatures {
 
 
 	/* ---------- Placed Features ---------- */
-	public static PlacedFeature NETHER_BRASS_ORE_PLACED_FEATURE = new PlacedFeature(
-		getBrassFeatureHolder(),
-		List.of(
-			CountPlacement.of(18),
-			InSquarePlacement.spread(),
-			HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(64))
-		));
+
 
 	@ExpectPlatform
 	public static void register() {
