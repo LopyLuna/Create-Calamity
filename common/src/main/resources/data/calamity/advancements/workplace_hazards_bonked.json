@@ -1,0 +1,22 @@
+{
+  "parent": "create:mechanical_press",
+  "criteria": {
+    "hehe_bonked": {
+      "trigger": "calamity:bonked",
+      "conditions": {}
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "icon": {
+      "item": "minecraft:player_head"
+    },
+    "description": {
+      "translate": "advancement.createcalamity.bonked.desc"
+    },
+    "frame": "challenge",
+    "title": {
+      "translate": "advancement.createcalamity.bonked.title"
+    }
+  }
+}

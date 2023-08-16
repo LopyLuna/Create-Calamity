@@ -1,7 +1,7 @@
 package com.calamityteam.calamity.mixin.workplace_hazards;
 
-import com.calamityteam.calamity.base.registries.AdvancementCriteria;
-import com.calamityteam.calamity.base.registries.DamageSourceRegistry;
+import com.calamityteam.calamity.registry.CLAdvancements;
+import com.calamityteam.calamity.registry.CLDamageSources;
 import com.calamityteam.calamity.mixin.KineticBlockEntityAccessor;
 
 import com.simibubi.create.content.kinetics.belt.behaviour.BeltProcessingBehaviour;
@@ -93,13 +93,13 @@ public abstract class PressingBehaviourMixin extends BeltProcessingBehaviour {
 					else {
 						// ensure prerequisite achievement
 						AllAdvancements.PRESS.awardTo(p);
-						AdvancementCriteria.PRESS_BONK.trigger(p);
+						CLAdvancements.PRESS_BONK.trigger(p);
 					}
 
 				ItemStack headSlot = target.getItemBySlot(EquipmentSlot.HEAD);
 				headSlot.hurt((int) (headSlot.getMaxDamage() * speedCoefficient), world.getRandom(), null);
 
-				target.hurt(DamageSourceRegistry.DAMAGE_SOURCE_CRUSHING, target.getHealth() * stressCoefficient); // we hurt everyone
+				target.hurt(CLDamageSources.DAMAGE_SOURCE_CRUSHING, target.getHealth() * stressCoefficient); // we hurt everyone
 			}
 	}
 }

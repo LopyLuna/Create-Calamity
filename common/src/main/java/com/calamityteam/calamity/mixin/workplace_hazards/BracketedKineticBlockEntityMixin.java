@@ -1,7 +1,7 @@
 package com.calamityteam.calamity.mixin.workplace_hazards;
 
-import com.calamityteam.calamity.base.registries.AdvancementCriteria;
-import com.calamityteam.calamity.base.registries.DamageSourceRegistry;
+import com.calamityteam.calamity.registry.CLAdvancements;
+import com.calamityteam.calamity.registry.CLDamageSources;
 
 import com.mojang.datafixers.util.Pair;
 
@@ -50,8 +50,6 @@ public class BracketedKineticBlockEntityMixin extends SimpleKineticBlockEntity {
 		var STATE = getBlockState();
 		if (STATE.getBlock() != COGWHEEL)
 			return;
-		System.out.println("==");
-		System.out.println(getBlockPos() + " - " + getSpeed());
 		if (crushEntity == null) {
 			var entities = level.getEntities(null, new AABB(getBlockPos().above()));
 			Direction.Axis axis = COGWHEEL.getRotationAxis(STATE);
@@ -113,10 +111,10 @@ public class BracketedKineticBlockEntityMixin extends SimpleKineticBlockEntity {
 					2
 				);
 				double newHealth = living.getHealth() - damage;
-				living.hurt(DamageSourceRegistry.DAMAGE_SOURCE_CRUNCHING, (float) damage); // do atleast 2 damage, and 5 hearts for 128
+				living.hurt(CLDamageSources.DAMAGE_SOURCE_CRUNCHING, (float) damage); // do atleast 2 damage, and 5 hearts for 128
 
 				if (getSpeed() >= 256 && newHealth <= 0 && living instanceof ServerPlayer sp)
-					AdvancementCriteria.COG_CRUNCH.trigger(sp);
+					CLAdvancements.COG_CRUNCH.trigger(sp);
 
 			}
 

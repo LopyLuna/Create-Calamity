@@ -1,5 +1,7 @@
 package com.calamityteam.calamity.feature.workplace_hazards;
 
+import com.calamityteam.calamity.Calamity;
+
 import net.minecraft.advancements.critereon.AbstractCriterionTriggerInstance;
 import net.minecraft.advancements.critereon.DeserializationContext;
 import net.minecraft.advancements.critereon.EntityPredicate;
@@ -7,7 +9,6 @@ import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 
-import com.calamityteam.calamity.CreateCalamity;
 import com.google.gson.JsonObject;
 
 public class CrunchCriterion extends SimpleCriterionTrigger<CrunchCriterion.TriggerInstance> {
@@ -23,7 +24,7 @@ public class CrunchCriterion extends SimpleCriterionTrigger<CrunchCriterion.Trig
 		});
 	}
 
-	public final static ResourceLocation ID = CreateCalamity.asResource("crunched");
+	public final static ResourceLocation ID = Calamity.asResource("crunched");
 	@Override
 	public ResourceLocation getId() {
 		return ID;

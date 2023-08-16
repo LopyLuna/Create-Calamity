@@ -1,6 +1,6 @@
 package com.calamityteam.calamity.feature.workplace_hazards;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 import com.google.gson.JsonObject;
 
 import net.minecraft.advancements.CriteriaTriggers;
@@ -25,7 +25,7 @@ public class BonkCriterion extends SimpleCriterionTrigger<BonkCriterion.TriggerI
 		});
 	}
 
-	public final static ResourceLocation ID = CreateCalamity.asResource("bonked");
+	public final static ResourceLocation ID = Calamity.asResource("bonked");
 	@Override
 	public ResourceLocation getId() {
 		return ID;
