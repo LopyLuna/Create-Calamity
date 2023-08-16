@@ -45,6 +45,9 @@ public class CLTagGen {
 		}
 
 		CommonTags.ORES.generateShared(tags);
+		CommonTags.NETHERRACK_ORES.generateShared(tags);
+		CommonTags.BRASS_ORES.generateShared(tags);
+		CommonTags.SPARSE_ORES.generateShared(tags);
 	}
 
 	public static void generateItemTags(RegistrateItemTagsProvider tags) {
@@ -60,6 +63,8 @@ public class CLTagGen {
 		CommonTags.BRASS_PLATES.generateCommon(tags);
 
 		CommonTags.ORES_ITEM.generateShared(tags);
+		CommonTags.NETHERRACK_ORES_ITEM.generateShared(tags);
+		CommonTags.BRASS_ORES_ITEM.generateShared(tags);
 
 		for (AllItemTags tag : AllItemTags.values()) {
 			if (tag.alwaysDatagen)

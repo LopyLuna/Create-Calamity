@@ -15,36 +15,35 @@ import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import org.jetbrains.annotations.ApiStatus;
 
 import java.util.List;
 
 
 public class CLFeatures {
-	private static final ConfiguredFeature<?, ?> NETHER_BRASS_ORE_CONFIGURED_FEATURE = new ConfiguredFeature<>(
-			Feature.ORE, new OreConfiguration(OreFeatures.NETHERRACK,
+	@ApiStatus.Internal
+	public static ConfiguredFeature<?, ?> makeBrassConfiguredFeature() {
+		return new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OreFeatures.NETHER_ORE_REPLACEABLES,
 			CLBlocks.BRASS_ORE.getDefaultState(), 7));
+	}
+
+	@ExpectPlatform
+	private static Holder<ConfiguredFeature<?, ?>> getBrassFeatureHolder() {
+		throw new AssertionError();
+	}
 
 
 	/* ---------- Placed Features ---------- */
 	public static PlacedFeature NETHER_BRASS_ORE_PLACED_FEATURE = new PlacedFeature(
-		Holder.direct(NETHER_BRASS_ORE_CONFIGURED_FEATURE),
+		getBrassFeatureHolder(),
 		List.of(
 			CountPlacement.of(18),
 			InSquarePlacement.spread(),
 			HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(64))
 		));
 
-	public static void register() {
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
-				Calamity.asResource("nether_brass_ore"), NETHER_BRASS_ORE_CONFIGURED_FEATURE);
-		Registry.register(BuiltinRegistries.PLACED_FEATURE,
-				Calamity.asResource("nether_brass_ore"),
-				NETHER_BRASS_ORE_PLACED_FEATURE);
-		loaderSpecificRegistration();
-	}
-
 	@ExpectPlatform
-	public static void loaderSpecificRegistration() {
+	public static void register() {
 		throw new AssertionError();
 	}
 }

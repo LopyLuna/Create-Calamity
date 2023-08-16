@@ -19,7 +19,9 @@ public class ModSetup {
 		CLDataFixers.register();
 		CLExtraRegistration.register();
 		CasingCollisionUtils.register();*/
+	}
 
+	public static void registerPostRegistrate() {
 		CLFeatures.register();
 	}
 }
