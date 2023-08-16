@@ -38,6 +38,7 @@ public class Calamity {
 
 		ModSetup.register();
 		finalizeRegistrate();
+		ModSetup.registerPostRegistrate();
 
 		CLPackets.PACKETS.registerC2SListener();
 	}

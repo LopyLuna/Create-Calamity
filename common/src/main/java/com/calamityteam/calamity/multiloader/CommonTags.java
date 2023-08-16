@@ -9,6 +9,8 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+import org.jetbrains.annotations.Nullable;
+
 public class CommonTags {
 	public static final CommonTag<Item>
 			STRING = item("string"),
@@ -19,10 +21,6 @@ public class CommonTags {
 			BRASS_PLATES = item("plates/brass_plates", "brass_plates", "plates/brass"),
 			COPPER_INGOTS = item("ingots/copper_ingots", "copper_ingots", "ingots/copper"),
 			IRON_INGOTS = item("ingots/iron_ingots", "iron_ingots", "ingots/iron");
-			/*ORES = item("ores", "ores", "???"),
-			NETHERRACK_ORES = item("ores_in_ground/netherrack", "ores_in_ground/netherrack", "???"),
-			BRASS_ORES = item("ores/brass", "brass_ores", "???"),
-			SPARSE_ORES = item("ore_rates/spares", "???", "ore_rates/sparse");*/
 
 	public static final Map<DyeColor, CommonTag<Item>> DYES = Util.make(new EnumMap<>(DyeColor.class), dyes -> {
 		for (DyeColor color : DyeColor.values()) {
@@ -37,17 +35,29 @@ public class CommonTags {
 	public static final CommonTag<Block>
 			RELOCATION_NOT_SUPPORTED = block("relocation_not_supported");
 
-	public static final BidirectionalCommonTag<Item>
-		ORES_ITEM = itemShared("ores");
-
 	public static final BidirectionalCommonTag<Block>
-		ORES = blockShared("ores");
+		ORES = blockShared("ores"),
+		NETHERRACK_ORES = blockShared("ores_in_ground/netherrack", "ores_in_ground/netherrack", "ore_bearing_ground/netherrack"),
+		BRASS_ORES = blockShared("ores/brass", "brass_ores", "ores/brass"),
+		SPARSE_ORES = blockShared("ore_rates/sparse", null, "ore_rates/sparse")
+	;
+
+	public static final BidirectionalCommonTag<Item>
+		ORES_ITEM = from(ORES),
+		NETHERRACK_ORES_ITEM = from(NETHERRACK_ORES),
+		BRASS_ORES_ITEM = from(BRASS_ORES)
+	;
+
+	private static BidirectionalCommonTag<Item> from(BidirectionalCommonTag<Block> source) {
+		return itemShared(source.tag.location().getPath(), source.fabric == null ? null : source.fabric.location().getPath(),
+			source.forge == null ? null : source.forge.location().getPath());
+	}
 
 	public static CommonTag<Block> block(String path) {
 		return CommonTag.conventional(Registry.BLOCK_REGISTRY, path);
 	}
 
-	public static BidirectionalCommonTag<Block> blockShared(String common, String fabric, String forge) {
+	public static BidirectionalCommonTag<Block> blockShared(String common, @Nullable String fabric, @Nullable String forge) {
 		return BidirectionalCommonTag.conventional(Registry.BLOCK_REGISTRY, common, fabric, forge);
 	}
 
@@ -63,7 +73,7 @@ public class CommonTags {
 		return item(path, path, path);
 	}
 
-	public static BidirectionalCommonTag<Item> itemShared(String common, String fabric, String forge) {
+	public static BidirectionalCommonTag<Item> itemShared(String common, @Nullable String fabric, @Nullable String forge) {
 		return BidirectionalCommonTag.conventional(Registry.ITEM_REGISTRY, common, fabric, forge);
 	}
 
