@@ -2,6 +2,7 @@ package com.calamityteam.calamity.registry;
 
 import com.calamityteam.calamity.Calamity;
 
+import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 import com.calamityteam.calamity.multiloader.CommonTags;
 
 import com.simibubi.create.AllItems;
@@ -9,6 +10,7 @@ import com.simibubi.create.foundation.data.TagGen;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -58,8 +60,21 @@ public class CLBlocks {
 		.build()
 		.register();
 
+	static {
+		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.TEST_1);
+	}
 
+	public static final BlockEntry<Block> TEST_BLOCK_1 = Calamity.REGISTRATE.block("test_block_1", Block::new)
+		.simpleItem()
+		.register();
 
+	static {
+		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.TEST_2);
+	}
+
+	public static final BlockEntry<Block> TEST_BLOCK_2 = Calamity.REGISTRATE.block("test_block_2", Block::new)
+		.simpleItem()
+		.register();
 
 	public static void register() {
 	}
