@@ -5,20 +5,20 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import com.calamityteam.calamity.CreateCalamity;
-import com.calamityteam.calamity.base.registries.BlockRegistry;
-import com.calamityteam.calamity.base.registries.PlushieRegistry;
-import com.calamityteam.calamity.base.registries.SoundRegistry;
+import com.calamityteam.calamity.Calamity;
+import com.calamityteam.calamity.registry.CLBlocks;
+import com.calamityteam.calamity.registry.PlushieRegistry;
+import com.calamityteam.calamity.registry.SoundRegistry;
 
-@Mod(CreateCalamity.MOD_ID)
+@Mod(Calamity.MOD_ID)
 public class CreateCalamityForge {
 	public CreateCalamityForge() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
-		CreateCalamity.REGISTRATE.registerEventListeners(modEventBus);
+		Calamity.REGISTRATE.registerEventListeners(modEventBus);
 
-		BlockRegistry.register();
+		CLBlocks.register();
 		PlushieRegistry.register();
 		SoundRegistry.register();
 
@@ -26,6 +26,6 @@ public class CreateCalamityForge {
 		forgeEventBus.addListener(Events::registerCommands);*/
 		modEventBus.addListener(CalamityEventListener::setup);
 		modEventBus.addListener(CalamityEventListener.ClientModBusEvents::onLoadComplete);
-		CreateCalamity.init();
+		Calamity.init();
 	}
 }

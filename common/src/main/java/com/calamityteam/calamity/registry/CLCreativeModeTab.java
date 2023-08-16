@@ -14,7 +14,7 @@ public class CLCreativeModeTab {
 			return new ItemStack(Blocks.TNT.asItem());
 		}
 	};
-	public static final CreativeModeTab CALAMITY_PLUSHIE_TAB = new CreativeModeTab(0,CreateCalamity.MOD_ID) {
+	public static final CreativeModeTab CALAMITY_PLUSHIE_TAB = new CreativeModeTab(0,Calamity.MOD_ID) {
 		@Override
 		public @NotNull ItemStack makeIcon() {
 			return new ItemStack(Blocks.TNT.asItem());
