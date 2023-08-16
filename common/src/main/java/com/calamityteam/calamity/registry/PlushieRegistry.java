@@ -22,7 +22,7 @@ public class PlushieRegistry {
 		public static final BlockEntry<PlushieBlock> MILKYFUR_PLUSH = newPlush("milkyfur");
 		public static final BlockEntry<PlushieBlock> PLUSH_506 = newPlush("506");
 		public static final BlockEntry<PlushieBlock> OUTCRAFT_PLUSH = newPlush("outcraft");
-		public static final BlockEntry<PlushieBlock> FISJ_PLUSH = newPlush("fisj");
+		public static final BlockEntry<PlushieBlock> ILLUC_PLUSH = newPlush("illuc");
 		public static final BlockEntry<PlushieBlock> SPYDNEL_PLUSH = newPlush("spydnel");
 		public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee");
 		public static final BlockEntry<PlushieBlock> SHIRO_JR_PLUSH = newPlush("shiro_jr");
