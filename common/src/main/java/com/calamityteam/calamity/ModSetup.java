@@ -14,6 +14,7 @@ public class ModSetup {
 		CLEntities.register();
 		CLSounds.register();*/
 		CLTags.register();
+		CLAdvancements.register();
 		/*CLEdgePointTypes.register();
 		CLSchedule.register();
 		CLDataFixers.register();

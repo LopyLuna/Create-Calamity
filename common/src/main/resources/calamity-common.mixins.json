@@ -5,6 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "client": [],
   "mixins": [
+    "KineticBlockEntityAccessor",
+    "workplace_hazards.BeltBlockMixin",
+    "workplace_hazards.BracketedKineticBlockEntityMixin",
+    "workplace_hazards.EntityMixin",
+    "workplace_hazards.PressingBehaviourMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,7 @@
+{
+  "death.attack.crushing": "%1$s got bonked",
+  "death.attack.crushing.player": "%1$s got bonked while fighting %1$s",
+
+  "death.attack.crunching": "%1$s was crunched to death",
+  "death.attack.crunching.player": "%1$s was crunched to death while fighting %1$s"
+}

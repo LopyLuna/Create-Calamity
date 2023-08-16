@@ -4,6 +4,7 @@ import com.calamityteam.calamity.base.data.CLTagGen;
 import com.calamityteam.calamity.base.data.lang.CLLangPartials;
 import com.calamityteam.calamity.base.data.recipe.CalamitySequencedAssemblyRecipeGen;
 import com.calamityteam.calamity.base.data.recipe.CalamityStandardRecipeGen;
+import com.calamityteam.calamity.registry.CLAdvancements;
 import com.calamityteam.calamity.registry.CLPackets;
 import com.calamityteam.calamity.util.Util;
 
