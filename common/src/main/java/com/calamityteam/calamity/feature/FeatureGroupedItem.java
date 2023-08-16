@@ -30,9 +30,6 @@ public class FeatureGroupedItem extends Item {
 		return feature;
 	}
 	public boolean isFeatureLoaded() {
-		if (feature.isLoaded(feature.getID())) {
-			return true;
-		}
-		return false;
+		return feature.isFeatureConfigEnabled();
 	}
 }

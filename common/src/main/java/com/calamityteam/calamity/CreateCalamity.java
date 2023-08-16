@@ -1,6 +1,9 @@
 package com.calamityteam.calamity;
 
 import com.calamityteam.calamity.base.registries.BlockRegistry;
+import com.calamityteam.calamity.feature.research_mode.ResearchFeatureManager;
+import com.calamityteam.calamity.foundation.util.features.FeatureManager;
+
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,7 +38,7 @@ public class CreateCalamity {
 				Util.platformName());
 
 		BlockRegistry.register();
-
+		//ResearchFeatureManager.visit();
 		CalamityFeatures.register();
 	}
 

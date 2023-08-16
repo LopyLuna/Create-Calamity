@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.foundation.util.features;
+package com.calamityteam.calamity.feature.research_mode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,22 +8,23 @@ import com.calamityteam.calamity.feature.research_mode.researches.Features;
 import com.calamityteam.calamity.foundation.config.server.CalamityServer;
 import com.calamityteam.calamity.foundation.util.FeatureLoader;
 
-public class FeatureManager {
+public class ResearchFeatureManager {
 	public static final List<FeatureLoader> FEATURE_LOADERS;
 	static CalamityServer server = CalamityServer.INSTANCE;
-	static Features features = Features.get();
-	public static final WorkspaceHazards workspaceHazards;
-	public static boolean serverHasWorkspaceHazards = server.features.workspaceHazards.get();
-	static {
+	static FeatureLoader featureLoaders = Features.getLoaders();
+	static FeatureLoader getFeatureLoaders;
+	public static boolean serverHasFeature;
 
+	static {
 		List<FeatureLoader> allFeatures = new ArrayList<>();
-		if (serverHasWorkspaceHazards) {
-			allFeatures.add(workspaceHazards = new WorkspaceHazards());
-			features.setIsLoaded(Features.workspaceHazards.getID());
-		}
-		else {
-			workspaceHazards = null;
-		}
+		//assert features != null;
+		//serverHasFeature = features.isLoaded(features.getID());
+		//
+		//if (serverHasFeature) {
+		//	allFeatures.add(getFeatureLoaders = Features.getLoaders());
+		//	features.setIsLoaded(features.getID());
+		//	features.getFeatureConfig().set(true);
+		//}
 
 		for (FeatureLoader featureLoader : allFeatures) {
 			featureLoader.tryLoad();

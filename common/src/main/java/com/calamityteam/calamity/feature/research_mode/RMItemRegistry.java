@@ -20,5 +20,5 @@ public class RMItemRegistry {
 			.register();
 	}
 
-	public static final ItemEntry<ResearchBlueprintItem> bulkPressing = researchBlueprint(Features.BULK_PRESSING);
+	public static final ItemEntry<ResearchBlueprintItem> bulkPressing = researchBlueprint(Features.bulkPressing), workspaceHazards = researchBlueprint(Features.workspaceHazards);
 }

@@ -8,11 +8,11 @@ import com.simibubi.create.infrastructure.config.AllConfigs;
 public class BulkPressing extends FeatureLoader {
 	@Override
 	public String getFeatureID() {
-		return Features.BULK_PRESSING.getID();
+		return Features.bulkPressing.getID();
 	}
 
 	@Override
-	protected void onLoad() {
+	public void onLoad() {
 		AllConfigs.server().recipes.bulkPressing.set(true);
 	}
 }

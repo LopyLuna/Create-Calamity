@@ -22,7 +22,6 @@ public class ResearchBlueprintItem extends Item {
 		super(properties);
 		this.feature = feature;
 	}
-
 	public Features getFeatureGroup() {
 		return feature;
 	}
@@ -39,15 +38,16 @@ public class ResearchBlueprintItem extends Item {
 	private String linkedNegative(Features feature) {
 		return feature.isNegative() ? feature.getID() : null;
 	}
-	@SuppressWarnings("ResultOfMethodCallIgnored")
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
 		double negativeChance = getNegativeChance();
 		Features featureGroup = getFeatureGroup();
-		if (negativeChance <= featureGroup.getNegativeChanceBonus()) {
-			if (featureGroup.isNegative()) {
-				return InteractionResultHolder.fail(player.getItemInHand(usedHand));
-			}
+		if (featureGroup.isLoaded(feature.getID())) {
+			return InteractionResultHolder.fail(player.getItemInHand(usedHand));
 		}
-		return InteractionResultHolder.success(player.getItemInHand(usedHand));
+		if (!featureGroup.isLoaded(feature.getID())) {
+			feature.setIsLoaded(featureGroup.getID());
+			return InteractionResultHolder.consume(player.getItemInHand(usedHand));
+		}
+		return InteractionResultHolder.fail(player.getItemInHand(usedHand));
 	}
 }
