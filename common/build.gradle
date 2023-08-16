@@ -2,6 +2,10 @@ architectury {
     common rootProject.enabled_platforms.split(", ")
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/calamity.accesswidener")
+}
+
 repositories {
     maven { url "https://maven.shedaniel.me/" }
 	maven { url = "https://api.modrinth.com/maven" } // LazyDFU
@@ -25,6 +29,14 @@ dependencies {
 	// Flywheel and Registrate must also be used carefully due to differences.
 	modCompileOnly "com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric}+mc${rootProject.minecraft_version}"
 	modCompileOnly "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api}+${rootProject.minecraft_version}"
+}
+
+sourceSets.main {
+	resources { // include generated resources in resources
+		srcDir("src/generated/resources")
+		exclude(".cache/**")
+		exclude("assets/create/**")
+	}
 }
 
 publishing {

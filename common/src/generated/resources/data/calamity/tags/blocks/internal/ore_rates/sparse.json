@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:ore_rates/sparse",
+      "required": false
+    }
+  ]
+}
