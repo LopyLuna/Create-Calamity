@@ -10,6 +10,7 @@ public class ModSetup {
 		CLItems.register();
 		CLBlockEntities.register();*/
 		CLBlocks.register();
+		PlushieRegistry.register();
 		/*CLContainerTypes.register();
 		CLEntities.register();
 		CLSounds.register();*/

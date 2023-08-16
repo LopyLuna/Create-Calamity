@@ -15,30 +15,28 @@ public class PlushieRegistry {
 		Calamity.REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_PLUSHIE_TAB);
 	}
 
-	static {
-		final BlockEntry<Block> HEROBRINE = Calamity.REGISTRATE.block("herobrine", Block::new)
+		public static final BlockEntry<PlushieBlock> HEROBRINE = Calamity.REGISTRATE.block("herobrine", PlushieBlock::new)
 			.item(BlockItem::new).build().register(); // this one doesnt match on purpose, pls dont fix
-		final BlockEntry<Block> TO0PA_PLUSH = newPlush("to0pa");
-		final BlockEntry<Block> SASCHA_T_PLUSH = newPlush("sascha");
-		final BlockEntry<Block> MILKYFUR_PLUSH = newPlush("milkyfur");
-		final BlockEntry<Block> PLUSH_506 = newPlush("506");
-		final BlockEntry<Block> OUTCRAFT_PLUSH = newPlush("outcraft");
-		final BlockEntry<Block> FISJ_PLUSH = newPlush("fisj");
-		final BlockEntry<Block> SPYDNEL_PLUSH = newPlush("spydnel");
-		final BlockEntry<Block> RAEEEEE_PLUSH = newPlush("raeeeee");
-		final BlockEntry<Block> SHIRO_JR_PLUSH = newPlush("shiro_jr");
-		final BlockEntry<Block> REDS_PLUSH = newPlush("reds");
-		final BlockEntry<Block> TOMATO_SOUPTER_PLUSH = newPlush("tomato_soupter");
-		final BlockEntry<Block> POTATO_PLUSH = newPlush("potato");
-		final BlockEntry<Block> NULL_PLUSH = newPlush("null");
-		final BlockEntry<Block> BAAB_PLUSH = newPlush("baab");
-		final BlockEntry<Block> ITHUNDXR_PLUSH = newPlush("ithundxr");
-		final BlockEntry<Block> FERN_PLUSH = newPlush("fern");
-		final BlockEntry<Block> CAKE_PLUSH = newPlush("cake");
-	}
+		public static final BlockEntry<PlushieBlock> TO0PA_PLUSH = newPlush("to0pa");
+		public static final BlockEntry<PlushieBlock> SASCHA_T_PLUSH = newPlush("sascha");
+		public static final BlockEntry<PlushieBlock> MILKYFUR_PLUSH = newPlush("milkyfur");
+		public static final BlockEntry<PlushieBlock> PLUSH_506 = newPlush("506");
+		public static final BlockEntry<PlushieBlock> OUTCRAFT_PLUSH = newPlush("outcraft");
+		public static final BlockEntry<PlushieBlock> FISJ_PLUSH = newPlush("fisj");
+		public static final BlockEntry<PlushieBlock> SPYDNEL_PLUSH = newPlush("spydnel");
+		public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee");
+		public static final BlockEntry<PlushieBlock> SHIRO_JR_PLUSH = newPlush("shiro_jr");
+		public static final BlockEntry<PlushieBlock> REDS_PLUSH = newPlush("reds");
+		public static final BlockEntry<PlushieBlock> TOMATO_SOUPTER_PLUSH = newPlush("tomato_soupter");
+		public static final BlockEntry<PlushieBlock> POTATO_PLUSH = newPlush("potato");
+		public static final BlockEntry<PlushieBlock> NULL_PLUSH = newPlush("null");
+		public static final BlockEntry<PlushieBlock> BAAB_PLUSH = newPlush("baab");
+		public static final BlockEntry<PlushieBlock> ITHUNDXR_PLUSH = newPlush("ithundxr");
+		public static final BlockEntry<PlushieBlock> FERN_PLUSH = newPlush("fern");
+		public static final BlockEntry<PlushieBlock> CAKE_PLUSH = newPlush("cake");
 
-	public static BlockEntry<Block> newPlush(String name) {
-		return Calamity.REGISTRATE.block("plushie_" + name, Block::new)
+	public static BlockEntry<PlushieBlock> newPlush(String name) {
+		return Calamity.REGISTRATE.block("plushie_" + name, PlushieBlock::new)
 			.item(BlockItem::new)
 			.build()
 			.register();
