@@ -1,0 +1,68 @@
+{
+  "plushie_506": {
+    "subtitle": "sound.createcalamity.plushie_506",
+    "sounds": [
+      "createcalamity:plushie_506"
+    ]
+  },
+  "plushie_illuc": {
+    "subtitle": "sound.createcalamity.plushie_illuc",
+    "sounds": [
+      "createcalamity:plushie_illuc"
+    ]
+  },
+  "plushie_kelad8": {
+    "subtitle": "sound.createcalamity.plushie_kelad8",
+    "sounds": [
+      "createcalamity:plushie_kelad8"
+    ]
+  },
+  "plushie_milkyfur_blush": {
+    "subtitle": "sound.createcalamity.plushie_milkyfur_blush",
+    "sounds": [
+      "createcalamity:plushie_milkyfur_blush"
+    ]
+  },
+  "plushie_milkyfur_honk": {
+    "subtitle": "sound.createcalamity.plushie_milkyfur_honk",
+    "sounds": [
+      "createcalamity:plushie_milkyfur_honk"
+    ]
+  },
+  "plushie_outcraft": {
+    "subtitle": "sound.createcalamity.plushie_outcraft",
+    "sounds": [
+      "createcalamity:plushie_outcraft"
+    ]
+  },
+  "plushie_reds": {
+    "subtitle": "sound.createcalamity.plushie_reds",
+    "sounds": [
+      "createcalamity:plushie_reds"
+    ]
+  },
+  "plushie_shirojr": {
+    "subtitle": "sound.createcalamity.plushie_shirojr",
+    "sounds": [
+      "createcalamity:plushie_shirojr"
+    ]
+  },
+  "plushie_thespokesman": {
+    "subtitle": "sound.createcalamity.plushie_thespokesman",
+    "sounds": [
+      "createcalamity:plushie_thespokesman"
+    ]
+  },
+  "plushie_to0pa": {
+    "subtitle": "sound.createcalamity.plushie_to0pa",
+    "sounds": [
+      "createcalamity:plushie_to0pa"
+    ]
+  },
+  "plushie_sascha": {
+    "subtitle": "sound.createcalamity.plushie_sascha",
+    "sounds": [
+      "createcalamity:plushie_sascha"
+    ]
+  }
+}

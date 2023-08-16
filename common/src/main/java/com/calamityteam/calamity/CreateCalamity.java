@@ -1,7 +1,5 @@
 package com.calamityteam.calamity;
 
-import com.calamityteam.calamity.base.registries.PlushieRegistry;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +9,8 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.resources.ResourceLocation;
 
 import com.calamityteam.calamity.base.registries.BlockRegistry;
+import com.calamityteam.calamity.base.registries.PlushieRegistry;
+import com.calamityteam.calamity.base.registries.SoundRegistry;
 
 public class CreateCalamity {
 	public static final String MOD_ID = "createcalamity";
@@ -26,6 +26,7 @@ public class CreateCalamity {
 
 		BlockRegistry.register();
 		PlushieRegistry.register();
+		SoundRegistry.register();
 	}
 
 	public static ResourceLocation asResource(String path) {
