@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "calamity:block/plushie_milkyfur",
-		"particle": "calamity:block/plushies_milkyfur"
+		"particle": "calamity:block/plushie_milkyfur"
 	},
 	"elements": [
 		{
@@ -25,12 +25,12 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 3]},
 			"color": 3,
 			"faces": {
-				"north": {"uv": [4.5, 8.5, 5.5, 9.75], "texture": "#missing"},
-				"east": {"uv": [4, 8.5, 4.5, 9.75], "texture": "#missing"},
-				"south": {"uv": [6, 8.5, 7, 9.75], "texture": "#missing"},
-				"west": {"uv": [5.5, 8.5, 6, 9.75], "texture": "#missing"},
-				"up": {"uv": [5.5, 8.5, 4.5, 8], "texture": "#missing"},
-				"down": {"uv": [6.5, 8, 5.5, 8.5], "texture": "#missing"}
+				"north": {"uv": [4.5, 8.5, 5.5, 9.75], "texture": "#0"},
+				"east": {"uv": [4, 8.5, 4.5, 9.75], "texture": "#0"},
+				"south": {"uv": [6, 8.5, 7, 9.75], "texture": "#0"},
+				"west": {"uv": [5.5, 8.5, 6, 9.75], "texture": "#0"},
+				"up": {"uv": [5.5, 8.5, 4.5, 8], "texture": "#0"},
+				"down": {"uv": [6.5, 8, 5.5, 8.5], "texture": "#0"}
 			}
 		},
 		{

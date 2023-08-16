@@ -5,9 +5,9 @@ import com.calamityteam.calamity.registry.CLCreativeModeTab;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.block.Block;
-
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 
 public class PlushieRegistry {
@@ -16,9 +16,11 @@ public class PlushieRegistry {
 	}
 
 		public static final BlockEntry<PlushieBlock> HEROBRINE = Calamity.REGISTRATE.block("herobrine", PlushieBlock::new)
+			.properties(BlockBehaviour.Properties::noOcclusion)
+			.addLayer(() -> RenderType::cutoutMipped)
 			.item(BlockItem::new).build().register(); // this one doesnt match on purpose, pls dont fix
 		public static final BlockEntry<PlushieBlock> TO0PA_PLUSH = newPlush("to0pa");
-		public static final BlockEntry<PlushieBlock> SASCHA_T_PLUSH = newPlush("sascha");
+		public static final BlockEntry<PlushieBlock> SASCHA_PLUSH = newPlush("sascha");
 		public static final BlockEntry<PlushieBlock> MILKYFUR_PLUSH = newPlush("milkyfur");
 		public static final BlockEntry<PlushieBlock> PLUSH_506 = newPlush("506");
 		public static final BlockEntry<PlushieBlock> OUTCRAFT_PLUSH = newPlush("outcraft");
@@ -37,6 +39,8 @@ public class PlushieRegistry {
 
 	public static BlockEntry<PlushieBlock> newPlush(String name) {
 		return Calamity.REGISTRATE.block("plushie_" + name, PlushieBlock::new)
+			.properties(BlockBehaviour.Properties::noOcclusion)
+			.addLayer(() -> RenderType::cutoutMipped)
 			.item(BlockItem::new)
 			.build()
 			.register();

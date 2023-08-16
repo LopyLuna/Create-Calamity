@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 32],
 	"textures": {
-		"1": "calamity:block/plushie_sascha_t",
-		"particle": "calamity:block/plushie_sascha_t"
+		"1": "calamity:block/plushie_sascha",
+		"particle": "calamity:block/plushie_sascha"
 	},
 	"elements": [
 		{
