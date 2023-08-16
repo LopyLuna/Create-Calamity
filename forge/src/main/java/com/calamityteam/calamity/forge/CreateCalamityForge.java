@@ -8,7 +8,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import com.calamityteam.calamity.Calamity;
 import com.calamityteam.calamity.registry.CLBlocks;
 import com.calamityteam.calamity.registry.PlushieRegistry;
-import com.calamityteam.calamity.registry.SoundRegistry;
+import com.calamityteam.calamity.registry.CLSounds;
 
 @Mod(Calamity.MOD_ID)
 public class CreateCalamityForge {
@@ -20,7 +20,7 @@ public class CreateCalamityForge {
 
 		CLBlocks.register();
 		PlushieRegistry.register();
-		SoundRegistry.register();
+		CLSounds.register();
 
 		/*forgeEventBus.register(Events.ClientModBusEvents.class);
 		forgeEventBus.addListener(Events::registerCommands);*/
