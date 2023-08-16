@@ -1,11 +1,12 @@
 package com.calamityteam.calamity.feature.research_mode.researches;
 
+import com.calamityteam.calamity.Calamity;
+
 import com.simibubi.create.foundation.config.ConfigBase;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 
 import net.minecraft.resources.ResourceLocation;
 
-import com.calamityteam.calamity.CreateCalamity;
 import com.calamityteam.calamity.feature.research_mode.loaders.BulkPressing;
 import com.calamityteam.calamity.foundation.config.server.CalamityServer;
 import com.calamityteam.calamity.foundation.util.FeatureLoader;
@@ -13,12 +14,12 @@ import com.calamityteam.calamity.foundation.util.features.WorkspaceHazards;
 
 public enum Features {
 
-	pneumaticPipes("pneumatic_pipes", 17, CreateCalamity.asResource("loot_tables/research/pneumatic_pipes.json"), false),
-	nukes("nukes", 38, CreateCalamity.asResource("loot_tables/research/nukes.json"), false),
-	bulkPressing("bulk_pressing", 49, CreateCalamity.asResource("loot_tables/research/bulk_pressing.json"), false, new BulkPressing(), AllConfigs.server().recipes.bulkPressing),
-	pipeBombs("pipe_bombs", 23, CreateCalamity.asResource("loot_tables/research/pipe_bombs.json"), true),
-	steelRNG("steel_rng", 12, CreateCalamity.asResource("loot_tables/research/steel_rng.json"), true),
-	workspaceHazards("workspace_hazards", 5, CreateCalamity.asResource("loot_tables/research/workspace_hazards.json"), true, new WorkspaceHazards(), CalamityServer.INSTANCE.features.workspaceHazards),
+	pneumaticPipes("pneumatic_pipes", 17, Calamity.asResource("loot_tables/research/pneumatic_pipes.json"), false),
+	nukes("nukes", 38, Calamity.asResource("loot_tables/research/nukes.json"), false),
+	bulkPressing("bulk_pressing", 49, Calamity.asResource("loot_tables/research/bulk_pressing.json"), false, new BulkPressing(), AllConfigs.server().recipes.bulkPressing),
+	pipeBombs("pipe_bombs", 23, Calamity.asResource("loot_tables/research/pipe_bombs.json"), true),
+	steelRNG("steel_rng", 12, Calamity.asResource("loot_tables/research/steel_rng.json"), true),
+	workspaceHazards("workspace_hazards", 5, Calamity.asResource("loot_tables/research/workspace_hazards.json"), true, new WorkspaceHazards(), CalamityServer.INSTANCE.features.workspaceHazards),
 	;
 	private static Features INSTANCE;
 	private final String id;
@@ -31,7 +32,7 @@ public enum Features {
 	private ConfigBase.ConfigBool featureConfig;
 
 	Features(String id, int xpCost, ResourceLocation lootTable, boolean negative, FeatureLoader loaders, ConfigBase.ConfigBool featureConfig) {
-		this.description = CreateCalamity.MOD_ID + "research_mode.feature." + id + ".description";
+		this.description = Calamity.MOD_ID + "research_mode.feature." + id + ".description";
 		this.id = id;
 		this.loaders = loaders;
 		this.xpCost = xpCost;
@@ -40,7 +41,7 @@ public enum Features {
 		this.featureConfig = featureConfig;
 	}
 	Features(String id, int xpCost, ResourceLocation lootTable, boolean negative) {
-		this.description = CreateCalamity.MOD_ID + "research_mode.feature." + id + ".description";
+		this.description = Calamity.MOD_ID + "research_mode.feature." + id + ".description";
 		this.id = id;
 		this.xpCost = xpCost;
 		this.lootTable = lootTable;

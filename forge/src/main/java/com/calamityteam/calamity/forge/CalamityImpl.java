@@ -1,6 +1,6 @@
 package com.calamityteam.calamity.forge;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 
 import com.calamityteam.calamity.foundation.config.CalamityConfig;
 
@@ -10,17 +10,23 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(CreateCalamity.MOD_ID)
-public class CalamityForge {
-	public CalamityForge() {
-		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+@Mod(Calamity.MOD_ID)
+public class CalamityImpl {
+	static IEventBus bus;
+	public CalamityImpl() {
+		bus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 		ModLoadingContext modLoadingContext = ModLoadingContext.get();
 
-		forgeEventBus.register(Events.ClientModBusEvents.class);
-		forgeEventBus.addListener(Events::registerCommands);
-		modEventBus.addListener(Events.ClientModBusEvents::onLoadComplete);
-		CreateCalamity.init();
+		bus.addListener(CalamityEventListener::setup);
+
+		Calamity.init();
+
+		//noinspection Convert2MethodRef
+		Env.CLIENT.runIfCurrent(() -> () -> CalamityClientImpl.init());
 		CalamityConfig.register(modLoadingContext);
+	}
+	public static void finalizeRegistrate() {
+		Calamity.REGISTRATE.registerEventListeners(bus);
 	}
 }

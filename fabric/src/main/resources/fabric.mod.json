@@ -17,7 +17,7 @@
   "environment": "*",
   "entrypoints": {
 	"main": [
-	  "com.calamityteam.calamity.fabric.CreateCalamityFabric"
+      "com.calamityteam.calamity.fabric.CalamityImpl"
 	]
   },
   "mixins": [

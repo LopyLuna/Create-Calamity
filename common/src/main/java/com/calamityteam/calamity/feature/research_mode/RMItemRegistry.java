@@ -1,16 +1,14 @@
 package com.calamityteam.calamity.feature.research_mode;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 import com.calamityteam.calamity.feature.research_mode.researches.Features;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
 
-import net.minecraft.world.item.Item;
-
 public class RMItemRegistry {
-	private static final CreateRegistrate REGISTRATE = CreateCalamity.REGISTRATE;
+	private static final CreateRegistrate REGISTRATE = Calamity.REGISTRATE;
 	public static void register() {
 	}
 

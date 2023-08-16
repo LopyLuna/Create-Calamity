@@ -1,5 +1,5 @@
 package com.calamityteam.calamity.base.world.feature;
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 import com.calamityteam.calamity.base.registries.BlockRegistry;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.Holder;
@@ -32,9 +32,9 @@ public class CalamityFeatures {
 
 	public static void register() {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
-				CreateCalamity.asResource("nether_brass_ore"), NETHER_BRASS_ORE_CONFIGURED_FEATURE);
+				Calamity.asResource("nether_brass_ore"), NETHER_BRASS_ORE_CONFIGURED_FEATURE);
 		Registry.register(BuiltinRegistries.PLACED_FEATURE,
-				CreateCalamity.asResource("nether_brass_ore"),
+				Calamity.asResource("nether_brass_ore"),
 				NETHER_BRASS_ORE_PLACED_FEATURE);
 		addFeaturesToWorldgen();
 	}

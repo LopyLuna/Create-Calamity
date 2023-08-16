@@ -1,14 +1,17 @@
 package com.calamityteam.calamity.fabric;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 
 import com.calamityteam.calamity.foundation.config.CalamityConfig;
 import net.fabricmc.api.ModInitializer;
 
-public class CreateCalamityFabric implements ModInitializer {
+public class CalamityImpl implements ModInitializer {
     @Override
     public void onInitialize() {
-        CreateCalamity.init();
+        Calamity.init();
 		CalamityConfig.register();
     }
+	public static void finalizeRegistrate() {
+		Calamity.REGISTRATE.register();
+	}
 }

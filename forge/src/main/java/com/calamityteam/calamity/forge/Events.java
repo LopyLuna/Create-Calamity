@@ -1,6 +1,7 @@
 package com.calamityteam.calamity.forge;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
+
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,12 +14,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 
 public abstract class Events {
-	@Mod.EventBusSubscriber(modid = CreateCalamity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+	@Mod.EventBusSubscriber(modid = Calamity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static abstract class ClientModBusEvents {
 		@SubscribeEvent
 		static void onLoadComplete(FMLLoadCompleteEvent event) {
 			ModContainer container = ModList.get()
-					.getModContainerById(CreateCalamity.MOD_ID)
+					.getModContainerById(Calamity.MOD_ID)
 					.orElseThrow(
 							() -> new IllegalStateException("Create Calamity mod container missing on LoadComplete"));
 			container.registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class,

@@ -1,5 +1,6 @@
 package com.calamityteam.calamity.base.registries;
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
+
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.data.TagGen;
 import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
@@ -19,7 +20,7 @@ public class BlockRegistry {
 	public static void register() {
 	}
 
-	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = CreateCalamity.REGISTRATE
+	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = Calamity.REGISTRATE
 			.block("tin_ore", DropExperienceBlock::new)
 			.lang("Tin ore")
 			.properties(properties -> properties

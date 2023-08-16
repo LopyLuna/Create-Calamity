@@ -1,5 +1,7 @@
 package com.calamityteam.calamity.feature;
 
+import com.calamityteam.calamity.Calamity;
+
 import org.jetbrains.annotations.NotNull;
 
 import net.minecraft.core.NonNullList;
@@ -7,7 +9,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-import com.calamityteam.calamity.CreateCalamity;
 import com.calamityteam.calamity.feature.research_mode.researches.Features;
 
 public class FeatureGroupedItem extends Item {
@@ -19,7 +20,7 @@ public class FeatureGroupedItem extends Item {
 	}
 	@Override
 	public void fillItemCategory(@NotNull CreativeModeTab group, @NotNull NonNullList<ItemStack> items) {
-		if (group == CreateCalamity.itemGroup) {
+		if (group == Calamity.itemGroup) {
 			if (isFeatureLoaded()) {
 				ItemStack stack = new ItemStack(this);
 				items.add(stack);

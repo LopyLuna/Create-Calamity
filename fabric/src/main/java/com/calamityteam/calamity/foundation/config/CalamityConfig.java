@@ -4,7 +4,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 
 import com.simibubi.create.Create;
 
@@ -64,8 +64,8 @@ public class CalamityConfig {
 			ModLoadingContext.registerConfig(Create.ID, pair.getKey(), pair.getValue().specification);
 
 
-		ModConfigEvents.loading(CreateCalamity.MOD_ID).register(CalamityConfig::onLoad);
-		ModConfigEvents.reloading(CreateCalamity.MOD_ID).register(CalamityConfig::onReload);
+		ModConfigEvents.loading(Calamity.MOD_ID).register(CalamityConfig::onLoad);
+		ModConfigEvents.reloading(Calamity.MOD_ID).register(CalamityConfig::onReload);
 	}
 
 	public static void onLoad(ModConfig modConfig) {

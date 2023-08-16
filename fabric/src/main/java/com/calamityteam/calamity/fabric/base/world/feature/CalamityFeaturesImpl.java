@@ -1,5 +1,5 @@
 package com.calamityteam.calamity.fabric.base.world.feature;
-import com.calamityteam.calamity.CreateCalamity;
+import com.calamityteam.calamity.Calamity;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.core.Registry;
@@ -10,6 +10,6 @@ public class CalamityFeaturesImpl {
 	public static void addFeaturesToWorldgen() {
 		BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(), GenerationStep.Decoration.UNDERGROUND_ORES,
 				ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY,
-						CreateCalamity.asResource("nether_brass_ore")));
+						Calamity.asResource("nether_brass_ore")));
 	}
 }
