@@ -23,6 +23,7 @@ public class ModSetup {
 	}
 
 	public static void registerPostRegistrate() {
-		CLFeatures.register();
+		//FIXME: Forge ore generation breaks here!
+		//CLFeatures.register();
 	}
 }
