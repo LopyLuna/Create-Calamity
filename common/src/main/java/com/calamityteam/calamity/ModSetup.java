@@ -8,11 +8,12 @@ public class ModSetup {
 		/*CLTrackMaterials.register();
 		CLBogeyStyles.register();*/
 		CLItems.register();
-		/*CLBlockEntities.register();*/
+		CLBlockEntities.register();*/
+		CLSounds.register();
 		CLBlocks.register();
+		PlushieRegistry.register();
 		/*CLContainerTypes.register();
-		CLEntities.register();
-		CLSounds.register();*/
+		CLEntities.register();*/
 		CLTags.register();
 		CLAdvancements.register();
 		/*CLEdgePointTypes.register();
@@ -23,6 +24,7 @@ public class ModSetup {
 	}
 
 	public static void registerPostRegistrate() {
-		CLFeatures.register();
+		//FIXME: Forge ore generation breaks here!
+		//CLFeatures.register();
 	}
 }
