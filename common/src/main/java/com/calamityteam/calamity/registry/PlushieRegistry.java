@@ -22,7 +22,7 @@ public class PlushieRegistry {
 			properties -> new PlushieBlock(properties, null))
 		.properties(BlockBehaviour.Properties::noOcclusion)
 		.addLayer(() -> RenderType::cutoutMipped)
-		.item(BlockItem::new).build().register(); // this one doesnt match on purpose, pls dont fix
+		.item(BlockItem::new).build().register(); // this one doesn't match on purpose, pls don't fix
 	public static final BlockEntry<PlushieBlock> TO0PA_PLUSH = newPlush("to0pa",
 		List.of(CLSounds.PLUSHIE_TO0PA));
 	public static final BlockEntry<PlushieBlock> SASCHA_PLUSH = newPlush("sascha",

@@ -14,7 +14,7 @@ public class CLCreativeModeTab {
 			return new ItemStack(Blocks.TNT.asItem());
 		}
 	};
-	public static final CreativeModeTab CALAMITY_PLUSHIE_TAB = new CreativeModeTab(0,Calamity.MOD_ID + "_plushie") {
+	public static final CreativeModeTab CALAMITY_PLUSHIE_TAB = new CreativeModeTab(1,Calamity.MOD_ID + "_plushie") {
 		@Override
 		public @NotNull ItemStack makeIcon() {
 			return new ItemStack(PlushieRegistry.HEROBRINE.get());
