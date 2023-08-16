@@ -47,9 +47,14 @@ public class CLBlocks {
 		.loot((lt, b) -> lt.add(b, RegistrateBlockLootTables.createOreDrop(b, AllItems.BRASS_NUGGET.get())))
 		.tag(BlockTags.NEEDS_IRON_TOOL)
 		.tag(CommonTags.ORES.commonWritable)
+		.tag(CommonTags.NETHERRACK_ORES.commonWritable)
+		.tag(CommonTags.BRASS_ORES.commonWritable)
+		.tag(CommonTags.SPARSE_ORES.commonWritable)
 		//.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
 		.item()
 		.tag(CommonTags.ORES_ITEM.commonWritable)
+		.tag(CommonTags.NETHERRACK_ORES_ITEM.commonWritable)
+		.tag(CommonTags.BRASS_ORES_ITEM.commonWritable)
 		.build()
 		.register();
 

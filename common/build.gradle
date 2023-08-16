@@ -31,6 +31,14 @@ dependencies {
 	modCompileOnly "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api}+${rootProject.minecraft_version}"
 }
 
+sourceSets.main {
+	resources { // include generated resources in resources
+		srcDir("src/generated/resources")
+		exclude(".cache/**")
+		exclude("assets/create/**")
+	}
+}
+
 publishing {
     publications {
         mavenCommon(MavenPublication) {

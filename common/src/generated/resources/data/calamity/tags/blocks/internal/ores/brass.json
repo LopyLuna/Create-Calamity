@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:brass_ores",
+      "required": false
+    },
+    {
+      "id": "#forge:ores/brass",
+      "required": false
+    }
+  ]
+}
