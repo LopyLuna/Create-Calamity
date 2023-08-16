@@ -20,6 +20,7 @@ public class ModSetup {
 		CLDataFixers.register();
 		CLExtraRegistration.register();
 		CasingCollisionUtils.register();*/
+		CLItems.register();
 	}
 
 	public static void registerPostRegistrate() {
