@@ -4,6 +4,8 @@ import com.calamityteam.calamity.CreateCalamity;
 
 import com.calamityteam.calamity.base.registries.BlockRegistry;
 
+import com.calamityteam.calamity.base.registries.PlushieRegistry;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -20,6 +22,7 @@ public class CreateCalamityForge {
 		CreateCalamity.REGISTRATE.registerEventListeners(modEventBus);
 
 		BlockRegistry.register();
+		PlushieRegistry.register();
 
 		/*forgeEventBus.register(Events.ClientModBusEvents.class);
 		forgeEventBus.addListener(Events::registerCommands);*/

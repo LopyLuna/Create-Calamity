@@ -7,19 +7,21 @@ import com.simibubi.create.foundation.data.TagGen;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
-import com.calamityteam.calamity.CreateCalamity;
+import static com.calamityteam.calamity.CreateCalamity.REGISTRATE;
 import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 public class BlockRegistry {
 	static {
-		CreateCalamity.REGISTRATE.creativeModeTab(() -> ModCreativeModeTab.CALAMITY_TAB);
+		REGISTRATE.creativeModeTab(() -> ModCreativeModeTab.CALAMITY_TAB);
 	}
 
 	/*public static final BlockEntry<DropExperienceBlock> BRASS_ORE = CreateCalamity.REGISTRATE
@@ -36,7 +38,7 @@ public class BlockRegistry {
 		.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
 		.build()
 		.register();*/
-	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = CreateCalamity.REGISTRATE.block("brass_ore", p ->
+	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = REGISTRATE.block("brass_ore", p ->
 		new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
 			.sound(SoundType.NETHER_ORE)
 			.strength(3.0f,3.0f)

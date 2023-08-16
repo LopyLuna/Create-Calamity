@@ -1,5 +1,7 @@
 package com.calamityteam.calamity;
 
+import com.calamityteam.calamity.base.registries.PlushieRegistry;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +25,7 @@ public class CreateCalamity {
 			Util.platformName());
 
 		BlockRegistry.register();
+		PlushieRegistry.register();
 	}
 
 	public static ResourceLocation asResource(String path) {
