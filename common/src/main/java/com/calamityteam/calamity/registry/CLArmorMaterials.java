@@ -9,6 +9,7 @@ import com.simibubi.create.Create;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
@@ -20,8 +21,8 @@ import java.util.function.Supplier;
 
 public enum CLArmorMaterials implements ArmorMaterial {
 
-	COPPER(Calamity.asResource("thigh_highs").toString(), 7, new int[] { 1, 3, 4, 2 }, 25, () -> AllSoundEvents.COPPER_ARMOR_EQUIP.getMainEvent(), 0.0F, 0.0F,
-		() -> Ingredient.of(Items.COPPER_INGOT))
+	THIGH_HIGH(Calamity.asResource("thigh_highs").toString(), 15, new int[] { 1, 4, 5, 2 }, 12, () -> SoundEvents.WOOL_PLACE, 0.0F, 0.0F,
+		() -> Ingredient.of(ItemTags.WOOL))
 
 	;
 

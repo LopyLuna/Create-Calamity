@@ -18,7 +18,7 @@ public class CLItems {
 	}
 
 	public static final ItemEntry<? extends DyeableArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new DyeableArmorItem(ArmorMaterials.NETHERITE,EquipmentSlot.LEGS, p))
+		p -> new DyeableArmorItem(CLArmorMaterials.THIGH_HIGH, EquipmentSlot.LEGS, p))
 		.register();
 
 	public static void register() {}
