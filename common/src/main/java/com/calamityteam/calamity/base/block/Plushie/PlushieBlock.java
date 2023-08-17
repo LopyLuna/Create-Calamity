@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.base.block;
+package com.calamityteam.calamity.base.block.Plushie;
 
 import java.util.List;
 
