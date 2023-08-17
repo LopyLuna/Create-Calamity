@@ -67,7 +67,7 @@ public class BracketedKineticBlockEntityMixin extends SimpleKineticBlockEntity {
 						continue;
 					if (subZ % 1.0 < 0.4 || subZ % 1.0 > 0.6)
 						continue;
-				}
+				} else { continue; }
 
 				var ret = findSecond(level, getBlockPos(), entity, axis);
 				if (ret == null)
