@@ -38,15 +38,16 @@ public class PlushieRegistry {
 	public static final BlockEntry<PlushieBlock> MILKYFUR_PLUSH = newPlush("milkyfur",
 		List.of(CLSounds.PLUSHIE_MILKYFUR_HONK, CLSounds.PLUSHIE_MILKYFUR_BLUSH), Component.empty());
 	public static final BlockEntry<PlushieBlock> PLUSH_506 = newPlush("506",
-		List.of(CLSounds.PLUSHIE_506), Component.empty());
+		List.of(CLSounds.PLUSHIE_506), Component.literal("The fucking water turned me gay").withStyle(ChatFormatting.DARK_GRAY));
 	public static final BlockEntry<PlushieBlock> OUTCRAFT_PLUSH = newPlush("outcraft",
-		List.of(CLSounds.PLUSHIE_OUTCRAFT), Component.empty());
+		List.of(CLSounds.PLUSHIE_OUTCRAFT), Component.literal("Hi :D").withStyle(ChatFormatting.DARK_GRAY));
 	public static final BlockEntry<PlushieBlock> ILLUC_PLUSH = newPlush("illuc",
-		List.of(CLSounds.PLUSHIE_ILLUC), Component.empty());
+		List.of(CLSounds.PLUSHIE_ILLUC), Component.literal("eepy :33").withStyle(ChatFormatting.DARK_GRAY));
 	public static final BlockEntry<PlushieBlock> SPYDNEL_PLUSH = newPlush("spydnel", Component.empty());
-	public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee", Component.empty());
+	public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee",
+		Component.literal("I will be the master of procrastination... someday").withStyle(ChatFormatting.DARK_GRAY));
 	public static final BlockEntry<PlushieBlock> SHIROJR_PLUSH = newPlush("shirojr",
-		List.of(CLSounds.PLUSHIE_SHIROJR), Component.empty());
+		List.of(CLSounds.PLUSHIE_SHIROJR), Component.literal("Nuking may include health risks!").withStyle(ChatFormatting.DARK_GRAY)); //the tooltip thingy does not work with multiple lines atm so i just left in the last line
 	public static final BlockEntry<PlushieBlock> REDS_PLUSH = newPlush("reds",
 		List.of(CLSounds.PLUSHIE_REDS), Component.empty());
 	public static final BlockEntry<PlushieBlock> TOMATO_SOUPTER_PLUSH = newPlush("tomato_soupter", Component.empty());
