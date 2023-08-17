@@ -14,8 +14,8 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 public class PlushieItem extends BlockItem {
-	Component toolTip;
-	public PlushieItem(Block block, Properties properties, Component toolTip) {
+	List<Component> toolTip;
+	public PlushieItem(Block block, Properties properties, List<Component> toolTip) {
 		super(block, properties);
 
 		this.toolTip = toolTip;
@@ -24,8 +24,11 @@ public class PlushieItem extends BlockItem {
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-		if (this.toolTip!=null) {
-			tooltipComponents.add(this.toolTip);
+		if (this.toolTip!=null && !this.toolTip.isEmpty()) {
+			for (Component tip:this.toolTip) {
+				tooltipComponents.add(tip);
+			}
+
 		}
 
 		super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
