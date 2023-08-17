@@ -15,8 +15,8 @@ public class CLItems {
 		REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_TAB);
 	}
 
-	public static final ItemEntry<? extends CLDyeableArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new CLDyeableArmorItem(CLArmorMaterials.THIGH_HIGH, EquipmentSlot.LEGS, p))
+	public static final ItemEntry<? extends CLThighHighItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
+		p -> new CLThighHighItem(CLArmorMaterials.THIGH_HIGH, EquipmentSlot.LEGS, p))
 		.register();
 
 	public static void register() {}
