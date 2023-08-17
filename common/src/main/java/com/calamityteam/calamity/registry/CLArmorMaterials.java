@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 public enum CLArmorMaterials implements ArmorMaterial {
 
-	COPPER(Calamity.asResource("copper").toString(), 7, new int[] { 1, 3, 4, 2 }, 25, () -> AllSoundEvents.COPPER_ARMOR_EQUIP.getMainEvent(), 0.0F, 0.0F,
+	COPPER(Calamity.asResource("thigh_highs").toString(), 7, new int[] { 1, 3, 4, 2 }, 25, () -> AllSoundEvents.COPPER_ARMOR_EQUIP.getMainEvent(), 0.0F, 0.0F,
 		() -> Ingredient.of(Items.COPPER_INGOT))
 
 	;
@@ -35,7 +35,7 @@ public enum CLArmorMaterials implements ArmorMaterial {
 	private final float knockbackResistance;
 	private final Supplier<Ingredient> repairMaterial;
 
-	private AllArmorMaterials(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability,
+	private CLArmorMaterials(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability,
 							  Supplier<SoundEvent> soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
 		this.name = name;
 		this.maxDamageFactor = maxDamageFactor;
