@@ -10,16 +10,16 @@ import net.minecraft.world.item.Item;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
 
+import net.minecraft.world.item.Items;
+
 public class CLItems {
 	static {
 		REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_TAB);
 	}
 
-	public static final ItemEntry<DyeableArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
+	public static final ItemEntry<? extends DyeableArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
 		p -> new DyeableArmorItem(ArmorMaterials.NETHERITE,EquipmentSlot.LEGS,new Item.Properties()))
 		.register();
-
-	// TODO 8/16/2023 : Add dyeable overlay to colored segments
 
 	public static void register() {}
 }
