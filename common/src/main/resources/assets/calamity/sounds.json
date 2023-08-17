@@ -1,4 +1,10 @@
 {
+  "plushie_default": {
+    "subtitle": "sound.calamity.plushie",
+    "sounds": [
+      "calamity:plushie_default"
+    ]
+  },
   "plushie_506": {
     "subtitle": "sound.calamity.plushie_506",
     "sounds": [

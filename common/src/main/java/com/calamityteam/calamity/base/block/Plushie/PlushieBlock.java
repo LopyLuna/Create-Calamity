@@ -2,6 +2,8 @@ package com.calamityteam.calamity.base.block.Plushie;
 
 import java.util.List;
 
+import com.calamityteam.calamity.registry.CLSounds;
+
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.core.BlockPos;
@@ -43,12 +45,16 @@ public class PlushieBlock extends HorizontalDirectionalBlock {
 	@SuppressWarnings("deprecation")
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-		if (level.isClientSide() || this.sounds == null) return InteractionResult.SUCCESS;
+		if (level.isClientSide()) return InteractionResult.SUCCESS;
 
-		int index = 0;
-		if (this.sounds.size() > 1) index = level.getRandom().nextInt(this.sounds.size());
-		level.playSound(null, pos, this.sounds.get(index).get(), SoundSource.BLOCKS, 2f, 1f);
+		if (this.sounds == null) {
+			level.playSound(null, pos, CLSounds.PLUSHIE_DEFAULT.get(), SoundSource.BLOCKS, 2f, 1f);
 
+		} else {
+			int index = 0;
+			if (this.sounds.size() > 1) index = level.getRandom().nextInt(this.sounds.size());
+			level.playSound(null, pos, this.sounds.get(index).get(), SoundSource.BLOCKS, 2f, 1f);
+		}
 		return InteractionResult.SUCCESS;
 	}
 }

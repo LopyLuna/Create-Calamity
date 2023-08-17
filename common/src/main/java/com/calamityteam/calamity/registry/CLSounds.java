@@ -7,6 +7,7 @@ import com.calamityteam.calamity.Calamity;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 
 public class CLSounds {
+	public static final RegistryEntry<SoundEvent> PLUSHIE_DEFAULT = registerSound("plushie_default");
 	public static final RegistryEntry<SoundEvent> PLUSHIE_506 = registerSound("plushie_506");
 	public static final RegistryEntry<SoundEvent> PLUSHIE_ILLUC = registerSound("plushie_illuc");
 	public static final RegistryEntry<SoundEvent> PLUSHIE_KELAD8 = registerSound("plushie_kelad8");
