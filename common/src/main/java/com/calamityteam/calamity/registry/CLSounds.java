@@ -17,8 +17,9 @@ public class CLSounds {
 	public static final RegistryEntry<SoundEvent> PLUSHIE_REDS = registerSound("plushie_reds");
 	public static final RegistryEntry<SoundEvent> PLUSHIE_SASCHA = registerSound("plushie_sascha");
 	public static final RegistryEntry<SoundEvent> PLUSHIE_SHIROJR = registerSound("plushie_shirojr");
-	public static final RegistryEntry<SoundEvent> PLUSHIE_THESPOKESMAN = registerSound("plushie_tespokesman");
+	public static final RegistryEntry<SoundEvent> PLUSHIE_THESPOKESMAN = registerSound("plushie_thespokesman");
 	public static final RegistryEntry<SoundEvent> PLUSHIE_TO0PA = registerSound("plushie_to0pa");
+	public static final RegistryEntry<SoundEvent> PLUSHIE_KOLOS = registerSound("plushie_kolos");
 
 	/**
 	 * Register sound events <br><br>

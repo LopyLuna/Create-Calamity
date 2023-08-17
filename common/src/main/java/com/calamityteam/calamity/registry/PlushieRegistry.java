@@ -66,6 +66,7 @@ public class PlushieRegistry {
 	public static final BlockEntry<PlushieBlock> ITHUNDXR_PLUSH = newPlush("ithundxr", List.of());
 	public static final BlockEntry<PlushieBlock> FERN_PLUSH = newPlush("fern", List.of(Component.translatable("item.calamity.plushie.fern.tooltip1").withStyle(ChatFormatting.DARK_GREEN),Component.translatable("item.calamity.plushie.fern.tooltip2").withStyle(ChatFormatting.GREEN) ));
 	public static final BlockEntry<PlushieBlock> CAKE_PLUSH = newPlush("cake", List.of());
+	public static final BlockEntry<PlushieBlock> KOLOS_PLUSH = newPlush("kolos", List.of(CLSounds.PLUSHIE_KOLOS), List.of());
 
 
 	public static BlockEntry<PlushieBlock> newPlush(String name, List<Component> toolTip) {

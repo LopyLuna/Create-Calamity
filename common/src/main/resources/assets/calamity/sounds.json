@@ -70,5 +70,11 @@
     "sounds": [
       "calamity:plushie_sascha"
     ]
+  },
+  "plushie_kolos": {
+    "subtitle": "sound.calamity.plushie_kolos",
+    "sounds": [
+      "calamity:plushie_kolos"
+    ]
   }
 }
