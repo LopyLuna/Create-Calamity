@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import com.calamityteam.calamity.Calamity;
@@ -72,6 +73,7 @@ public class PlushieRegistry {
 	}
 	public static BlockEntry<PlushieBlock> newPlush(String name, List<RegistryEntry<SoundEvent>> sounds,  List<Component> textToolTip) {
 		return Calamity.REGISTRATE.block("plushie_" + name, properties -> new PlushieBlock(properties, sounds))
+			.properties(p -> p.sound(SoundType.WOOL))
 			.properties(BlockBehaviour.Properties::noOcclusion)
 			.addLayer(() -> RenderType::cutoutMipped)
 			.item((plushieBlock, properties) -> new PlushieItem(plushieBlock,properties,textToolTip))
