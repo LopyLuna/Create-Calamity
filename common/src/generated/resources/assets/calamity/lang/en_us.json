@@ -22,6 +22,24 @@
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
 	"block.create.track_signal.tooltip.summary": "Test",
 
+  "_": "->------------------------]  Plushie Tooltips  [------------------------<-",
+
+  "item.calamity.plushie.506.tooltip": "The fucking water turned me gay",
+  "item.calamity.plushie.outcraft.tooltip": "Hi :D",
+  "item.calamity.plushie.illuc.tooltip": "eepy :33",
+  "item.calamity.plushie.raeeeee.tooltip": "I will be the master of procrastination... someday",
+
+  "item.calamity.plushie.shirojr.tooltip1": "Cities that are attacked by nuclear missiles",
+  "item.calamity.plushie.shirojr.tooltip2": "burn at such an intensity that they create their own",
+  "item.calamity.plushie.shirojr.tooltip3": "wind system, a firestorm: hot air above the burning",
+  "item.calamity.plushie.shirojr.tooltip4": "city ascends and is replaced by air that rushes",
+  "item.calamity.plushie.shirojr.tooltip5": "in from all directions. The storm-force winds fan",
+  "item.calamity.plushie.shirojr.tooltip6": "the flames and create immense heat.",
+  "item.calamity.plushie.shirojr.tooltip7": "Nuking may include health risks!",
+
+  "item.calamity.plushie.fern.tooltip1": "EAT GRASS",
+  "item.calamity.plushie.fern.tooltip2": "SMOKE ASS",
+
 
 	"_": "->------------------------]  Damage Sources and Deaths  [------------------------<-",
 

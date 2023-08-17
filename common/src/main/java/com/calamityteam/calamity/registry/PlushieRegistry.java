@@ -38,16 +38,24 @@ public class PlushieRegistry {
 	public static final BlockEntry<PlushieBlock> MILKYFUR_PLUSH = newPlush("milkyfur",
 		List.of(CLSounds.PLUSHIE_MILKYFUR_HONK, CLSounds.PLUSHIE_MILKYFUR_BLUSH), List.of());
 	public static final BlockEntry<PlushieBlock> PLUSH_506 = newPlush("506",
-		List.of(CLSounds.PLUSHIE_506),List.of(  Component.literal("The fucking water turned me gay").withStyle(ChatFormatting.DARK_GRAY)));
+		List.of(CLSounds.PLUSHIE_506),List.of(  Component.translatable("item.calamity.plushie.506.tooltip").withStyle(ChatFormatting.DARK_GRAY)));
 	public static final BlockEntry<PlushieBlock> OUTCRAFT_PLUSH = newPlush("outcraft",
-		List.of(CLSounds.PLUSHIE_OUTCRAFT),List.of(  Component.literal("Hi :D").withStyle(ChatFormatting.DARK_GRAY)));
+		List.of(CLSounds.PLUSHIE_OUTCRAFT),List.of(  Component.translatable("item.calamity.plushie.outcraft.tooltip").withStyle(ChatFormatting.DARK_GRAY)));
 	public static final BlockEntry<PlushieBlock> ILLUC_PLUSH = newPlush("illuc",
-		List.of(CLSounds.PLUSHIE_ILLUC), List.of( Component.literal("eepy :33").withStyle(ChatFormatting.DARK_GRAY)));
+		List.of(CLSounds.PLUSHIE_ILLUC), List.of( Component.translatable("item.calamity.plushie.illuc.tooltip").withStyle(ChatFormatting.DARK_GRAY)));
 	public static final BlockEntry<PlushieBlock> SPYDNEL_PLUSH = newPlush("spydnel", List.of());
 	public static final BlockEntry<PlushieBlock> RAEEEEE_PLUSH = newPlush("raeeeee",
-		List.of(Component.literal("I will be the master of procrastination... someday").withStyle(ChatFormatting.DARK_GRAY)));
+		List.of(Component.translatable("item.calamity.plushie.raeeeee.tooltip").withStyle(ChatFormatting.DARK_GRAY)));
+	//something tells me im doing this the wrong way
 	public static final BlockEntry<PlushieBlock> SHIROJR_PLUSH = newPlush("shirojr",
-		List.of(CLSounds.PLUSHIE_SHIROJR),List.of( Component.literal("Nuking may include health risks!").withStyle(ChatFormatting.DARK_GRAY))); //the tooltip thingy does not work with multiple lines atm so i just left in the last line
+		List.of(CLSounds.PLUSHIE_SHIROJR),List.of(
+			Component.translatable("item.calamity.plushie.shirojr.tooltip1").withStyle(ChatFormatting.DARK_GRAY),
+			Component.translatable("item.calamity.plushie.shirojr.tooltip2").withStyle(ChatFormatting.DARK_GRAY),
+			Component.translatable("item.calamity.plushie.shirojr.tooltip3").withStyle(ChatFormatting.DARK_GRAY),
+			Component.translatable("item.calamity.plushie.shirojr.tooltip4").withStyle(ChatFormatting.DARK_GRAY),
+			Component.translatable("item.calamity.plushie.shirojr.tooltip5").withStyle(ChatFormatting.DARK_GRAY),
+			Component.translatable("item.calamity.plushie.shirojr.tooltip6").withStyle(ChatFormatting.DARK_GRAY),
+			Component.translatable("item.calamity.plushie.shirojr.tooltip7").withStyle(ChatFormatting.DARK_GRAY)));
 	public static final BlockEntry<PlushieBlock> REDS_PLUSH = newPlush("reds",
 		List.of(CLSounds.PLUSHIE_REDS),List.of());
 	public static final BlockEntry<PlushieBlock> TOMATO_SOUPTER_PLUSH = newPlush("tomato_soupter", List.of());
@@ -55,7 +63,7 @@ public class PlushieRegistry {
 	public static final BlockEntry<PlushieBlock> NULL_PLUSH = newPlush("null", List.of());
 	public static final BlockEntry<PlushieBlock> BAAB_PLUSH = newPlush("baab", List.of());
 	public static final BlockEntry<PlushieBlock> ITHUNDXR_PLUSH = newPlush("ithundxr", List.of());
-	public static final BlockEntry<PlushieBlock> FERN_PLUSH = newPlush("fern", List.of(Component.literal("EAT GRASS").withStyle(ChatFormatting.DARK_GREEN),Component.literal("SMOKE ASS").withStyle(ChatFormatting.GREEN) ));
+	public static final BlockEntry<PlushieBlock> FERN_PLUSH = newPlush("fern", List.of(Component.translatable("item.calamity.plushie.fern.tooltip1").withStyle(ChatFormatting.DARK_GREEN),Component.translatable("item.calamity.plushie.fern.tooltip2").withStyle(ChatFormatting.GREEN) ));
 	public static final BlockEntry<PlushieBlock> CAKE_PLUSH = newPlush("cake", List.of());
 
 
