@@ -37,7 +37,7 @@ public class CLCreativeModeTab {
 	public static final CalamityCreativeModeTab CALAMITY_PLUSHIE_TAB = new CalamityCreativeModeTab("plushie") {
 		@Override
 		public @NotNull ItemStack makeIcon() {
-			return new ItemStack(CLPlushies.HEROBRINE.get());
+			return new ItemStack(CLPlushies.HEROBRINE_PLUSH.get());
 		}
 	};
 }
