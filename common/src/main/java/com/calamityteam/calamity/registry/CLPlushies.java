@@ -67,6 +67,12 @@ public class CLPlushies {
 		List.of(),
 		List.of()
 	));
+	public static final BlockEntry<PlushieBlock> POUFFY_PLUSH = newPlush(new PlushieEntry(
+		"pouffy",
+		new PartialModel(Calamity.asResource("partial/plushie_pouffy")),
+		List.of(),
+		List.of()
+	));
 	public static final BlockEntry<PlushieBlock> TO0PA_PLUSH = newPlush(new PlushieEntry(
 		"to0pa",
 		new PartialModel(Calamity.asResource("partial/plushie_to0pa")),

@@ -1,7 +1,7 @@
 // incase u ever need to fix everything
 let names = [
     "506", "baab", "cake", "fern", "herobrine", "illuc", "ithundxr", "kolos", "milkyfur", "null", "outcraft",
-    "potato", "raeeeee", "reds", "sascha", "shirojr", "spydnel", "to0pa", "tomato_soupter"
+    "potato", "raeeeee", "reds", "sascha", "shirojr", "spydnel", "to0pa", "tomato_soupter", "pouffy"
 ]
 
 for(name of names) {
