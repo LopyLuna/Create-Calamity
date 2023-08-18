@@ -13,20 +13,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 
-import com.calamityteam.calamity.util.StuckInSlot;
+import com.calamityteam.calamity.util.ComfortablyStuck;
 
 /**
  * Add special Items to work like Items with the Curse of Binding using
- * the {@linkplain StuckInSlot StuckInSlot} Interface<br>
+ * the {@linkplain ComfortablyStuck ComfortablyStuck} Interface<br>
  * For an example, check out {@linkplain ThighHighItem ThighHighItem}
  */
 @Mixin(EnchantmentHelper.class)
 public abstract class EnchantmentHelperMixin {
 	@Inject(method = "hasBindingCurse", at = @At("HEAD"), cancellable = true)
 	private static void hasBindingCurse(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-		Calamity.LOGGER.info("Calamity common Mixin successfully applied");
 		boolean binding = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BINDING_CURSE, stack) > 0 ||
-			stack.getItem() instanceof StuckInSlot;
+			stack.getItem() instanceof ComfortablyStuck;
 		cir.setReturnValue(binding);
 	}
 }

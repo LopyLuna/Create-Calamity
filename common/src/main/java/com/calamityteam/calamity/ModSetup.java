@@ -1,6 +1,5 @@
 package com.calamityteam.calamity;
 
-import com.calamityteam.calamity.foundation.events.CommonEvents;
 import com.calamityteam.calamity.registry.worldgen.CLFeatures;
 import com.calamityteam.calamity.registry.*;
 
@@ -11,7 +10,7 @@ public class ModSetup {
 		CLItems.register();
 		/*CLBlockEntities.register();*/
 		CLBlocks.register();
-		CommonEvents.register();
+		//CommonEvents.register();
 		/*CLContainerTypes.register();
 		CLEntities.register();
 		CLSounds.register();*/

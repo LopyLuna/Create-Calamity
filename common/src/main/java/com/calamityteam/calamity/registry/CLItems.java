@@ -15,7 +15,7 @@ public class CLItems {
 	}
 
 	public static final ItemEntry<? extends ThighHighItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new ThighHighItem(CLArmorMaterials.THIGH_HIGH, EquipmentSlot.LEGS, p))
+		p -> new ThighHighItem(CLArmorMaterials.THIGH_HIGH, 0.5d, EquipmentSlot.LEGS, p))
 		.lang("Programmer Thigh Highs").properties(p -> p.rarity(Rarity.EPIC)).register();
 
 	public static void register() {
