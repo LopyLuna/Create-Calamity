@@ -38,6 +38,11 @@ public class CLBlocks {
 		.transform(TagGen.tagBlockAndItem("ores/brass", "ores_in_ground/netherrack"))
 		.build()
 		.register();*/
+
+	static {
+		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.BRASS_ORE);
+	}
+
 	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = Calamity.REGISTRATE.block("brass_ore", p ->
 			new DropExperienceBlock(p, UniformInt.of(3,7)))
 		.initialProperties(Material.STONE)
@@ -61,20 +66,16 @@ public class CLBlocks {
 		.register();
 
 	static {
-		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.TEST_1);
+		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.TEST);
 	}
 
-	public static final BlockEntry<Block> TEST_BLOCK_1 = Calamity.REGISTRATE.block("test_block_1", Block::new)
+	public static final BlockEntry<Block> TEST_BLOCK = Calamity.REGISTRATE.block("test_block", Block::new)
 		.simpleItem()
 		.register();
 
 	static {
-		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.TEST_2);
+		Calamity.REGISTRATE.setFeatureFactory(null);
 	}
-
-	public static final BlockEntry<Block> TEST_BLOCK_2 = Calamity.REGISTRATE.block("test_block_2", Block::new)
-		.simpleItem()
-		.register();
 
 	public static void register() {
 	}

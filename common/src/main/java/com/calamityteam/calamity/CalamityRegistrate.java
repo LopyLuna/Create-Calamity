@@ -2,6 +2,7 @@ package com.calamityteam.calamity;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
+import java.nio.file.Path;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -14,6 +15,10 @@ import com.simibubi.create.foundation.data.CreateBlockEntityBuilder;
 import com.simibubi.create.foundation.data.CreateEntityBuilder;
 
 import com.simibubi.create.foundation.data.VirtualFluidBuilder;
+
+import dev.architectury.injectables.annotations.ExpectPlatform;
+
+import dev.architectury.injectables.annotations.PlatformOnly;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -94,6 +99,11 @@ public class CalamityRegistrate extends AbstractRegistrate<CalamityRegistrate> {
 		return currentTooltipModifierFactory;
 	}
 
+	@PlatformOnly("forge")
+	public void subscribeEventBus(Object eventBus) {
+		throw new AssertionError();
+	}
+
 	@Override
 	protected <R , T extends R> RegistryEntry<T> accept(String name, ResourceKey<? extends Registry<R>> type, Builder<R, T, ?, ?> builder, NonNullSupplier<? extends T> creator, NonNullFunction<RegistryObject<T>, ? extends RegistryEntry<T>> entryFactory) {
 		RegistryEntry<T> entry = super.accept(name, type, builder, creator, entryFactory);
@@ -102,7 +112,6 @@ public class CalamityRegistrate extends AbstractRegistrate<CalamityRegistrate> {
 				TooltipModifier.REGISTRY.registerDeferred(entry.getId(), currentTooltipModifierFactory);
 			}
 			if (currentFeatureFactory != null) {
-				Calamity.LOGGER.info("set into" + entry.getId());
 				CalamityFeaturePack.REGISTRY.registerDeferred(entry.getId(), currentFeatureFactory);
 			}
 		}

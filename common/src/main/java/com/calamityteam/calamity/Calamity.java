@@ -4,10 +4,14 @@ import com.calamityteam.calamity.base.data.CLTagGen;
 import com.calamityteam.calamity.base.data.lang.CLLangPartials;
 import com.calamityteam.calamity.base.data.recipe.CalamitySequencedAssemblyRecipeGen;
 import com.calamityteam.calamity.base.data.recipe.CalamityStandardRecipeGen;
+import com.calamityteam.calamity.base.featurepack.CalamityFeatureConfig;
 import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 import com.calamityteam.calamity.registry.CLBlocks;
 import com.calamityteam.calamity.registry.CLPackets;
 import com.calamityteam.calamity.util.Util;
+
+import com.electronwill.nightconfig.core.CommentedConfig;
+import com.electronwill.nightconfig.core.ConfigFormat;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
@@ -23,12 +27,20 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 
 import net.minecraft.data.DataGenerator;
 
+import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.fml.config.IConfigSpec;
+import net.minecraftforge.fml.config.ModConfig;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.simibubi.create.Create;
 
 import net.minecraft.resources.ResourceLocation;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Calamity {
 	public static final String MOD_ID = "calamity";
@@ -48,7 +60,10 @@ public class Calamity {
 
 		CLPackets.PACKETS.registerC2SListener();
 
-		LOGGER.info(CLBlocks.TEST_BLOCK_2.getId().toString());
+		ForgeConfigSpec spec = new ForgeConfigSpec.Builder()
+			.configure(CalamityFeatureConfig::new).getValue();
+
+		Util.registerConfig(MOD_ID, ModConfig.Type.SERVER, spec, MOD_ID);
 	}
 
 	public static ResourceLocation asResource(String path) {

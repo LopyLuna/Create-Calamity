@@ -5,15 +5,19 @@ import com.simibubi.create.foundation.utility.AttachedRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 
+import net.minecraftforge.common.ForgeConfigSpec;
+
 public enum CalamityFeaturePack {
 	BASE(false, "Calamity mod core features"),
-	TEST_1(true, "Testing feature, adds the elusive test feature 1"),
-	TEST_2(true, "Testing feature, adds the elusive test feature 2"),
+	BRASS_ORE(true, "Brass ore, generates in the nether (Does not disable worldgen cause idk havent done it)"),
+	TEST(true, "Testing feature, adds the test block"),
 	;
 	public static final AttachedRegistry<Item, CalamityFeaturePack> REGISTRY = new AttachedRegistry<>(Registry.ITEM);
 
-	boolean toggleable;
-	String description;
+	final boolean toggleable;
+	final String description;
+
+	ForgeConfigSpec.BooleanValue configValue;
 
 	CalamityFeaturePack(boolean toggleable, String description) {
 		this.toggleable = toggleable;
@@ -24,7 +28,19 @@ public enum CalamityFeaturePack {
 		return toggleable;
 	}
 
+	public boolean getDefaultState() {
+		return true;
+	}
+
 	public String getDescription() {
 		return description;
+	}
+
+	public void setConfigValue(ForgeConfigSpec.BooleanValue configValue) {
+		this.configValue = configValue;
+	}
+
+	public Boolean isEnabled() {
+		return configValue.get();
 	}
 }
