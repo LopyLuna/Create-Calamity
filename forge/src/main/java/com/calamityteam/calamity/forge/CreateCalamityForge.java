@@ -16,7 +16,7 @@ public class CreateCalamityForge {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
-		Calamity.REGISTRATE.registerEventListeners(modEventBus);
+		// Calamity.REGISTRATE.registerEventListeners(modEventBus); @todo: this is automatically called in the Registrate constructor
 
 		CLSounds.register();
 		CLBlocks.register();
