@@ -6,6 +6,9 @@
 
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
 	"block.create.track_signal.tooltip.summary": "Test",
+  "item.calamity.thigh_highs": "Thigh Highs",
+  "item.calamity.netherite_thigh_highs": "Programmer Thigh Highs",
+  "item.calamity.thigh_highs.tooltip": "So comfy you'll §onever§r want to take them off...",
 
 	"itemGroup.calamity": "Create: Calamity. Run while you can",
 
@@ -19,8 +22,6 @@
 
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
 	"block.create.track_signal.tooltip.summary": "Test",
-  "item.calamity.thigh_highs": "Programmer Thigh Highs",
-  "item.calamity.thigh_highs.tooltip": "So comfy you'll §onever§r want to take them off...",
 
 	"_": "Thank you for translating Create: Calamity!"
 

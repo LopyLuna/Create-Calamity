@@ -15,7 +15,11 @@ public class CLItems {
 	}
 
 	public static final ItemEntry<? extends ThighHighItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new ThighHighItem(CLArmorMaterials.THIGH_HIGH, 0.5d, EquipmentSlot.LEGS, p))
+		p -> new ThighHighItem(CLArmorMaterials.WOOL, 0.5d, EquipmentSlot.LEGS, p))
+		.lang("Thigh Highs").properties(p -> p.rarity(Rarity.EPIC)).register();
+
+	public static final ItemEntry<? extends ThighHighItem> NETHERITE_THIGH_HIGHS = REGISTRATE.item("netherite_thigh_highs",
+		p -> new ThighHighItem(CLArmorMaterials.NETHERITE, 1.0d, EquipmentSlot.LEGS,p))
 		.lang("Programmer Thigh Highs").properties(p -> p.rarity(Rarity.EPIC)).register();
 
 	public static void register() {
