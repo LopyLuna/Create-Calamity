@@ -33,7 +33,7 @@ public class ThighHighColor implements ItemColor {
 		int green = colorInPhase(phaseBlue + 2, timeStepInPhase);
 		int blue = colorInPhase(phaseBlue, timeStepInPhase);
 		if (i == 0)
-			return Color.mixColors(0xffffff, 0xffffff, (Mth.sin(progress) + 1) / 2);
+			return Color.WHITE.getRGB();
 		if (i == 1) {
 			if (ThighHighItem.getTHColor(itemStack) == 11574159) {
 				return new Color(red, green, blue).getRGB();
