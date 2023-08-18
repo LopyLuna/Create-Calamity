@@ -2,6 +2,7 @@ package com.calamityteam.calamity.registry;
 
 import com.calamityteam.calamity.Calamity;
 
+import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 import com.calamityteam.calamity.multiloader.CommonTags;
 
 import com.simibubi.create.AllItems;
@@ -9,6 +10,7 @@ import com.simibubi.create.foundation.data.TagGen;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -43,6 +45,10 @@ public class CLBlocks {
 		.build()
 		.register();*/
 
+	static {
+		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.BRASS_ORE);
+	}
+
 	public static final BlockEntry<DropExperienceBlock> BRASS_ORE = Calamity.REGISTRATE.block("brass_ore", p ->
 			new DropExperienceBlock(p, UniformInt.of(3,7)))
 		.initialProperties(Material.STONE)
@@ -65,8 +71,9 @@ public class CLBlocks {
 		.build()
 		.register();
 
-
-
+	static {
+		Calamity.REGISTRATE.setFeatureFactory(null);
+	}
 
 	public static void register() {
 	}

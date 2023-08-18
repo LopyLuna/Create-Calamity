@@ -7,6 +7,7 @@
     "ClientPacketListenerMixin"
   ],
   "mixins": [
+    "CalamityRegistrateMixin",
     "ChunkMapAccessor",
     "ChunkMapAccessor$TrackedEntityAccessor",
     "ServerGamePacketListenerImplMixin"

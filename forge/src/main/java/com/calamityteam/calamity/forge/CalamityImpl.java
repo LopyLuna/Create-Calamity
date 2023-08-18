@@ -30,6 +30,7 @@ public class CalamityImpl {
 	}
 
 	public static void finalizeRegistrate() {
-		Calamity.REGISTRATE.registerEventListeners(bus);
+		Calamity.REGISTRATE.subscribeEventBus(bus);
 	}
+
 }

@@ -18,9 +18,13 @@
     <a href="https://github.com/LopyLuna/Create-Calamity/releases">
         <img src="https://img.shields.io/github/v/release/LopyLuna/Create-Calamity?logo=github&style=for-the-badge">
     </a>
-	<p align="center">
-	<img src="https://cdn.discordapp.com/attachments/1133381418987298826/1140870567977824368/warrning-image.png" alt="Prop 65 warning, this product may expose you to chemicals known to the state of Californis to cause cancer!">
-	</p>
+<div style="display:flex;gap:10px;flex-wrap: wrap;align-items:center;justify-content:space-around;">
+  <img width="40%" height="auto" src = "https://cdn.discordapp.com/attachments/1133381418987298826/1140870567977824368/warrning-image.png" alt="Prop 65 warning, this product may expose you to chemicals known to the state of California to cause cancer!">
+	<img width="40%" height="auto" src="https://cdn.discordapp.com/attachments/1133382370276425778/1141120223186002081/biohazard-universal-precautions-warning-label-lb-2230.png" alt="Biohazard Universal Precautions Must be observed">
+    <img width="40%" height="auto" src="https://uspto.report/TM/79205311/mark" alt="Smoking kills">
+    <img width="40%" height="auto" src="https://www.labelbar.co.uk/images/warning-do-not-use-gas-safety-labels-p1598-48497_image.jpg" alt="Smoking kills">
+	</div>
+
 </h1>
 
 ### Overview
