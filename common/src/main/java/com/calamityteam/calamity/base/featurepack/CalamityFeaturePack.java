@@ -10,7 +10,6 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public enum CalamityFeaturePack {
 	BASE(false, "Calamity mod core features"),
 	BRASS_ORE(true, "Brass ore, generates in the nether (Does not disable worldgen cause idk havent done it)"),
-	TEST(true, "Testing feature, adds the test block"),
 	;
 	public static final AttachedRegistry<Item, CalamityFeaturePack> REGISTRY = new AttachedRegistry<>(Registry.ITEM);
 

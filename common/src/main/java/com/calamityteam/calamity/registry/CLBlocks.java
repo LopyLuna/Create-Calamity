@@ -66,14 +66,6 @@ public class CLBlocks {
 		.register();
 
 	static {
-		Calamity.REGISTRATE.setFeatureFactory(item -> CalamityFeaturePack.TEST);
-	}
-
-	public static final BlockEntry<Block> TEST_BLOCK = Calamity.REGISTRATE.block("test_block", Block::new)
-		.simpleItem()
-		.register();
-
-	static {
 		Calamity.REGISTRATE.setFeatureFactory(null);
 	}
 
