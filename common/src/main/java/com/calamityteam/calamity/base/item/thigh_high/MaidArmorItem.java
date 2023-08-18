@@ -2,15 +2,18 @@ package com.calamityteam.calamity.base.item.thigh_high;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.DyeableArmorItem;
 import net.minecraft.world.item.ItemStack;
@@ -22,17 +25,25 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck {
-	private final Multimap<Attribute, AttributeModifier> attributeModifier;
+	private Multimap<Attribute, AttributeModifier> attributeModifier;
+	private static final String SPEED_NAME = "Speed modifier";
+	private static final String SPEED_UUID = "91AEAA56-376B-4498-935B-2F7F68070635";
+	private final double speedMultiplier;
 
-	public MaidArmorItem(ArmorMaterial material, Double speedMultiplier, EquipmentSlot slot, Properties properties) {
+	public MaidArmorItem(ArmorMaterial material, double speedMultiplier, EquipmentSlot slot, Properties properties) {
 		super(material, slot, properties);
+		this.speedMultiplier = speedMultiplier;
+		this.attributeModifier = setEntityAttribute( SPEED_NAME, SPEED_UUID, speedMultiplier,
+			AttributeModifier.Operation.MULTIPLY_TOTAL);
+	}
 
+	private Multimap<Attribute, AttributeModifier> setEntityAttribute(String name, String uuid, Double multiplier, AttributeModifier.Operation operation) {
 		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-		UUID SPEED_ATTRIBUTE_ID = UUID.fromString("91AEAA56-376B-4498-935B-2F7F68070635");
+		UUID ATTRIBUTE_ID = UUID.fromString(uuid);
 		builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(
-			SPEED_ATTRIBUTE_ID, "Speed modifier", speedMultiplier, AttributeModifier.Operation.MULTIPLY_TOTAL)
+			ATTRIBUTE_ID, name, multiplier, operation)
 		);
-		this.attributeModifier = builder.build();
+		return builder.build();
 	}
 
 	@Override
@@ -40,9 +51,24 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 		CompoundTag compoundTag = stack.getTagElement("display");
 		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
 	}
+
 	public static int getTHColor(ItemStack stack) {
 		CompoundTag compoundTag = stack.getTagElement("display");
 		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slotId, boolean isSelected) {
+		super.inventoryTick(itemStack, level, entity, slotId, isSelected);
+		if (!(entity instanceof Player player)) return;
+		List<ItemStack> armorSet = IntStream.rangeClosed(0, 3).mapToObj(player.getInventory()::getArmor).toList();
+
+		double modifier;
+		if (armorSet.stream().anyMatch(stack -> !(stack.getItem() instanceof MaidArmorItem))) modifier = 0.0d;
+		else modifier = this.speedMultiplier;
+
+		this.attributeModifier = setEntityAttribute(SPEED_NAME, SPEED_UUID, modifier,
+			AttributeModifier.Operation.MULTIPLY_TOTAL);
 	}
 
 	@Override
@@ -51,7 +77,7 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 			return this.attributeModifier;
 		}
 		return super.getDefaultAttributeModifiers(slot);
-		// todo make me only work with full set equipped
+		//TODO: make me only work with full set equipped
 	}
 
 	@Override
