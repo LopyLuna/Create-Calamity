@@ -2,6 +2,7 @@ package com.calamityteam.calamity.registry;
 
 import com.calamityteam.calamity.Calamity;
 
+import com.calamityteam.calamity.base.block.ChainwheelBlock;
 import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 import com.calamityteam.calamity.multiloader.CommonTags;
 
@@ -69,6 +70,8 @@ public class CLBlocks {
 		.tag(CommonTags.NETHERRACK_ORES_ITEM.commonWritable)
 		.tag(CommonTags.BRASS_ORES_ITEM.commonWritable)
 		.build()
+		.register();
+	public static final BlockEntry<ChainwheelBlock> CHAINWHEEL_BLOCK = Calamity.REGISTRATE.block("chainwheel", ChainwheelBlock::new)
 		.register();
 
 	static {
