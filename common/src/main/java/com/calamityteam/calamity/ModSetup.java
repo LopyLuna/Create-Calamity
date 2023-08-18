@@ -1,5 +1,6 @@
 package com.calamityteam.calamity;
 
+import com.calamityteam.calamity.base.data.lang.CLCustomLang;
 import com.calamityteam.calamity.registry.*;
 
 public class ModSetup {
@@ -11,6 +12,7 @@ public class ModSetup {
 		CLSounds.register();
 		CLBlocks.register();
 		CLPlushies.register();
+		CLCustomLang.register();
 		/*CLContainerTypes.register();
 		CLEntities.register();*/
 		CLTags.register();
