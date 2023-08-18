@@ -8,6 +8,12 @@ import com.calamityteam.calamity.base.block.PlushieBlock;
 import com.calamityteam.calamity.base.block.entities.PlushieBlockEntity;
 import com.calamityteam.calamity.base.block.entities.renderer.PlushieBlockEntityRenderer;
 import com.calamityteam.calamity.base.item.PlushieItem;
+
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity;
+import com.simibubi.create.content.kinetics.deployer.DeployerInstance;
+import com.simibubi.create.content.kinetics.deployer.DeployerRenderer;
+
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 
@@ -28,6 +34,8 @@ import com.calamityteam.calamity.Calamity;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import org.jetbrains.annotations.Nullable;
+
+import static com.simibubi.create.Create.REGISTRATE;
 
 
 public class CLPlushies {
@@ -91,8 +99,8 @@ public class CLPlushies {
 		List.of(CLSounds.PLUSHIE_KOLOS), null);
 
 	public static final BlockEntityEntry<PlushieBlockEntity> PLUSHIE_ENTITY = Calamity.REGISTRATE.blockEntity("plushies", PlushieBlockEntity::new)
-		.validBlocks(PLUSHIES.stream().map(a -> (NonNullSupplier<PlushieBlock>) a::get).toArray(NonNullSupplier[]::new))
 		.renderer(() -> PlushieBlockEntityRenderer::new)
+		.validBlocks(PLUSHIES.stream().map(a -> (NonNullSupplier<PlushieBlock>) a::get).toArray(NonNullSupplier[]::new) )
 		.register();
 
 
