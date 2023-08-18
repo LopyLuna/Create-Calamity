@@ -7,6 +7,7 @@ import com.calamityteam.calamity.base.data.recipe.CalamityStandardRecipeGen;
 import com.calamityteam.calamity.base.featurepack.CalamityFeatureConfig;
 import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 import com.calamityteam.calamity.registry.CLBlocks;
+import com.calamityteam.calamity.registry.CLAdvancements;
 import com.calamityteam.calamity.registry.CLPackets;
 import com.calamityteam.calamity.util.Util;
 

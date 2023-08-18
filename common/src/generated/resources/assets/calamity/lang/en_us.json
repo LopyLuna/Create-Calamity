@@ -7,18 +7,54 @@
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
 	"block.create.track_signal.tooltip.summary": "Test",
 
-	"itemGroup.calamity": "Create: Calamity. Run while you can",
+	"itemGroup.calamity.base": "Create: Calamity. Run while you can",
+  "itemGroup.calamity.plushie": "Create: Plushies :3",
 
 
 	"_": "->------------------------]  UI & Messages  [------------------------<-",
 
-	"itemGroup.calamity": "Create: Calamity. Run while you can",
+	"itemGroup.calamity.base": "Create: Calamity. Run while you can",
+  "itemGroup.calamity.plushie": "Create: Plushies :3",
 
 
 	"_": "->------------------------]  Item Descriptions  [------------------------<-",
 
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
 	"block.create.track_signal.tooltip.summary": "Test",
+
+  "_": "->------------------------]  Plushie Tooltips  [------------------------<-",
+
+  "item.calamity.plushie.506.tooltip": "The fucking water turned me gay",
+  "item.calamity.plushie.outcraft.tooltip": "Hi :D",
+  "item.calamity.plushie.illuc.tooltip": "eepy :33",
+  "item.calamity.plushie.raeeeee.tooltip": "I will be the master of procrastination... someday",
+
+  "item.calamity.plushie.shirojr.tooltip1": "Cities that are attacked by nuclear missiles",
+  "item.calamity.plushie.shirojr.tooltip2": "burn at such an intensity that they create their own",
+  "item.calamity.plushie.shirojr.tooltip3": "wind system, a firestorm: hot air above the burning",
+  "item.calamity.plushie.shirojr.tooltip4": "city ascends and is replaced by air that rushes",
+  "item.calamity.plushie.shirojr.tooltip5": "in from all directions. The storm-force winds fan",
+  "item.calamity.plushie.shirojr.tooltip6": "the flames and create immense heat.",
+  "item.calamity.plushie.shirojr.tooltip7": "Nuking may include health risks!",
+
+  "item.calamity.plushie.fern.tooltip1": "EAT GRASS",
+  "item.calamity.plushie.fern.tooltip2": "SMOKE ASS",
+
+
+	"_": "->------------------------]  Damage Sources and Deaths  [------------------------<-",
+
+	"death.attack.crushing": "%1$s got bonked",
+	"death.attack.crushing.player": "%1$s got bonked while fighting %1$s",
+	"death.attack.crunching": "%1$s was crunched to death",
+	"death.attack.crunching.player": "%1$s was crunched to death while fighting %1$s",
+
+
+	"_": "->------------------------]  Advancement Titles and Tooltips  [------------------------<-",
+
+	"advancement.createcalamity.bonked.title": "Bonk! it goes indeed",
+	"advancement.createcalamity.bonked.desc": "Get crushed by a mechanical press.",
+	"advancement.createcalamity.crunched.title": "RIP AND TEAR",
+	"advancement.createcalamity.crunched.desc": "Have 2 maximum speed opposite-running cogwheels crunch you to death.",
 
 	"_": "Thank you for translating Create: Calamity!"
 

@@ -6,6 +6,7 @@ import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
+import com.calamityteam.calamity.infrastructure.item.CalamityCreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CLCreativeModeTab {
-	public static final CreativeModeTab CALAMITY_TAB = new CreativeModeTab(CreativeModeTab.TABS.length-1, Calamity.MOD_ID) {
+	public static final CalamityCreativeModeTab CALAMITY_TAB = new CalamityCreativeModeTab("base") {
 		@Override
 		public @NotNull ItemStack makeIcon() {
 			return new ItemStack(Blocks.TNT.asItem());
@@ -31,6 +32,12 @@ public class CLCreativeModeTab {
 					disabledItems.add(itemStack);
 			}
 			items.removeAll(disabledItems);
+		}
+	};
+	public static final CalamityCreativeModeTab CALAMITY_PLUSHIE_TAB = new CalamityCreativeModeTab("plushie") {
+		@Override
+		public @NotNull ItemStack makeIcon() {
+			return new ItemStack(CLPlushies.HEROBRINE.get());
 		}
 	};
 }
