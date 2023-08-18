@@ -17,6 +17,7 @@ public class ModSetup {
 		CLEntities.register();*/
 		CLTags.register();
 		CLAdvancements.register();
+		CLBlockEntities.register();
 		/*CLEdgePointTypes.register();
 		CLSchedule.register();
 		CLDataFixers.register();

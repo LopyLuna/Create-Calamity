@@ -2,10 +2,14 @@ package com.calamityteam.calamity.registry;
 
 import com.calamityteam.calamity.Calamity;
 
+import com.calamityteam.calamity.base.block.Canister.CanisterBlock;
+import com.calamityteam.calamity.base.block.PneumaticIO.PneumaticIOBlock;
+import com.calamityteam.calamity.base.block.PneumaticPipe.PneumaticPipeBlock;
 import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
 import com.calamityteam.calamity.multiloader.CommonTags;
 
 import com.simibubi.create.AllItems;
+import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.foundation.data.TagGen;
 
 import net.minecraft.tags.BlockTags;
@@ -69,6 +73,24 @@ public class CLBlocks {
 		.tag(CommonTags.NETHERRACK_ORES_ITEM.commonWritable)
 		.tag(CommonTags.BRASS_ORES_ITEM.commonWritable)
 		.build()
+		.register();
+
+
+	public static final  BlockEntry<PneumaticPipeBlock> PNEU_PLACE_HOLDER = Calamity.REGISTRATE.block("pneumatic_placeholder",  PneumaticPipeBlock::new)
+		.initialProperties(SharedProperties::softMetal)
+		.defaultBlockstate()
+		.simpleItem()
+		.register();
+
+	public static final  BlockEntry<PneumaticIOBlock> PNEU_IO = Calamity.REGISTRATE.block("pneumatic_io",  PneumaticIOBlock::new)
+		.initialProperties(SharedProperties::softMetal)
+		.defaultBlockstate()
+		.simpleItem()
+		.register();
+
+	public static final  BlockEntry<CanisterBlock> CANISTER = Calamity.REGISTRATE.block("canister",  CanisterBlock::new)
+		.initialProperties(SharedProperties::copperMetal)
+		.simpleItem()
 		.register();
 
 	static {
