@@ -20,20 +20,10 @@ import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.Map;
 
-public class CLThighHighItem extends DyeableArmorItem implements CustomEnchantmentsItem {
+public class CLThighHighItem extends DyeableArmorItem {
 	public CLThighHighItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
 		super(material, slot, properties);
-		this.getDefaultInstance().enchant(Enchantments.BINDING_CURSE,1);
-		// fixme enchant not applied
 	}
-
-	/*@Override
-	public ItemStack getDefaultInstance() {
-		ItemStack out = new ItemStack(this);
-		out.enchant(Enchantments.BINDING_CURSE,1);
-		Calamity.LOGGER.debug("apply curse" + out);
-		return out;
-	}*/
 
 	@Override
 	public int getColor(ItemStack stack) {
@@ -57,20 +47,9 @@ public class CLThighHighItem extends DyeableArmorItem implements CustomEnchantme
 	public static void speed(LivingEntity entity) {
 		if (isWornBy(entity)) {
 			entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2, 0, true, false, true));
+			if (!getWornItem(entity).isEnchanted()) getWornItem(entity).enchant(Enchantments.BINDING_CURSE,1);
+			// todo find a better way to do this
 		}
-	}
-
-	/**
-	 * modify the enchantments found on the given stack.
-	 * The map is a map of enchantments to the level found on the item. This map is mutable and may be directly modified.
-	 *
-	 * @param enchantments
-	 * @param stack
-	 */
-	@Override
-	public void modifyEnchantments(Map<Enchantment, Integer> enchantments, ItemStack stack) {
-		enchantments.put(Enchantments.BINDING_CURSE,1);
-		Calamity.LOGGER.debug("add enchant to " + enchantments);
 	}
 
 	public static void register() {}
