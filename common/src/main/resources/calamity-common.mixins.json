@@ -9,7 +9,7 @@
     "workplace_hazards.BeltBlockMixin",
     "workplace_hazards.BracketedKineticBlockEntityMixin",
     "workplace_hazards.EntityMixin",
-    "workplace_hazards.PressingBehaviourMixin"
+    "workplace_hazards.PressingBehaviourMixin",
     "EnchantmentHelperMixin"
   ],
   "injectors": {
