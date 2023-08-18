@@ -68,7 +68,7 @@ public class CLPlushies {
 		List.of()
 	));
 	public static final BlockEntry<PlushieBlock> TO0PA_PLUSH = newPlush(new PlushieEntry(
-		"t0opa",
+		"to0pa",
 		new PartialModel(Calamity.asResource("partial/plushie_to0pa")),
 		List.of(),
 		List.of(CLSounds.PLUSHIE_TO0PA)
