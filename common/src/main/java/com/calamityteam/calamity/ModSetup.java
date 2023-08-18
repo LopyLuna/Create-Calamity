@@ -1,6 +1,5 @@
 package com.calamityteam.calamity;
 
-import com.calamityteam.calamity.registry.worldgen.CLFeatures;
 import com.calamityteam.calamity.registry.*;
 
 public class ModSetup {
@@ -11,7 +10,7 @@ public class ModSetup {
 		//CLBlockEntities.register();
 		CLSounds.register();
 		CLBlocks.register();
-		PlushieRegistry.register();
+		CLPlushies.register();
 		/*CLContainerTypes.register();
 		CLEntities.register();*/
 		CLTags.register();

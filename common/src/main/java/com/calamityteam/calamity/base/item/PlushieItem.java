@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.base.block.Plushie;
+package com.calamityteam.calamity.base.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;

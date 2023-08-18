@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.base.block.Plushie;
+package com.calamityteam.calamity.base.block;
 
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class PlushieBlock extends HorizontalDirectionalBlock {
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 		if (level.isClientSide()) return InteractionResult.SUCCESS;
 
-		if (this.sounds == null) {
+		if (this.sounds == null || this.sounds.isEmpty()) {
 			level.playSound(null, pos, CLSounds.PLUSHIE_DEFAULT.get(), SoundSource.BLOCKS, 2f, 1f);
 
 		} else {
