@@ -1,19 +1,36 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "calamity:block/plushie_tomato_soupter"
-    },
-    "facing=east": {
-      "model": "calamity:block/plushie_tomato_soupter",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "calamity:block/plushie_tomato_soupter",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "calamity:block/plushie_tomato_soupter",
-      "y": 270
-    }
+    "rotation=0": {
+      "model": "calamity:block/plushie"},
+    "rotation=1": {
+      "model": "calamity:block/plushie"},
+    "rotation=2": {
+      "model": "calamity:block/plushie"},
+    "rotation=3": {
+      "model": "calamity:block/plushie"},
+    "rotation=4": {
+      "model": "calamity:block/plushie"},
+    "rotation=5": {
+      "model": "calamity:block/plushie"},
+    "rotation=6": {
+      "model": "calamity:block/plushie"},
+    "rotation=7": {
+      "model": "calamity:block/plushie"},
+    "rotation=8": {
+      "model": "calamity:block/plushie"},
+    "rotation=9": {
+      "model": "calamity:block/plushie"},
+    "rotation=10": {
+      "model": "calamity:block/plushie"},
+    "rotation=11": {
+      "model": "calamity:block/plushie"},
+    "rotation=12": {
+      "model": "calamity:block/plushie"},
+    "rotation=13": {
+      "model": "calamity:block/plushie"},
+    "rotation=14": {
+      "model": "calamity:block/plushie"},
+    "rotation=15": {
+      "model": "calamity:block/plushie"}
   }
 }
