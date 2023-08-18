@@ -2,7 +2,7 @@ package com.calamityteam.calamity.registry;
 
 import static com.calamityteam.calamity.Calamity.REGISTRATE;
 
-import com.calamityteam.calamity.base.item.thigh_high.ThighHighItem;
+import com.calamityteam.calamity.base.item.thigh_high.MaidArmorItem;
 
 import com.calamityteam.calamity.base.item.thigh_high.ThighHighColor;
 
@@ -15,20 +15,40 @@ public class CLItems {
 	static {
 		REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_TAB);
 	}
-
-	public static final ItemEntry<? extends ThighHighItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new ThighHighItem(CLArmorMaterials.WOOL, 0.5d, EquipmentSlot.LEGS, p))
+	/* Maid Armor set:
+		Full set grants +50% speed
+		Full set grants goggles functionality
+		Full set cannot be unequipped
+	 */
+	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
+		p -> new MaidArmorItem(CLArmorMaterials.WOOL, 0.5d, EquipmentSlot.LEGS, p))
 		.lang("Thigh Highs")
 		.properties(p -> p.rarity(Rarity.EPIC))
 		.color(() -> ThighHighColor::new)
 		.register();
 
-	public static final ItemEntry<? extends ThighHighItem> NETHERITE_THIGH_HIGHS = REGISTRATE.item("netherite_thigh_highs",
-		p -> new ThighHighItem(CLArmorMaterials.NETHERITE, 1.0d, EquipmentSlot.LEGS,p))
+	public static final ItemEntry<? extends MaidArmorItem> NETHERITE_THIGH_HIGHS = REGISTRATE.item("netherite_thigh_highs",
+		p -> new MaidArmorItem(CLArmorMaterials.NETHERITE, 1.0d, EquipmentSlot.LEGS,p))
 		.lang("Programmer Thigh Highs")
 		.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
 		.color(() -> ThighHighColor::new)
 		.register();
+	public static final ItemEntry<? extends MaidArmorItem> CAT_EARS = newMaidPiece("cat_ears", EquipmentSlot.HEAD,
+		"Cat Ears");
+	public static final ItemEntry<? extends MaidArmorItem> MAID_BLOUSE = newMaidPiece("maid_dress_top", EquipmentSlot.CHEST,
+		"Maid Dress Blouse");
+	public static final ItemEntry<? extends MaidArmorItem> MAID_SKIRT = newMaidPiece("maid_dress_bottom", EquipmentSlot.LEGS,
+		"Maid Dress Skirt");
+	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGH = newMaidPiece("thigh_high", EquipmentSlot.FEET,
+		"Thigh Highs");
+
+	public static ItemEntry<? extends MaidArmorItem> newMaidPiece(String id, EquipmentSlot eSlot, String lang) {
+		return REGISTRATE.item(id, p -> new MaidArmorItem(CLArmorMaterials.NETHERITE, 0.5d, eSlot, p))
+			.lang(lang)
+			.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
+			.color(() -> ThighHighColor::new)
+			.register();
+	}
 
 	public static void register() {
 	}

@@ -21,10 +21,10 @@ import com.calamityteam.calamity.util.ComfortablyStuck;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
-public class ThighHighItem extends DyeableArmorItem implements ComfortablyStuck {
+public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck {
 	private final Multimap<Attribute, AttributeModifier> attributeModifier;
 
-	public ThighHighItem(ArmorMaterial material, Double speedMultiplier, EquipmentSlot slot, Properties properties) {
+	public MaidArmorItem(ArmorMaterial material, Double speedMultiplier, EquipmentSlot slot, Properties properties) {
 		super(material, slot, properties);
 
 		ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
@@ -51,6 +51,7 @@ public class ThighHighItem extends DyeableArmorItem implements ComfortablyStuck 
 			return this.attributeModifier;
 		}
 		return super.getDefaultAttributeModifiers(slot);
+		// todo make me only work with full set equipped
 	}
 
 	@Override

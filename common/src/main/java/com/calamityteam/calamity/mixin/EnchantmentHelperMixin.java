@@ -1,6 +1,6 @@
 package com.calamityteam.calamity.mixin;
 
-import com.calamityteam.calamity.base.item.thigh_high.ThighHighItem;
+import com.calamityteam.calamity.base.item.thigh_high.MaidArmorItem;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +16,7 @@ import com.calamityteam.calamity.util.ComfortablyStuck;
 /**
  * Add special Items to work like Items with the Curse of Binding using
  * the {@linkplain ComfortablyStuck ComfortablyStuck} Interface<br>
- * For an example, check out {@linkplain ThighHighItem ThighHighItem}
+ * For an example, check out {@linkplain MaidArmorItem ThighHighItem}
  */
 @Mixin(EnchantmentHelper.class)
 public abstract class EnchantmentHelperMixin {

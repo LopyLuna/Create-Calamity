@@ -5,7 +5,6 @@ import com.simibubi.create.foundation.utility.Color;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.item.ItemColor;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 
 public class ThighHighColor implements ItemColor {
@@ -35,10 +34,10 @@ public class ThighHighColor implements ItemColor {
 		if (i == 0)
 			return Color.WHITE.getRGB();
 		if (i == 1) {
-			if (ThighHighItem.getTHColor(itemStack) == 11574159) {
+			if (MaidArmorItem.getTHColor(itemStack) == 11574159) {
 				return new Color(red, green, blue).getRGB();
 			}
-			return ThighHighItem.getTHColor(itemStack);
+			return MaidArmorItem.getTHColor(itemStack);
 		}
 		return 0;
 	}
