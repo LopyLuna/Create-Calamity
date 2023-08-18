@@ -1,0 +1,80 @@
+{
+  "plushie_default": {
+    "subtitle": "sound.calamity.plushie",
+    "sounds": [
+      "calamity:plushie_default"
+    ]
+  },
+  "plushie_506": {
+    "subtitle": "sound.calamity.plushie_506",
+    "sounds": [
+      "calamity:plushie_506"
+    ]
+  },
+  "plushie_illuc": {
+    "subtitle": "sound.calamity.plushie_illuc",
+    "sounds": [
+      "calamity:plushie_illuc"
+    ]
+  },
+  "plushie_kelad8": {
+    "subtitle": "sound.calamity.plushie_kelad8",
+    "sounds": [
+      "calamity:plushie_kelad8"
+    ]
+  },
+  "plushie_milkyfur_blush": {
+    "subtitle": "sound.calamity.plushie_milkyfur_blush",
+    "sounds": [
+      "calamity:plushie_milkyfur_blush"
+    ]
+  },
+  "plushie_milkyfur_honk": {
+    "subtitle": "sound.calamity.plushie_milkyfur_honk",
+    "sounds": [
+      "calamity:plushie_milkyfur_honk"
+    ]
+  },
+  "plushie_outcraft": {
+    "subtitle": "sound.calamity.plushie_outcraft",
+    "sounds": [
+      "calamity:plushie_outcraft"
+    ]
+  },
+  "plushie_reds": {
+    "subtitle": "sound.calamity.plushie_reds",
+    "sounds": [
+      "calamity:plushie_reds"
+    ]
+  },
+  "plushie_shirojr": {
+    "subtitle": "sound.calamity.plushie_shirojr",
+    "sounds": [
+      "calamity:plushie_shirojr"
+    ]
+  },
+  "plushie_thespokesman": {
+    "subtitle": "sound.calamity.plushie_thespokesman",
+    "sounds": [
+      "calamity:plushie_thespokesman"
+    ]
+  },
+  "plushie_to0pa": {
+    "subtitle": "sound.calamity.plushie_to0pa",
+    "sounds": [
+      "calamity:plushie_to0pa"
+    ]
+  },
+  "plushie_sascha": {
+    "subtitle": "sound.calamity.plushie_sascha",
+    "sounds": [
+      "calamity:plushie_sascha"
+    ]
+  },
+  "plushie_kolos": {
+    "subtitle": "sound.calamity.plushie_kolos",
+    "sounds": [
+      "calamity:plushie_kolos"
+    ]
+  }
+}

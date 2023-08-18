@@ -1,0 +1,22 @@
+{
+  "parent": "create:water_wheel",
+  "criteria": {
+    "hehe_bonked": {
+      "trigger": "calamity:crunched",
+      "conditions": {}
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "icon": {
+      "item": "create:large_cogwheel"
+    },
+    "description": {
+      "translate": "advancement.createcalamity.crunched.desc"
+    },
+    "frame": "challenge",
+    "title": {
+      "translate": "advancement.createcalamity.crunched.title"
+    }
+  }
+}

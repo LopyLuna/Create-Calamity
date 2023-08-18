@@ -1,6 +1,6 @@
 package com.calamityteam.calamity;
 
-import com.calamityteam.calamity.registry.worldgen.CLFeatures;
+import com.calamityteam.calamity.base.data.lang.CLCustomLang;
 import com.calamityteam.calamity.registry.*;
 
 public class ModSetup {
@@ -8,13 +8,15 @@ public class ModSetup {
 		/*CLTrackMaterials.register();
 		CLBogeyStyles.register();*/
 		CLItems.register();
-		/*CLBlockEntities.register();*/
+		//CLBlockEntities.register();
+		CLSounds.register();
 		CLBlocks.register();
-		//CommonEvents.register();
+		CLPlushies.register();
+		CLCustomLang.register();
 		/*CLContainerTypes.register();
-		CLEntities.register();
-		CLSounds.register();*/
+		CLEntities.register();*/
 		CLTags.register();
+		CLAdvancements.register();
 		/*CLEdgePointTypes.register();
 		CLSchedule.register();
 		CLDataFixers.register();
@@ -23,6 +25,7 @@ public class ModSetup {
 	}
 
 	public static void registerPostRegistrate() {
-		CLFeatures.register();
+		//FIXME: Forge ore generation breaks here!
+		//CLFeatures.register();
 	}
 }

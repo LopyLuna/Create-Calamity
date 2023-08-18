@@ -12,10 +12,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Calamity.MOD_ID)
 public class CalamityImpl {
-	static IEventBus bus;
+	static IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 	public CalamityImpl() {
-		bus = FMLJavaModLoadingContext.get().getModEventBus();
 		IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
 
 		/*forgeEventBus.register(Events.ClientModBusEvents.class);

@@ -12,7 +12,8 @@ import java.util.function.Supplier;
 public enum CLLangPartials implements LangPartial {
 	INTERFACE("UI & Messages"),
 	TOOLTIPS("Item Descriptions"),
-
+	DAMAGE_SOURCES("Damage Sources and Deaths"),
+	ADVANCEMENTS("Advancement Titles and Tooltips")
 	;
 
 	private final String display;
