@@ -2,7 +2,13 @@ package com.calamityteam.calamity.base.block;
 
 import java.util.List;
 
+import com.calamityteam.calamity.base.block.entities.PlushieBlockEntity;
+import com.calamityteam.calamity.registry.CLPlushies;
 import com.calamityteam.calamity.registry.CLSounds;
+
+import net.minecraft.world.level.block.EntityBlock;
+
+import net.minecraft.world.level.block.entity.BlockEntity;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +29,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import com.tterrag.registrate.util.entry.RegistryEntry;
 
-public class PlushieBlock extends HorizontalDirectionalBlock {
+public class PlushieBlock extends HorizontalDirectionalBlock implements EntityBlock {
 	private final @Nullable List<RegistryEntry<SoundEvent>> sounds;
 
 	public PlushieBlock(Properties properties, @Nullable List<RegistryEntry<SoundEvent>> sounds) {
@@ -56,5 +62,11 @@ public class PlushieBlock extends HorizontalDirectionalBlock {
 			level.playSound(null, pos, this.sounds.get(index).get(), SoundSource.BLOCKS, 2f, 1f);
 		}
 		return InteractionResult.SUCCESS;
+	}
+
+	@Nullable
+	@Override
+	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+		return new PlushieBlockEntity(CLPlushies.PLUSHIE_ENTITY.get(), pos, state);
 	}
 }

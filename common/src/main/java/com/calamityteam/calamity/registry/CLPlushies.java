@@ -1,16 +1,26 @@
 package com.calamityteam.calamity.registry;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.calamityteam.calamity.base.block.PlushieBlock;
+import com.calamityteam.calamity.base.block.entities.PlushieBlockEntity;
+import com.calamityteam.calamity.base.block.entities.renderer.PlushieBlockEntityRenderer;
 import com.calamityteam.calamity.base.item.PlushieItem;
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
+
+import com.tterrag.registrate.util.nullness.NonNullFunction;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -25,6 +35,7 @@ public class CLPlushies {
 		Calamity.REGISTRATE.creativeModeTab(() -> CLCreativeModeTab.CALAMITY_PLUSHIE_TAB);
 	}
 
+	public static final Set<BlockEntry<PlushieBlock>> PLUSHIES = new HashSet<>();
 	public static final BlockEntry<PlushieBlock> HEROBRINE = Calamity.REGISTRATE.block("herobrine",
 			properties -> new PlushieBlock(properties, null))
 		.properties(BlockBehaviour.Properties::noOcclusion)
@@ -79,8 +90,14 @@ public class CLPlushies {
 	public static final BlockEntry<PlushieBlock> KOLOS_PLUSH = newPlush("kolos",
 		List.of(CLSounds.PLUSHIE_KOLOS), null);
 
+	public static final BlockEntityEntry<PlushieBlockEntity> PLUSHIE_ENTITY = Calamity.REGISTRATE.blockEntity("plushies", PlushieBlockEntity::new)
+		.validBlocks(PLUSHIES.stream().map(a -> (NonNullSupplier<PlushieBlock>) a::get).toArray(NonNullSupplier[]::new))
+		.renderer(() -> PlushieBlockEntityRenderer::new)
+		.register();
+
+
 	public static BlockEntry<PlushieBlock> newPlush(String name, @Nullable List<RegistryEntry<SoundEvent>> sounds, @Nullable List<Component> textToolTip) {
-		return Calamity.REGISTRATE.block("plushie_" + name, properties ->
+		var x = Calamity.REGISTRATE.block("plushie_" + name, properties ->
 				new PlushieBlock(properties, sounds != null ? sounds : List.of()))
 			.properties(p -> p.sound(SoundType.WOOL))
 			.properties(BlockBehaviour.Properties::noOcclusion)
@@ -89,6 +106,8 @@ public class CLPlushies {
 				new PlushieItem(plushieBlock,properties, textToolTip != null ? textToolTip : List.of()))
 			.build()
 			.register();
+		PLUSHIES.add(x);
+		return x;
 	}
 
 	public static void register() {
