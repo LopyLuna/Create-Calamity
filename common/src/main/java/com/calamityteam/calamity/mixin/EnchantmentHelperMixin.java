@@ -1,8 +1,6 @@
 package com.calamityteam.calamity.mixin;
 
-import com.calamityteam.calamity.Calamity;
-
-import com.calamityteam.calamity.base.item.ThighHighItem;
+import com.calamityteam.calamity.base.item.thigh_high.ThighHighItem;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

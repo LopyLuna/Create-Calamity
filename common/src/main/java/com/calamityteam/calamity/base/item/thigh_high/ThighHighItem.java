@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.base.item;
+package com.calamityteam.calamity.base.item.thigh_high;
 
 import java.util.List;
 import java.util.UUID;
@@ -37,6 +37,10 @@ public class ThighHighItem extends DyeableArmorItem implements ComfortablyStuck 
 
 	@Override
 	public int getColor(ItemStack stack) {
+		CompoundTag compoundTag = stack.getTagElement("display");
+		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
+	}
+	public static int getTHColor(ItemStack stack) {
 		CompoundTag compoundTag = stack.getTagElement("display");
 		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
 	}
