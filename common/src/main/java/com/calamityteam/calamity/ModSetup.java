@@ -1,6 +1,7 @@
 package com.calamityteam.calamity;
 
 import com.calamityteam.calamity.base.data.lang.CLCustomLang;
+import com.calamityteam.calamity.infrastructure.events.CommonEvents;
 import com.calamityteam.calamity.registry.*;
 
 public class ModSetup {
@@ -13,6 +14,7 @@ public class ModSetup {
 		CLBlocks.register();
 		CLPlushies.register();
 		CLCustomLang.register();
+		CommonEvents.register();
 		/*CLContainerTypes.register();
 		CLEntities.register();*/
 		CLTags.register();

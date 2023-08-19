@@ -4,6 +4,12 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.IntStream;
 
+import com.calamityteam.calamity.Calamity;
+
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.nbt.CompoundTag;
@@ -57,7 +63,7 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
 	}
 
-	@Override
+	/*@Override
 	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slotId, boolean isSelected) {
 		super.inventoryTick(itemStack, level, entity, slotId, isSelected);
 		if (!(entity instanceof Player player) || level.isClientSide()) return;
@@ -76,6 +82,20 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 	@Override
 	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
 		return this.attributeModifier;
+	}*/
+	public static boolean hasFullSet(Entity entity) {
+		if (!(entity instanceof Player player)) {
+			return false;
+		}
+		List<ItemStack> armorSet = IntStream.rangeClosed(0, 3).mapToObj(player.getInventory()::getArmor).toList();
+		if (armorSet.stream().anyMatch(stack -> !(stack.getItem() instanceof MaidArmorItem))) return false;
+		else return true;
+	}
+	public static void applySpeed(LivingEntity entity) {
+		if (!(entity instanceof Player)) return;
+		if (hasFullSet(entity)) {
+			entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2, 0, true, false, false));
+		}
 	}
 
 	@Override
