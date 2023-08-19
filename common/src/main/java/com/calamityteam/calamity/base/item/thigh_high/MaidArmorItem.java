@@ -30,9 +30,9 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 	private static final String SPEED_UUID = "91AEAA56-376B-4498-935B-2F7F68070635";
 	private final double speedMultiplier;
 
-	public MaidArmorItem(ArmorMaterial material, double speedMultiplier, EquipmentSlot slot, Properties properties) {
+	public MaidArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
 		super(material, slot, properties);
-		this.speedMultiplier = speedMultiplier;
+		this.speedMultiplier = 5.5d;
 		this.attributeModifier = setEntityAttribute(SPEED_NAME, SPEED_UUID, speedMultiplier,
 			AttributeModifier.Operation.MULTIPLY_TOTAL);
 	}
