@@ -20,8 +20,8 @@ public enum CLArmorMaterials implements ArmorMaterial {
 		12, () -> SoundEvents.WOOL_PLACE, 0.0F, 0.0F,
 		() -> Ingredient.of(ItemTags.WOOL)),
 
-	NETHERITE(Calamity.asResource("netherite_thigh_highs").toString(), 37, new int[]{3, 6, 8, 3},
-		15, () -> SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 1.0F,
+	NETHERITE_MAID(Calamity.asResource("maid_armor").toString(), 37, new int[]{3, 6, 8, 3},
+		15, () -> SoundEvents.WOOL_PLACE, 3.0F, 1.0F,
 		() -> Ingredient.of(Items.NETHERITE_INGOT));
 
 	private static final int[] MAX_DAMAGE_ARRAY = new int[] { 13, 15, 16, 11 };
