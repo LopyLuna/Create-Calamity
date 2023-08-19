@@ -26,7 +26,7 @@ import com.calamityteam.calamity.util.ComfortablyStuck;
 
 public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck {
 	private static final String SPEED_NAME = "Speed modifier";
-	private static final String SPEED_UUID = "91AEAA56-376B-4498-935B-2F7F68070635";
+	private static final UUID SPEED_UUID = UUID.fromString("91AEAA56-376B-4498-935B-2F7F68070635");
 	private final static double speedMultiplier = 0.5d;
 
 	public MaidArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
@@ -45,21 +45,19 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 	}
 
 	public static boolean hasFullSet(Entity entity) {
-		if (!(entity instanceof Player player)) {
-			return false;
-		}
+		if (!(entity instanceof Player player)) return false;
 		List<ItemStack> armorSet = IntStream.rangeClosed(0, 3).mapToObj(player.getInventory()::getArmor).toList();
-		return !(armorSet.stream().anyMatch(stack -> !(stack.getItem() instanceof MaidArmorItem)));
+		return armorSet.stream().allMatch(stack -> stack.getItem() instanceof MaidArmorItem);
 	}
+
 	public static void applySpeed(LivingEntity entity) {
 		if (!(entity instanceof Player)) return;
-		Objects.requireNonNull(entity.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(UUID.fromString(SPEED_UUID));
-		if (hasFullSet(entity)) {
-			Objects.requireNonNull(entity.getAttribute(Attributes.MOVEMENT_SPEED))
-				.addTransientModifier(new AttributeModifier(
-					UUID.fromString(SPEED_UUID), SPEED_NAME, speedMultiplier,
-					AttributeModifier.Operation.MULTIPLY_TOTAL));
-		}
+		Objects.requireNonNull(entity.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(SPEED_UUID);
+		if (!hasFullSet(entity)) return;
+		Objects.requireNonNull(entity.getAttribute(Attributes.MOVEMENT_SPEED))
+			.addTransientModifier(new AttributeModifier(
+				SPEED_UUID, SPEED_NAME, speedMultiplier,
+				AttributeModifier.Operation.MULTIPLY_TOTAL));
 	}
 
 	@Override
