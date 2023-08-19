@@ -12,7 +12,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -43,6 +42,18 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 		CompoundTag compoundTag = stack.getTagElement("display");
 		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
 	}
+	@Override
+	public void inventoryTick(@NotNull ItemStack itemStack, @NotNull Level level, @NotNull Entity entity,
+							  int slotId, boolean isSelected) {
+		if (!(entity instanceof Player player)) return;
+		Objects.requireNonNull(player.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(SPEED_UUID);
+		if (!hasFullSet(player)) return;
+		Objects.requireNonNull(player.getAttribute(Attributes.MOVEMENT_SPEED))
+			.addTransientModifier(new AttributeModifier(
+				SPEED_UUID, SPEED_NAME, speedMultiplier,
+				AttributeModifier.Operation.MULTIPLY_TOTAL));
+
+	}
 
 	public static boolean hasFullSet(Entity entity) {
 		if (!(entity instanceof Player player)) return false;
@@ -50,15 +61,6 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 		return armorSet.stream().allMatch(stack -> stack.getItem() instanceof MaidArmorItem);
 	}
 
-	public static void applySpeed(LivingEntity entity) {
-		if (!(entity instanceof Player)) return;
-		Objects.requireNonNull(entity.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(SPEED_UUID);
-		if (!hasFullSet(entity)) return;
-		Objects.requireNonNull(entity.getAttribute(Attributes.MOVEMENT_SPEED))
-			.addTransientModifier(new AttributeModifier(
-				SPEED_UUID, SPEED_NAME, speedMultiplier,
-				AttributeModifier.Operation.MULTIPLY_TOTAL));
-	}
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
