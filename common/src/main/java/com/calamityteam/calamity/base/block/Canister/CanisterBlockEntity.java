@@ -131,7 +131,7 @@ public class CanisterBlockEntity extends RandomizableContainerBlockEntity implem
 
 
 	protected AbstractContainerMenu createMenu(int containerId, Inventory inventory) {
-		return new ShulkerBoxMenu(containerId, inventory, this);
+		return new CanisterBlockMenu(containerId, inventory, this);
 	}
 
 }

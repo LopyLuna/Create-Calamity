@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "full=true,io=false": {
+      "model": "calamity:block/pneumatic_full"
+    },
+    "full=true,io=true": {
+      "model": "calamity:block/pneumatic_full"
+    },
+    "io=false,full=false": {
+      "model": "calamity:block/pneumatic_i"
+    },
+    "io=true,full=false": {
+      "model": "calamity:block/pneumatic_o"
+    }
+
+  }
+}

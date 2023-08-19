@@ -6,6 +6,7 @@ import com.calamityteam.calamity.base.block.Canister.CanisterBlock;
 import com.calamityteam.calamity.base.block.PneumaticIO.PneumaticIOBlock;
 import com.calamityteam.calamity.base.block.PneumaticPipe.PneumaticPipeBlock;
 import com.calamityteam.calamity.base.featurepack.CalamityFeaturePack;
+import com.calamityteam.calamity.base.item.CanisterItem;
 import com.calamityteam.calamity.multiloader.CommonTags;
 
 import com.simibubi.create.AllItems;
@@ -76,21 +77,23 @@ public class CLBlocks {
 		.register();
 
 
-	public static final  BlockEntry<PneumaticPipeBlock> PNEU_PLACE_HOLDER = Calamity.REGISTRATE.block("pneumatic_placeholder",  PneumaticPipeBlock::new)
+	public static final  BlockEntry<PneumaticPipeBlock> PNEU_PIPE = Calamity.REGISTRATE.block("pneumatic_pipe",  PneumaticPipeBlock::new)
 		.initialProperties(SharedProperties::softMetal)
-		.defaultBlockstate()
 		.simpleItem()
 		.register();
 
 	public static final  BlockEntry<PneumaticIOBlock> PNEU_IO = Calamity.REGISTRATE.block("pneumatic_io",  PneumaticIOBlock::new)
 		.initialProperties(SharedProperties::softMetal)
-		.defaultBlockstate()
 		.simpleItem()
 		.register();
 
 	public static final  BlockEntry<CanisterBlock> CANISTER = Calamity.REGISTRATE.block("canister",  CanisterBlock::new)
 		.initialProperties(SharedProperties::copperMetal)
-		.simpleItem()
+		.transform(TagGen.pickaxeOnly())
+		.tag(BlockTags.NEEDS_STONE_TOOL)
+		.defaultLoot()
+		.item(CanisterItem::new)
+		.build()
 		.register();
 
 	static {

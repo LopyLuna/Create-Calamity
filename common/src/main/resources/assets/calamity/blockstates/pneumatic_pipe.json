@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "calamity:block/pneumatic_pipe"
+    }
+  }
+}

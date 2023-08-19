@@ -18,7 +18,7 @@ public class CanisterBlockMenu extends AbstractContainerMenu {
 	}
 
 	public CanisterBlockMenu(int containerId, Inventory playerInventory, Container container) {
-		super(MenuType.SHULKER_BOX, containerId);
+		super(MenuType.GENERIC_3x3, containerId);
 		checkContainerSize(container, 9);
 		this.container = container;
 		container.startOpen(playerInventory.player);
@@ -26,9 +26,13 @@ public class CanisterBlockMenu extends AbstractContainerMenu {
 
 		int k;
 		int l;
+		int s=0;
 		for(k = 0; k < 3; ++k) {
 			for(l = 0; l < 3; ++l) {
-				this.addSlot(new ShulkerBoxSlot(container, l + k * 9, 8 + l * 18, 18 + k * 18));
+
+				System.out.println(l+k);
+				this.addSlot(new CanisterSlot(container, s, 8 + l * 18, 18 + k * 18));
+				s+=1;
 			}
 		}
 
