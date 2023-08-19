@@ -22,9 +22,7 @@ public enum CLArmorMaterials implements ArmorMaterial {
 
 	NETHERITE(Calamity.asResource("netherite_thigh_highs").toString(), 37, new int[]{3, 6, 8, 3},
 		15, () -> SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 1.0F,
-		() -> Ingredient.of(Items.NETHERITE_INGOT)),
-
-	;
+		() -> Ingredient.of(Items.NETHERITE_INGOT));
 
 	private static final int[] MAX_DAMAGE_ARRAY = new int[] { 13, 15, 16, 11 };
 	private final String name;

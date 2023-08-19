@@ -33,7 +33,7 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 	public MaidArmorItem(ArmorMaterial material, double speedMultiplier, EquipmentSlot slot, Properties properties) {
 		super(material, slot, properties);
 		this.speedMultiplier = speedMultiplier;
-		this.attributeModifier = setEntityAttribute( SPEED_NAME, SPEED_UUID, speedMultiplier,
+		this.attributeModifier = setEntityAttribute(SPEED_NAME, SPEED_UUID, speedMultiplier,
 			AttributeModifier.Operation.MULTIPLY_TOTAL);
 	}
 
@@ -60,24 +60,22 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 	@Override
 	public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slotId, boolean isSelected) {
 		super.inventoryTick(itemStack, level, entity, slotId, isSelected);
-		if (!(entity instanceof Player player)) return;
+		if (!(entity instanceof Player player) || level.isClientSide()) return;
 		List<ItemStack> armorSet = IntStream.rangeClosed(0, 3).mapToObj(player.getInventory()::getArmor).toList();
 
-		double modifier;
-		if (armorSet.stream().anyMatch(stack -> !(stack.getItem() instanceof MaidArmorItem))) modifier = 0.0d;
-		else modifier = this.speedMultiplier;
+		double oldModifier = this.speedMultiplier;
+		double newModifier;
+		if (armorSet.stream().anyMatch(stack -> !(stack.getItem() instanceof MaidArmorItem))) newModifier = 0.0d;
+		else newModifier = this.speedMultiplier;
+		if (oldModifier == newModifier) return;
 
-		this.attributeModifier = setEntityAttribute(SPEED_NAME, SPEED_UUID, modifier,
+		this.attributeModifier = setEntityAttribute(SPEED_NAME, SPEED_UUID, oldModifier,
 			AttributeModifier.Operation.MULTIPLY_TOTAL);
 	}
 
 	@Override
 	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot) {
-		if (slot == EquipmentSlot.LEGS) {
-			return this.attributeModifier;
-		}
-		return super.getDefaultAttributeModifiers(slot);
-		//TODO: make me only work with full set equipped
+		return this.attributeModifier;
 	}
 
 	@Override

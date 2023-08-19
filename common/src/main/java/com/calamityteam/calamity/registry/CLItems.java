@@ -42,8 +42,8 @@ public class CLItems {
 	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGH = newMaidPiece("thigh_high", EquipmentSlot.FEET,
 		"Thigh Highs");
 
-	public static ItemEntry<? extends MaidArmorItem> newMaidPiece(String id, EquipmentSlot eSlot, String lang) {
-		return REGISTRATE.item(id, p -> new MaidArmorItem(CLArmorMaterials.NETHERITE, 0.5d, eSlot, p))
+	public static ItemEntry<? extends MaidArmorItem> newMaidPiece(String id, EquipmentSlot equipmentSlot, String lang) {
+		return REGISTRATE.item(id, p -> new MaidArmorItem(CLArmorMaterials.NETHERITE, 5.5d, equipmentSlot, p))
 			.lang(lang)
 			.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
 			.color(() -> ThighHighColor::new)
