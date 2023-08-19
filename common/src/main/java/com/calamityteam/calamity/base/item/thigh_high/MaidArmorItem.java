@@ -42,6 +42,7 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 		CompoundTag compoundTag = stack.getTagElement("display");
 		return compoundTag != null && compoundTag.contains("color", 99) ? compoundTag.getInt("color") : 16099768;
 	}
+
 	@Override
 	public void inventoryTick(@NotNull ItemStack itemStack, @NotNull Level level, @NotNull Entity entity,
 							  int slotId, boolean isSelected) {
@@ -60,7 +61,6 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck 
 		List<ItemStack> armorSet = IntStream.rangeClosed(0, 3).mapToObj(player.getInventory()::getArmor).toList();
 		return armorSet.stream().allMatch(stack -> stack.getItem() instanceof MaidArmorItem);
 	}
-
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
