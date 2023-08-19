@@ -21,14 +21,14 @@ public class CLItems {
 		Full set cannot be unequipped
 	 */
 	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new MaidArmorItem(CLArmorMaterials.WOOL, 0.5d, EquipmentSlot.LEGS, p))
+		p -> new MaidArmorItem(CLArmorMaterials.WOOL, EquipmentSlot.LEGS, p))
 		.lang("Thigh Highs")
 		.properties(p -> p.rarity(Rarity.EPIC))
 		.color(() -> ThighHighColor::new)
 		.register();
 
 	public static final ItemEntry<? extends MaidArmorItem> NETHERITE_THIGH_HIGHS = REGISTRATE.item("netherite_thigh_highs",
-		p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, 1.0d, EquipmentSlot.LEGS,p))
+		p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, EquipmentSlot.LEGS,p))
 		.lang("Programmer Thigh Highs")
 		.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
 		.color(() -> ThighHighColor::new)
@@ -43,7 +43,7 @@ public class CLItems {
 		"Thigh Highs");
 
 	public static ItemEntry<? extends MaidArmorItem> newMaidPiece(String id, EquipmentSlot equipmentSlot, String lang) {
-		return REGISTRATE.item(id, p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, 0.5d, equipmentSlot, p))
+		return REGISTRATE.item(id, p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, equipmentSlot, p))
 			.lang(lang)
 			.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
 			.color(() -> ThighHighColor::new)
