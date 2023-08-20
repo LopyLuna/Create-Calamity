@@ -5,6 +5,8 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.IntStream;
 
+import com.calamityteam.calamity.util.thigh_high.ComfortablySneaky;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,9 +23,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
-import com.calamityteam.calamity.util.ComfortablyStuck;
+import com.calamityteam.calamity.util.thigh_high.ComfortablyStuck;
 
-public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck {
+public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck, ComfortablySneaky {
 	private static final String SPEED_NAME = "Speed modifier";
 	private static final UUID SPEED_UUID = UUID.fromString("91AEAA56-376B-4498-935B-2F7F68070635");
 	private final static double speedMultiplier = 0.5d;
