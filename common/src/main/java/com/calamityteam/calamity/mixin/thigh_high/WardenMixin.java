@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.mixin;
+package com.calamityteam.calamity.mixin.thigh_high;
 
 import java.util.stream.IntStream;
 

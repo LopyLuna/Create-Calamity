@@ -5,10 +5,10 @@
   "compatibilityLevel": "JAVA_17",
   "client": [],
   "mixins": [
-    "EnchantmentHelperMixin",
+    "thigh_high.EnchantmentHelperMixin",
     "KineticBlockEntityAccessor",
-    "SculkSensorBlockMixin",
-    "WardenMixin",
+    "thigh_high.SculkSensorBlockMixin",
+    "thigh_high.WardenMixin",
     "workplace_hazards.BeltBlockMixin",
     "workplace_hazards.BracketedKineticBlockEntityMixin",
     "workplace_hazards.EntityMixin",
