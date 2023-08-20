@@ -1,5 +1,9 @@
 package com.calamityteam.calamity.mixin;
 
+import com.calamityteam.calamity.registry.CLAdvancements;
+
+import net.minecraft.server.level.ServerPlayer;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -31,5 +35,8 @@ public abstract class SculkSensorBlockMixin extends BlockEntity {
 		if (!(sourceEntity instanceof Player player)) return;
 		if (!(player.getInventory().getArmor(0).getItem() instanceof MaidArmorItem)) return;
 		ci.cancel();
+		if (player instanceof ServerPlayer p) {
+			CLAdvancements.EVADE_SCULK_COMFY.trigger(p);
+		}
 	}
 }

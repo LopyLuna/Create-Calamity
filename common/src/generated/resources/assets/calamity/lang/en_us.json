@@ -20,6 +20,7 @@
   "itemGroup.calamity.plushie": "Create: Plushies :3",
 
 
+
 	"_": "->------------------------]  Item Descriptions  [------------------------<-",
 
 	"block.create.track_signal.tooltip": "TRAIN SIGNAL",
@@ -58,6 +59,8 @@
 	"advancement.createcalamity.bonked.desc": "Get crushed by a mechanical press.",
 	"advancement.createcalamity.crunched.title": "RIP AND TEAR",
 	"advancement.createcalamity.crunched.desc": "Have 2 maximum speed opposite-running cogwheels crunch you to death.",
+  "advancement.createcalamity.comfy_100.title": "Comfy 100",
+  "advancement.createcalamity.comfy_100.desc": "Avoid being detected by a sculk sensor by wearing thigh highs :3",
 
 	"_": "Thank you for translating Create: Calamity!"
 

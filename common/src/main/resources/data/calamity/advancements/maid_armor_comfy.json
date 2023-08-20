@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "comfy_thigh_highs": {
+      "trigger": "calamity:comfy_100",
+      "conditions": {}
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "icon": {
+      "item": "calamity:thigh_high"
+    },
+    "description": {
+      "translate": "advancement.createcalamity.comfy_100.desc"
+    },
+    "frame": "challenge",
+    "title": {
+      "translate": "advancement.createcalamity.comfy_100.title"
+    }
+  }
+}

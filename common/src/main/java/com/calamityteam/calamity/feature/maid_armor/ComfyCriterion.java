@@ -1,4 +1,4 @@
-package com.calamityteam.calamity.feature.workplace_hazards;
+package com.calamityteam.calamity.feature.maid_armor;
 
 import net.minecraft.advancements.critereon.AbstractCriterionTriggerInstance;
 import net.minecraft.advancements.critereon.DeserializationContext;
@@ -10,8 +10,8 @@ import net.minecraft.server.level.ServerPlayer;
 import com.calamityteam.calamity.Calamity;
 import com.google.gson.JsonObject;
 
-public class BonkCriterion extends SimpleCriterionTrigger<BonkCriterion.TriggerInstance> {
-	public BonkCriterion() {}
+public class ComfyCriterion extends SimpleCriterionTrigger<ComfyCriterion.TriggerInstance> {
+	public ComfyCriterion() {}
 	@Override
 	protected TriggerInstance createInstance(JsonObject json, EntityPredicate.Composite player, DeserializationContext context) {
 		return new TriggerInstance(player );
@@ -23,7 +23,7 @@ public class BonkCriterion extends SimpleCriterionTrigger<BonkCriterion.TriggerI
 		});
 	}
 
-	public final static ResourceLocation ID = Calamity.asResource("bonked");
+	public final static ResourceLocation ID = Calamity.asResource("comfy_100");
 	@Override
 	public ResourceLocation getId() {
 		return ID;
