@@ -18,34 +18,22 @@ public class CLItems {
 	/* Maid Armor set:
 		Full set grants +50% speed
 		Full set grants goggles functionality
+		Full set grants impermeability to warden attacks
 		Full set cannot be unequipped
 	 */
-	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGHS = REGISTRATE.item("thigh_highs",
-		p -> new MaidArmorItem(CLArmorMaterials.WOOL, EquipmentSlot.LEGS, p))
-		.lang("Thigh Highs")
-		.properties(p -> p.rarity(Rarity.EPIC))
-		.color(() -> ThighHighColor::new)
-		.register();
-
-	public static final ItemEntry<? extends MaidArmorItem> NETHERITE_THIGH_HIGHS = REGISTRATE.item("netherite_thigh_highs",
-		p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, EquipmentSlot.LEGS,p))
-		.lang("Programmer Thigh Highs")
-		.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
-		.color(() -> ThighHighColor::new)
-		.register();
 	public static final ItemEntry<? extends MaidArmorItem> CAT_EARS = newMaidPiece("cat_ears", EquipmentSlot.HEAD,
 		"Cat Ears");
-	public static final ItemEntry<? extends MaidArmorItem> MAID_BLOUSE = newMaidPiece("maid_dress_top", EquipmentSlot.CHEST,
+	public static final ItemEntry<? extends MaidArmorItem> MAID_DRESS = newMaidPiece("maid_dress", EquipmentSlot.CHEST,
 		"Maid Dress Blouse");
-	public static final ItemEntry<? extends MaidArmorItem> MAID_SKIRT = newMaidPiece("maid_dress_bottom", EquipmentSlot.LEGS,
+	public static final ItemEntry<? extends MaidArmorItem> MAID_PANTIES = newMaidPiece("maid_panties", EquipmentSlot.LEGS,
 		"Maid Dress Skirt");
-	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGH = newMaidPiece("thigh_high", EquipmentSlot.FEET,
+	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGHS = newMaidPiece("thigh_highs", EquipmentSlot.FEET,
 		"Thigh Highs");
 
 	public static ItemEntry<? extends MaidArmorItem> newMaidPiece(String id, EquipmentSlot equipmentSlot, String lang) {
 		return REGISTRATE.item(id, p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, equipmentSlot, p))
 			.lang(lang)
-			.properties(p -> p.rarity(Rarity.EPIC).fireResistant())
+			.properties(p -> p.rarity(Rarity.RARE).fireResistant())
 			.color(() -> ThighHighColor::new)
 			.register();
 	}

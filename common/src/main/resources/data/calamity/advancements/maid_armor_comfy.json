@@ -8,7 +8,7 @@
   "display": {
     "announce_to_chat": true,
     "icon": {
-      "item": "calamity:thigh_high"
+      "item": "calamity:thigh_highs"
     },
     "description": {
       "translate": "advancement.createcalamity.comfy_100.desc"
