@@ -8,6 +8,7 @@
     "EnchantmentHelperMixin",
     "KineticBlockEntityAccessor",
     "SculkSensorBlockMixin",
+    "WardenMixin",
     "workplace_hazards.BeltBlockMixin",
     "workplace_hazards.BracketedKineticBlockEntityMixin",
     "workplace_hazards.EntityMixin",

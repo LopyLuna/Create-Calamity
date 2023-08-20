@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 
-import com.calamityteam.calamity.util.ComfortablyStuck;
+import com.calamityteam.calamity.util.thigh_high.ComfortablyStuck;
 
 /**
  * Add special Items to work like Items with the Curse of Binding using
