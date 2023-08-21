@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "calamity:item/netherite_thigh_highs",
-    "layer1": "calamity:item/netherite_thigh_highs_overlay"
-  }
-}

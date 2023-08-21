@@ -24,9 +24,9 @@ public class CLItems {
 	public static final ItemEntry<? extends MaidArmorItem> CAT_EARS = newMaidPiece("cat_ears", EquipmentSlot.HEAD,
 		"Cat Ears");
 	public static final ItemEntry<? extends MaidArmorItem> MAID_DRESS = newMaidPiece("maid_dress", EquipmentSlot.CHEST,
-		"Maid Dress Blouse");
+		"Maid Dress");
 	public static final ItemEntry<? extends MaidArmorItem> MAID_PANTIES = newMaidPiece("maid_panties", EquipmentSlot.LEGS,
-		"Maid Dress Skirt");
+		"Maid Panties");
 	public static final ItemEntry<? extends MaidArmorItem> THIGH_HIGHS = newMaidPiece("thigh_highs", EquipmentSlot.FEET,
 		"Thigh Highs");
 

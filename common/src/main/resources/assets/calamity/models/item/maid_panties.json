@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "calamity:item/maid_panties",
+    "layer1": "calamity:item/maid_panties_overlay"
+  }
+}

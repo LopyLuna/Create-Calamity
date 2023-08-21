@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "calamity:item/cat_ears",
+    "layer1": "calamity:item/cat_ears_overlay"
+  }
+}
