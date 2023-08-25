@@ -90,8 +90,6 @@ public class CLBlocks {
 	public static final  BlockEntry<CanisterBlock> CANISTER = Calamity.REGISTRATE.block("canister",  CanisterBlock::new)
 		.initialProperties(SharedProperties::copperMetal)
 		.transform(TagGen.pickaxeOnly())
-		.tag(BlockTags.NEEDS_STONE_TOOL)
-		.defaultLoot()
 		.item(CanisterItem::new)
 		.build()
 		.register();
