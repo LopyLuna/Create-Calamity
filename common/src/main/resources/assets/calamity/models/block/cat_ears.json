@@ -1,0 +1,47 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "calamity:block/cat_ears",
+		"particle": "calamity:block/cat_ears"
+	},
+	"elements": [
+		{
+			"name": "strap",
+			"from": [3.9, 0, 4],
+			"to": [12.1, 8, 12.1],
+			"faces": {
+				"east": {"uv": [0, 0, 8, 8], "texture": "#0"},
+				"west": {"uv": [8, 0, 0, 8], "texture": "#0"},
+				"up": {"uv": [0, 8, 8, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "ear1",
+			"from": [4, 8, 6.5],
+			"to": [7, 11, 7.5],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [5.5, 9.5, 7]},
+			"faces": {
+				"north": {"uv": [8, 1, 11, 4], "texture": "#0"},
+				"east": {"uv": [11, 4, 12, 7], "texture": "#0"},
+				"south": {"uv": [11, 1, 14, 4], "texture": "#0"},
+				"west": {"uv": [12, 4, 13, 7], "texture": "#0"},
+				"up": {"uv": [8, 4, 11, 5], "texture": "#0"},
+				"down": {"uv": [8, 5, 11, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "ear2",
+			"from": [9, 8, 6.5],
+			"to": [12, 11, 7.5],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [10.5, 9.5, 7]},
+			"faces": {
+				"north": {"uv": [11, 1, 8, 4], "texture": "#0"},
+				"east": {"uv": [12, 4, 13, 7], "texture": "#0"},
+				"south": {"uv": [11, 1, 14, 4], "texture": "#0"},
+				"west": {"uv": [11, 4, 12, 7], "texture": "#0"},
+				"up": {"uv": [8, 4, 11, 5], "texture": "#0"},
+				"down": {"uv": [11, 5, 8, 6], "texture": "#0"}
+			}
+		}
+	]
+}

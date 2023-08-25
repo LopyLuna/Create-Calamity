@@ -7,6 +7,8 @@ import java.util.stream.IntStream;
 
 import com.calamityteam.calamity.util.thigh_high.ComfortablySneaky;
 
+import com.calamityteam.calamity.util.thigh_high.MaidSpeedBonus;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,7 +27,7 @@ import net.minecraft.world.level.Level;
 
 import com.calamityteam.calamity.util.thigh_high.ComfortablyStuck;
 
-public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck, ComfortablySneaky {
+public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck, ComfortablySneaky, MaidSpeedBonus {
 	private static final String SPEED_NAME = "Speed modifier";
 	private static final UUID SPEED_UUID = UUID.fromString("91AEAA56-376B-4498-935B-2F7F68070635");
 	private final static double speedMultiplier = 0.5d;
@@ -61,7 +63,7 @@ public class MaidArmorItem extends DyeableArmorItem implements ComfortablyStuck,
 	public static boolean hasFullSet(Entity entity) {
 		if (!(entity instanceof Player player)) return false;
 		List<ItemStack> armorSet = IntStream.rangeClosed(0, 3).mapToObj(player.getInventory()::getArmor).toList();
-		return armorSet.stream().allMatch(stack -> stack.getItem() instanceof MaidArmorItem);
+		return armorSet.stream().allMatch(stack -> stack.getItem() instanceof MaidSpeedBonus);
 	}
 
 	@Override

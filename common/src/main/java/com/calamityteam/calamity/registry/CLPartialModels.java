@@ -1,5 +1,6 @@
 package com.calamityteam.calamity.registry;
 
+import com.calamityteam.calamity.Calamity;
 import com.jozufozu.flywheel.core.PartialModel;
 
 import com.simibubi.create.Create;
@@ -13,7 +14,7 @@ public class CLPartialModels {
 
 
 	private static PartialModel block(String path) {
-		return new PartialModel(Create.asResource("block/" + path));
+		return new PartialModel(Calamity.asResource("block/" + path));
 	}
 
 	public static void register() {}

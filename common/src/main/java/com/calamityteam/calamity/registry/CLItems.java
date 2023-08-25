@@ -2,6 +2,7 @@ package com.calamityteam.calamity.registry;
 
 import static com.calamityteam.calamity.Calamity.REGISTRATE;
 
+import com.calamityteam.calamity.base.item.thigh_high.CatEarsItem;
 import com.calamityteam.calamity.base.item.thigh_high.MaidArmorItem;
 
 import com.calamityteam.calamity.base.item.thigh_high.MaidArmorColor;
@@ -25,13 +26,13 @@ public class CLItems {
 		Full set grants impermeability to warden attacks
 		Full set cannot be unequipped
 	 */
-	// cat ears registered separately for fabric/forge due to model inst. conflicts
-	public static final ItemEntry<? extends MaidArmorItem> CAT_EARS =
-		REGISTRATE.item("cat_ears", p -> new MaidArmorItem(CLArmorMaterials.NETHERITE_MAID, EquipmentSlot.HEAD, p))
+	// cat ears registered separately for fabric/forge due to model declaration conflicts
+	public static final ItemEntry<? extends CatEarsItem> CAT_EARS =
+		REGISTRATE.item("cat_ears", p -> new CatEarsItem(CLArmorMaterials.NETHERITE_MAID, EquipmentSlot.HEAD, p))
 			.lang("Cat Ears")
-			.onRegister(CreateRegistrate.itemModel(() -> CatEarsModel::new))
-			.properties(p -> p.stacksTo(1).rarity(Rarity.RARE))
 			.color(() -> MaidArmorColor::new)
+			.properties(p -> p.stacksTo(1).rarity(Rarity.RARE))
+			.onRegister(CreateRegistrate.itemModel(() -> CatEarsModel::new))
 			.register();
 	public static final ItemEntry<? extends MaidArmorItem> MAID_DRESS = newMaidPiece("maid_dress", EquipmentSlot.CHEST,
 		"Maid Dress");
