@@ -1,5 +1,7 @@
 package com.calamityteam.calamity.forge;
 
+import com.calamityteam.calamity.registry.CLForgeItems;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +23,7 @@ public class CreateCalamityForge {
 		CLSounds.register();
 		CLBlocks.register();
 		CLPlushies.register();
+		CLForgeItems.register();
 
 		/*forgeEventBus.register(Events.ClientModBusEvents.class);
 		forgeEventBus.addListener(Events::registerCommands);*/

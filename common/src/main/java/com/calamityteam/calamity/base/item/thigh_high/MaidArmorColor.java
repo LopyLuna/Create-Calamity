@@ -7,7 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.world.item.ItemStack;
 
-public class ThighHighColor implements ItemColor {
+public class MaidArmorColor implements ItemColor {
 	private static int colorInPhase(int phase, int progress) {
 		phase = phase % 6;
 		if (phase <= 1)

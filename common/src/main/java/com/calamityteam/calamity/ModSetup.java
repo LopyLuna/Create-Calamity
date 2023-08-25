@@ -8,6 +8,7 @@ public class ModSetup {
 	public static void register() {
 		/*CLTrackMaterials.register();
 		CLBogeyStyles.register();*/
+		CLPartialModels.register();
 		CLItems.register();
 		//CLBlockEntities.register();
 		CLSounds.register();
